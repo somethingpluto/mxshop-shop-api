@@ -1,0 +1,6 @@
+name: 'user-web'
+user_service:
+  host: '127.0.0.1'
+  port: 8000
+user_server:
+  port: 8081

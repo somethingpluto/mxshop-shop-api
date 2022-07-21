@@ -1,0 +1,37 @@
+2022-07-19T09:50:30.005+0800	INFO	runtime/proc.go:255	Hello zap
+2022-07-19T09:50:53.138+0800	DEBUG	runtime/proc.go:255	Hello zap
+2022-07-19T20:06:38.517+0800	DEBUG	runtime/proc.go:255	Hello zap
+2022-07-19T20:07:40.994+0800	DEBUG	runtime/proc.go:255	Hello zap
+2022-07-19T20:08:36.064+0800	DEBUG	runtime/proc.go:255	gin listen port 3000
+2022-07-19T20:08:54.553+0800	DEBUG	runtime/proc.go:255	gin listen port 3000
+2022-07-19T20:09:15.000+0800	DEBUG	runtime/proc.go:255	gin listen port 3000
+2022-07-19T20:20:56.523+0800	DEBUG	runtime/proc.go:255	gin listen port 3000
+{"level":"DEBUG","ts":"2022-07-19T20:21:34.071+0800","caller":"runtime/proc.go:255","msg":"gin listen port 3000"}
+2022-07-19T20:33:44.608+0800	DEBUG	runtime/proc.go:255	gin listen port 3000
+2022-07-19T20:34:15.198+0800	DEBUG	runtime/asm_amd64.s:1581	gin listen port 3000
+2022-07-19T20:34:27.921+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-19T21:13:40.026+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-19T21:14:29.152+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-19T22:05:04.721+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-19T22:05:11.320+0800	ERROR	api/user.go:20	[GetUserList] 连接 【用户服务】失败	{"msg": "grpc: no transport security set (use grpc.WithTransportCredentials(insecure.NewCredentials()) explicitly or set credentials)"}
+2022-07-19T22:05:31.470+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-19T22:05:33.523+0800	ERROR	api/user.go:20	[GetUserList] 连接 【用户服务】失败	{"msg": "grpc: no transport security set (use grpc.WithTransportCredentials(insecure.NewCredentials()) explicitly or set credentials)"}
+2022-07-19T22:07:01.433+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-19T22:13:47.007+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-19T22:17:45.298+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-20T08:45:54.766+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-20T08:46:24.247+0800	ERROR	api/user.go:37	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-20T08:51:43.738+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-20T16:34:48.305+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-20T16:36:11.917+0800	ERROR	api/user.go:66	[GetUserByMobile] 查询 【用户】失败msgrpc error: code = NotFound desc = 未查找到该用户
+2022-07-20T16:36:43.377+0800	DEBUG	Shop_api/main.go:14	gin listen port 3000
+2022-07-20T21:45:23.941+0800	DEBUG	user_web/main.go:14	gin listen port 3000
+2022-07-20T21:45:58.701+0800	DEBUG	user_web/main.go:14	gin listen port 3000
+2022-07-20T21:46:57.193+0800	DEBUG	user_web/main.go:14	gin listen port 3000
+2022-07-20T22:01:33.246+0800	DEBUG	user_web/main.go:16	gin listen port 3000
+2022-07-20T22:03:02.042+0800	DEBUG	user_web/main.go:16	gin listen port 3000
+2022-07-20T22:14:07.230+0800	DEBUG	user_web/main.go:18	gin listen port 8081
+2022-07-20T22:14:28.017+0800	ERROR	api/user.go:42	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-20T22:14:30.614+0800	ERROR	api/user.go:42	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-20T22:14:31.112+0800	ERROR	api/user.go:42	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-20T22:14:31.315+0800	ERROR	api/user.go:42	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
