@@ -74,5 +74,32 @@ func PasswordLogin(c *gin.Context) {
 	// 2.判断是否有错误
 	if err := c.ShouldBind(&passwordLoginForm); err != nil {
 		utils.HandleValidatorError(c, err)
+		return
+	}
+	// 3.登录
+	// 3.1获取用户加密后的密码
+	userInfoResponse, err := userClient.GetUserByMobile(context.Background(), &proto.MobileRequest{Mobile: passwordLoginForm.Mobile})
+	if err != nil {
+		zap.S().Errorw("[GetUserByMobiles] 查询失败", "err", err.Error())
+		utils.HandleGrpcErrorToHttpError(err, c)
+	}
+	// 4.密码进行验证比对
+	checkPasswordResponse, err := userClient.CheckPassword(context.Background(), &proto.CheckPasswordRequest{
+		Password:          passwordLoginForm.Password,
+		EncryptedPassword: userInfoResponse.Password,
+	})
+	if err != nil {
+		zap.S().Errorw("[CheckPassword] 密码验证失败")
+		//utils.HandleGrpcErrorToHttpError(err, c)
+	}
+	// 5.根据获取的结果返回
+	if checkPasswordResponse.Success {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "登录成功",
+		})
+	} else {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"msg": "登录失败",
+		})
 	}
 }

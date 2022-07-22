@@ -12,7 +12,7 @@ func HandleValidatorError(c *gin.Context, err error) {
 	errors, ok := err.(validator.ValidationErrors)
 	if !ok {
 		c.JSON(http.StatusOK, gin.H{
-			"msg": err.Error(),
+			"msg": "--" + err.Error(),
 		})
 	}
 	c.JSON(http.StatusBadRequest, gin.H{
