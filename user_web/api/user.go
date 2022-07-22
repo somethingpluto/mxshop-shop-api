@@ -64,8 +64,14 @@ func GetUserList(c *gin.Context) {
 	c.JSON(http.StatusOK, result)
 }
 
+// PasswordLogin
+// @Description: 手机密码登录
+// @param c
+//
 func PasswordLogin(c *gin.Context) {
+	// 1.实例化验证对象
 	passwordLoginForm := forms.PasswordLoginForm{}
+	// 2.判断是否有错误
 	if err := c.ShouldBind(&passwordLoginForm); err != nil {
 		utils.HandleValidatorError(c, err)
 	}
