@@ -122,3 +122,21 @@
 2022-07-22T21:15:12.067+0800	ERROR	api/user.go:82	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = NotFound desc = 未查找到该用户"}
 2022-07-22T21:15:12.527+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "1112312312321312313123123"}
 2022-07-22T21:15:12.666+0800	ERROR	api/user.go:82	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = NotFound desc = 未查找到该用户"}
+2022-07-22T21:27:09.977+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-22T21:27:14.529+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "1112312312321312313123123"}
+2022-07-22T21:27:35.627+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "123456"}
+2022-07-22T21:27:36.437+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "123456"}
+2022-07-22T21:27:47.929+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618793"}
+2022-07-22T21:29:28.928+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618793"}
+2022-07-22T21:29:34.528+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618793"}
+2022-07-22T21:29:40.728+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618793"}
+2022-07-22T21:31:09.629+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618793"}
+2022-07-22T21:31:26.728+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618789"}
+2022-07-22T21:32:16.036+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618789"}
+2022-07-22T21:32:21.527+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618789"}
+2022-07-22T21:32:24.526+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618789"}
+2022-07-23T12:57:03.706+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T13:05:54.799+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T13:05:59.496+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T13:14:19.664+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T13:31:27.156+0800	DEBUG	user_web/main.go:21	gin listen port 8081

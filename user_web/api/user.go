@@ -3,6 +3,7 @@ package api
 import (
 	"context"
 	"fmt"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
@@ -12,6 +13,8 @@ import (
 	"time"
 	"user_web/forms"
 	"user_web/global/response"
+	"user_web/middlewares"
+	"user_web/models"
 	"user_web/proto"
 	"user_web/utils"
 )
@@ -94,8 +97,30 @@ func PasswordLogin(c *gin.Context) {
 	}
 	// 5.根据获取的结果返回
 	if checkPasswordResponse.Success {
+		j := middlewares.NewJWT()
+		claims := models.CustomClaims{
+			ID:          uint(userInfoResponse.Id),
+			NickName:    userInfoResponse.NickName,
+			AuthorityId: uint(userInfoResponse.Role),
+			StandardClaims: jwt.StandardClaims{
+				NotBefore: time.Now().Unix(),               // 签名的生效时间
+				ExpiresAt: time.Now().Unix() + 60*60*24*30, // 设置30天过期
+				Issuer:    "pluto",
+			},
+		}
+		token, err := j.CreateToken(claims)
+		if err != nil {
+			zap.S().Errorw("生成token失败", "err:", err.Error())
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"msg": "生成token失败",
+			})
+			return
+		}
 		c.JSON(http.StatusOK, gin.H{
-			"msg": "登录成功",
+			"id":        userInfoResponse.Id,
+			"nickName":  userInfoResponse.NickName,
+			"token":     token,
+			"expiresAt": (time.Now().Unix() + 60*60*24*30) * 1000,
 		})
 	} else {
 		c.JSON(http.StatusBadRequest, gin.H{
