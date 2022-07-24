@@ -140,3 +140,74 @@
 2022-07-23T13:05:59.496+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
 2022-07-23T13:14:19.664+0800	DEBUG	user_web/main.go:21	gin listen port 8081
 2022-07-23T13:31:27.156+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T17:40:31.709+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T17:40:51.363+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T17:40:53.390+0800	ERROR	api/user.go:86	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-23T17:42:15.291+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T17:42:18.763+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T17:42:18.763+0800	ERROR	api/user.go:87	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-23T17:43:13.464+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T17:43:54.362+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T17:43:54.363+0800	ERROR	api/user.go:88	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-23T17:44:39.043+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T17:44:42.962+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T17:44:45.301+0800	ERROR	api/user.go:86	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-23T17:44:47.362+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T17:44:49.751+0800	ERROR	api/user.go:86	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-23T21:49:44.111+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T21:52:00.079+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T21:52:02.426+0800	ERROR	api/user.go:51	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-23T21:52:06.256+0800	ERROR	api/user.go:51	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-23T21:53:31.817+0800	ERROR	api/user.go:51	[GetUserList] 查询 【用户列表】 失败	{"msg": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: i/o timeout\""}
+2022-07-23T21:54:11.740+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T21:54:19.699+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T21:54:31.743+0800	ERROR	api/user.go:86	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: i/o timeout\""}
+2022-07-23T21:55:55.698+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T21:55:57.995+0800	ERROR	api/user.go:86	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-23T21:56:11.515+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-23T21:56:15.198+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T21:56:16.762+0800	ERROR	api/user.go:86	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-23T21:59:28.097+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-23T21:59:30.394+0800	ERROR	api/user.go:86	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 120.25.255.207:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-07-24T10:02:06.567+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:02:44.803+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:02:44.804+0800	ERROR	api/user.go:87	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-24T10:04:41.063+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:04:48.306+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:04:56.700+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:04:56.701+0800	ERROR	api/user.go:89	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-24T10:05:39.131+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:05:41.699+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:05:41.700+0800	ERROR	api/user.go:90	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-24T10:08:22.557+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:08:28.001+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:08:28.002+0800	ERROR	api/user.go:91	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-24T10:09:44.896+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:09:58.104+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:09:58.105+0800	ERROR	api/user.go:91	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-24T10:09:58.710+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:09:58.711+0800	ERROR	api/user.go:91	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-24T10:09:58.899+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:09:58.900+0800	ERROR	api/user.go:91	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp :0: connectex: The requested address is not valid in its context.\""}
+2022-07-24T10:10:37.527+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:11:02.450+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:11:49.254+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:12:05.256+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:13:04.181+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:13:33.282+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:13:43.882+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:13:51.400+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:26:03.934+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:26:17.833+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:27:01.385+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:29:22.417+0800	DEBUG	user_web/main.go:21	gin listen port 8081
+2022-07-24T10:37:08.913+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T10:37:22.065+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T10:37:30.900+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:37:30.901+0800	ERROR	api/user.go:71	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: lookup rpc服务 127.0.0.1: no such host\""}
+2022-07-24T10:38:03.983+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T10:38:37.318+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T10:38:42.000+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618780"}
+2022-07-24T10:38:42.000+0800	ERROR	api/user.go:71	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: lookup rpc服务 127.0.0.1: no such host\""}
+2022-07-24T10:57:07.699+0800	ERROR	validator/validators.go:12	手机号验证失败	{"手机号:": "15171618781"}
+2022-07-24T10:57:07.700+0800	ERROR	api/user.go:71	[GetUserByMobiles] 查询失败	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: lookup rpc服务 127.0.0.1: no such host\""}
