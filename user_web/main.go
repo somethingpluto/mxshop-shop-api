@@ -20,7 +20,7 @@ func main() {
 	initialize.InitRPC()
 	// 5.初始化router
 	Router := initialize.InitRouters()
-	zap.S().Debugf("gin listen port %d", global.ServerConfig.UserServer.Port)
+	zap.S().Warnf("--------------user-web服务开启gin listen port %d", global.ServerConfig.UserServer.Port)
 	err := Router.Run(fmt.Sprintf(":%d", global.ServerConfig.UserServer.Port))
 	if err != nil {
 		panic(err)

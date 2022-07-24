@@ -7,5 +7,14 @@ user_server:
   port: 8081
 
 jwt_config:
-  key: "7G(yQ9F0tXHy#EHT0ZIR
-"
+  key: "7G(yQ9F0tXHy#EHT0ZIR"
+
+alisms_config:
+  key: "LTAI5tADvWEsLktfz57iKBki"
+  secret: "NKXZG8xfJHODbrTH4WWwGwz0Do7kze"
+  signName: "阿里云短信测试"
+  templateCode: "SMS_154950909"
+
+redis_config:
+  host: "120.25.255.207"
+  port: 6379

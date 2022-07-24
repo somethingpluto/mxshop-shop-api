@@ -18,3 +18,40 @@
 2022-07-24T14:00:30.001+0800	INFO	initialize/rpc.go:21	RPC 服务连接成功
 2022-07-24T14:00:30.002+0800	INFO	initialize/router.go:18	路由启动成功
 2022-07-24T14:00:30.002+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T15:43:15.131+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T15:43:15.131+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T15:43:15.132+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-24T15:43:15.134+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T15:43:15.134+0800	ERROR	zap@v1.21.0/sugar.go:185	Ignored key without a value.	{"ignored": 8081}
+2022-07-24T15:43:15.134+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port %d
+2022-07-24T15:43:20.694+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T15:43:20.695+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T15:43:20.696+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-24T15:43:20.696+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T15:43:20.697+0800	ERROR	zap@v1.21.0/sugar.go:185	Ignored key without a value.	{"ignored": 8081}
+2022-07-24T15:43:20.697+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port %d
+2022-07-24T15:43:56.845+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T15:43:56.845+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T15:43:56.846+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-24T15:43:56.847+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T15:43:56.847+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081
+2022-07-24T20:33:03.771+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T20:33:03.772+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T20:33:03.773+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-24T20:33:03.773+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T20:33:03.774+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081
+2022-07-24T20:34:20.537+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T20:34:20.538+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T20:34:20.539+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-24T20:34:20.540+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T20:34:20.540+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081
+2022-07-24T20:35:36.854+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T20:35:36.855+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T20:35:36.855+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-24T20:35:36.856+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T20:35:36.856+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081
+2022-07-24T21:08:17.716+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T21:08:17.717+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T21:08:17.717+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-24T21:08:17.718+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T21:08:17.718+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081

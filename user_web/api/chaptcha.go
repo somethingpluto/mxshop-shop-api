@@ -14,6 +14,7 @@ var store = base64Captcha.DefaultMemStore
 // @param c
 //
 func GetCaptcha(c *gin.Context) {
+	// 生成base64 数字验证码
 	driver := base64Captcha.NewDriverDigit(80, 240, 5, 0.7, 80)
 	captcha := base64Captcha.NewCaptcha(driver, store)
 	id, b64s, err := captcha.Generate()

@@ -5,6 +5,8 @@ type ServerConfig struct {
 	UserService UserServiceConfig `mapstructure:"user_service"`
 	UserServer  UserServerConfig  `mapstructure:"user_server"`
 	JWTInfo     JwtConfig         `mapstructure:"jwt_config"`
+	AliSms      AliSmsConfig      `mapstructure:"alisms_config"`
+	Redis       RedisConfig       `mapstructure:"redis_config"`
 }
 
 // UserServiceConfig
@@ -22,6 +24,21 @@ type UserServerConfig struct {
 	Port int `mapstructure:"port"`
 }
 
+// JwtConfig
+// @Description: JWT
+//
 type JwtConfig struct {
 	SigningKey string `mapstructure:"key"`
+}
+
+type AliSmsConfig struct {
+	ApiKey       string `mapstructure:"key"`
+	ApiSecret    string `mapstructure:"secret"`
+	SignName     string `mapstructure:"signName"`
+	TemplateCode string `mapstructure:"templateCode"`
+}
+
+type RedisConfig struct {
+	Host string `mapstructure:"host"`
+	Port int    `mapstructure:"port"`
 }
