@@ -2,16 +2,14 @@ package api
 
 import (
 	"context"
-	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
 	"net/http"
 	"strconv"
 	"time"
 	"user_web/forms"
+	"user_web/global"
 	"user_web/global/response"
 	"user_web/middlewares"
 	"user_web/models"
@@ -19,18 +17,18 @@ import (
 	"user_web/utils"
 )
 
-var userClient proto.UserClient
-
-func init() {
-	// 1.grpc Dial
-	userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", "127.0.0.1", 8000), grpc.WithTransportCredentials(insecure.NewCredentials()))
-	if err != nil {
-		zap.S().Errorw("[GetUserList] 连接 【用户服务】失败", "msg", err.Error())
-		return
-	}
-	// 2.实例化客户端
-	userClient = proto.NewUserClient(userConn)
-}
+//var userClient proto.UserClient
+//
+//func init() {
+//	// 1.grpc Dial
+//	userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", "127.0.0.1", 8000), grpc.WithTransportCredentials(insecure.NewCredentials()))
+//	if err != nil {
+//		zap.S().Errorw("[GetUserList] 连接 【用户服务】失败", "msg", err.Error())
+//		return
+//	}
+//	// 2.实例化客户端
+//	userClient = proto.NewUserClient(userConn)
+//}
 
 // GetUserList
 // @Description: 获取用户列表
@@ -43,7 +41,7 @@ func GetUserList(c *gin.Context) {
 	pageSize := c.DefaultQuery("size", "10")
 	pageSizeInt, _ := strconv.Atoi(pageSize)
 	// 1.调用rpc服务
-	resp, err := userClient.GetUserList(context.Background(), &proto.PageInfoRequest{
+	resp, err := global.UserClient.GetUserList(context.Background(), &proto.PageInfoRequest{
 		PageNum:  uint32(pageNumInt),
 		PageSize: uint32(pageSizeInt),
 	})
@@ -79,15 +77,24 @@ func PasswordLogin(c *gin.Context) {
 		utils.HandleValidatorError(c, err)
 		return
 	}
+
+	verify := store.Verify(passwordLoginForm.CaptchaId, passwordLoginForm.Captcha, true)
+	if !verify {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"msg": "验证码错误",
+		})
+		return
+	}
+
 	// 3.登录
 	// 3.1获取用户加密后的密码
-	userInfoResponse, err := userClient.GetUserByMobile(context.Background(), &proto.MobileRequest{Mobile: passwordLoginForm.Mobile})
+	userInfoResponse, err := global.UserClient.GetUserByMobile(context.Background(), &proto.MobileRequest{Mobile: passwordLoginForm.Mobile})
 	if err != nil {
 		zap.S().Errorw("[GetUserByMobiles] 查询失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, c)
 	}
 	// 4.密码进行验证比对
-	checkPasswordResponse, err := userClient.CheckPassword(context.Background(), &proto.CheckPasswordRequest{
+	checkPasswordResponse, err := global.UserClient.CheckPassword(context.Background(), &proto.CheckPasswordRequest{
 		Password:          passwordLoginForm.Password,
 		EncryptedPassword: userInfoResponse.Password,
 	})

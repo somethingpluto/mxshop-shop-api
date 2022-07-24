@@ -37,4 +37,5 @@ func initMobileValidator() {
 	if err != nil {
 		zap.S().Errorw("mobile 注册翻译失败", "err", err.Error())
 	}
+	zap.S().Infow("mobile 验证器加载成功")
 }

@@ -1,0 +1,20 @@
+2022-07-24T12:52:53.005+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T12:52:53.006+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T12:52:53.007+0800	INFO	initialize/rpc.go:21	RPC 服务连接成功
+2022-07-24T12:52:53.008+0800	INFO	initialize/router.go:17	路由启动成功
+2022-07-24T12:52:53.009+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T12:52:59.836+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T12:52:59.837+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T12:52:59.837+0800	INFO	initialize/rpc.go:21	RPC 服务连接成功
+2022-07-24T12:52:59.838+0800	INFO	initialize/router.go:17	路由启动成功
+2022-07-24T12:52:59.838+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T13:49:14.646+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T13:49:14.647+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T13:49:14.647+0800	INFO	initialize/rpc.go:21	RPC 服务连接成功
+2022-07-24T13:49:14.648+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T13:49:14.648+0800	DEBUG	user_web/main.go:23	gin listen port 8081
+2022-07-24T14:00:30.000+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-24T14:00:30.001+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-24T14:00:30.001+0800	INFO	initialize/rpc.go:21	RPC 服务连接成功
+2022-07-24T14:00:30.002+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-24T14:00:30.002+0800	DEBUG	user_web/main.go:23	gin listen port 8081

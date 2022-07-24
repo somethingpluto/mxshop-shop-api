@@ -16,6 +16,8 @@ func main() {
 	initialize.InitTranslator("zh")
 	// 4.初始化验证器
 	initialize.InitValidator()
+	// 初始化rpc
+	initialize.InitRPC()
 	// 5.初始化router
 	Router := initialize.InitRouters()
 	zap.S().Debugf("gin listen port %d", global.ServerConfig.UserServer.Port)

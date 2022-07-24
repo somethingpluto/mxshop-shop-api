@@ -22,6 +22,7 @@ func InitTranslator(locale string) {
 		zap.S().Errorw("初始化 翻译器失败")
 		return
 	}
+	zap.S().Infow("翻译器加载成功")
 }
 
 func initTrans(locale string) (err error) {
