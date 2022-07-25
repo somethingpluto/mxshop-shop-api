@@ -1,0 +1,18 @@
+2022-07-25T22:17:41.054+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-25T22:17:41.055+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-25T22:17:41.055+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-25T22:17:41.056+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-25T22:17:41.056+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081
+2022-07-25T22:29:51.526+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-25T22:29:51.527+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-25T22:29:51.527+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-25T22:29:51.529+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-25T22:29:51.529+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081
+2022-07-25T22:31:30.607+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-25T22:31:30.608+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-25T22:31:30.608+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-25T22:31:30.609+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-25T22:31:30.609+0800	WARN	user_web/main.go:23	--------------user-web服务开启gin listen port 8081
+2022-07-25T22:31:34.595+0800	ERROR	api/user.go:157	[CreateUser] 失败	{"err": "rpc error: code = Internal desc = Error 1062: Duplicate entry '15171618793' for key 'mobile'"}
+2022-07-25T22:31:59.423+0800	ERROR	validator/validators.go:13	手机号验证失败	{"手机号:": "1808208820"}
+2022-07-25T22:32:07.825+0800	WARN	api/user.go:138	验证码发送/redis存储失败	{"用户手机号": "13907149911"}

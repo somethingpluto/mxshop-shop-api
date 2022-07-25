@@ -2,8 +2,8 @@ package api
 
 import (
 	"context"
-	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
+	"github.com/go-redis/redis/v9"
 	"go.uber.org/zap"
 	"net/http"
 	"strconv"
@@ -11,8 +11,6 @@ import (
 	"user_web/forms"
 	"user_web/global"
 	"user_web/global/response"
-	"user_web/middlewares"
-	"user_web/models"
 	"user_web/proto"
 	"user_web/utils"
 )
@@ -104,18 +102,7 @@ func PasswordLogin(c *gin.Context) {
 	}
 	// 5.根据获取的结果返回
 	if checkPasswordResponse.Success {
-		j := middlewares.NewJWT()
-		claims := models.CustomClaims{
-			ID:          uint(userInfoResponse.Id),
-			NickName:    userInfoResponse.NickName,
-			AuthorityId: uint(userInfoResponse.Role),
-			StandardClaims: jwt.StandardClaims{
-				NotBefore: time.Now().Unix(),               // 签名的生效时间
-				ExpiresAt: time.Now().Unix() + 60*60*24*30, // 设置30天过期
-				Issuer:    "pluto",
-			},
-		}
-		token, err := j.CreateToken(claims)
+		token, err := utils.GenerateToken(uint(userInfoResponse.Id), userInfoResponse.NickName, uint(userInfoResponse.Role))
 		if err != nil {
 			zap.S().Errorw("生成token失败", "err:", err.Error())
 			c.JSON(http.StatusInternalServerError, gin.H{
@@ -134,4 +121,55 @@ func PasswordLogin(c *gin.Context) {
 			"msg": "登录失败",
 		})
 	}
+}
+
+func Register(c *gin.Context) {
+	// 1.表单认证
+	registerForm := forms.RegisterForm{}
+	err := c.ShouldBind(&registerForm)
+	if err != nil {
+		utils.HandleValidatorError(c, err)
+		return
+	}
+	// 2.通过redis 验证 验证码是否正确
+	connectRedis()
+	value, err := red.Get(context.Background(), registerForm.Mobile).Result()
+	if err == redis.Nil { // redis中没有验证码
+		zap.S().Warnw("验证码发送/redis存储失败", "用户手机号", registerForm.Mobile)
+		c.JSON(http.StatusBadRequest, gin.H{
+			"msg": "验证码错误",
+		})
+		return
+	} else { // 验证码错误
+		if value != registerForm.Code {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"msg": "验证码错误",
+			})
+			return
+		}
+	}
+	userResponse, err := global.UserClient.CreateUser(context.Background(), &proto.CreateUserInfoRequest{
+		NickName: registerForm.Mobile,
+		Password: registerForm.Password,
+		Mobile:   registerForm.Mobile,
+	})
+	if err != nil {
+		zap.S().Errorw("[CreateUser] 失败", "err", err.Error())
+		utils.HandleGrpcErrorToHttpError(err, c)
+		return
+	}
+	token, err := utils.GenerateToken(uint(userResponse.Id), userResponse.NickName, uint(userResponse.Role))
+	if err != nil {
+		zap.S().Errorw("生成token失败", "err:", err.Error())
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"msg": "生成token失败",
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"id":        userResponse.Id,
+		"nickName":  userResponse.NickName,
+		"token":     token,
+		"expiresAt": (time.Now().Unix() + 60*60*24*30) * 1000,
+	})
 }
