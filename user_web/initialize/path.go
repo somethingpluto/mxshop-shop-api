@@ -8,6 +8,9 @@ import (
 	"user_web/global"
 )
 
+// InitFilePath
+// @Description: 初始化全局文件路径
+//
 func InitFilePath() {
 	basePath := getCurrentAbPathByCaller()
 	global.FileConfig = &config.FileConfig{

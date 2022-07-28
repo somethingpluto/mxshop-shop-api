@@ -4,6 +4,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// AdminAuth
+// @Description: 登录管理员权限验证
+// @return gin.HandlerFunc
+//
 func AdminAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		//claims, _ := c.Get("claims")

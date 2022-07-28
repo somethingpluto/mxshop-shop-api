@@ -50,6 +50,10 @@ func getLogWriter() zapcore.WriteSyncer {
 	return zapcore.AddSync(dest)
 }
 
+// createLogFileName
+// @Description: 返回文件名
+// @return string
+//
 func createLogFileName() string {
 	today := time.Now().Format("2006-01-02")
 	return fmt.Sprintf("%s/%s.log", global.FileConfig.LogFile, today)

@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	//0.
+	//0.初始化文件路径
 	initialize.InitFilePath()
 	// 1.初始化配置文件
 	initialize.InitConfig()

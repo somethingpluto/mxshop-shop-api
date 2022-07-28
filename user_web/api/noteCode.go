@@ -20,6 +20,10 @@ import (
 
 var red *redis.Client
 
+// SendNoteCode
+// @Description: 发送验证码
+// @param c
+//
 func SendNoteCode(c *gin.Context) {
 	// 表单验证
 	sendSmsForm := forms.SendSmsForm{}
@@ -59,6 +63,11 @@ func SendNoteCode(c *gin.Context) {
 	})
 }
 
+// generateNoteCode
+// @Description: 生成随机验证码
+// @param width 验证码长度
+// @return string
+//
 func generateNoteCode(width int) string {
 	numeric := [10]byte{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 	r := len(numeric)
@@ -66,11 +75,14 @@ func generateNoteCode(width int) string {
 
 	var sb strings.Builder
 	for i := 0; i < width; i++ {
-		fmt.Fprintf(&sb, "%d", numeric[rand.Intn(r)])
+		_, _ = fmt.Fprintf(&sb, "%d", numeric[rand.Intn(r)])
 	}
 	return sb.String()
 }
 
+// connectRedis
+// @Description: 连接redis
+//
 func connectRedis() {
 	red = redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%d", global.ServerConfig.Redis.Host, global.ServerConfig.Redis.Port),

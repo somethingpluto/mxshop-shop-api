@@ -7,6 +7,14 @@ import (
 	"user_web/models"
 )
 
+// GenerateToken
+// @Description: 生成Token
+// @param Id
+// @param NickName
+// @param Role
+// @return string
+// @return error
+//
 func GenerateToken(Id uint, NickName string, Role uint) (string, error) {
 	j := middlewares.NewJWT()
 	claims := models.CustomClaims{

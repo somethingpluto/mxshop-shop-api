@@ -1,25 +1,29 @@
 name: 'user-web'
+# grpc服务地址 端口 注册中心 name
 user_service:
   host: '127.0.0.1'
   port: 8000
   name: "user-service"
-
+# 对外暴露端口
 user_server:
   port: 8081
 
+# jwt 加密key
 jwt_config:
   key: "7G(yQ9F0tXHy#EHT0ZIR"
 
+# 阿里云短信服务配置
 alisms_config:
   key: "LTAI5tADvWEsLktfz57iKBki"
   secret: "NKXZG8xfJHODbrTH4WWwGwz0Do7kze"
   signName: "阿里云短信测试"
   templateCode: "SMS_154950909"
 
+# redis 地址端口
 redis_config:
   host: "120.25.255.207"
   port: 6379
-
+# 注册中心 地址端口
 consul_config:
   host: "127.0.0.1"
   port: 8500

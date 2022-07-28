@@ -8,6 +8,11 @@ import (
 	"user_web/global"
 )
 
+// HandleValidatorError
+// @Description:
+// @param c
+// @param err
+//
 func HandleValidatorError(c *gin.Context, err error) {
 	errors, ok := err.(validator.ValidationErrors)
 	if !ok {
@@ -19,6 +24,12 @@ func HandleValidatorError(c *gin.Context, err error) {
 		"error": removeTopStruct(errors.Translate(global.Translator)),
 	})
 }
+
+// removeTopStruct
+// @Description: 移除信息中的结构体前缀
+// @param fields
+// @return map[string]string
+//
 func removeTopStruct(fields map[string]string) map[string]string {
 	rsp := map[string]string{}
 	for filed, err := range fields {

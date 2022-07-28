@@ -1,5 +1,8 @@
 package config
 
+// ServerConfig
+// @Description: 服务配置总
+//
 type ServerConfig struct {
 	Name        string            `mapstructure:"name"`
 	UserService UserServiceConfig `mapstructure:"user_service"`
@@ -33,6 +36,9 @@ type JwtConfig struct {
 	SigningKey string `mapstructure:"key"`
 }
 
+// AliSmsConfig
+// @Description: 阿里云短信服务配置
+//
 type AliSmsConfig struct {
 	ApiKey       string `mapstructure:"key"`
 	ApiSecret    string `mapstructure:"secret"`
@@ -40,16 +46,25 @@ type AliSmsConfig struct {
 	TemplateCode string `mapstructure:"templateCode"`
 }
 
+// RedisConfig
+// @Description: Redis配置
+//
 type RedisConfig struct {
 	Host string `mapstructure:"host"`
 	Port int    `mapstructure:"port"`
 }
 
+// FileConfig
+// @Description: 文件路劲配置
+//
 type FileConfig struct {
 	ConfigFile string
 	LogFile    string
 }
 
+// ConsulConfig
+// @Description: Consul配置
+//
 type ConsulConfig struct {
 	Host string `mapstructure:"host"`
 	Port int    `mapstructure:"port"`

@@ -7,8 +7,8 @@ import (
 )
 
 var (
-	ServerConfig = &config.ServerConfig{}
-	Translator   ut.Translator
-	UserClient   proto.UserClient
-	FileConfig   = &config.FileConfig{}
+	ServerConfig = &config.ServerConfig{} // 服务配置
+	Translator   ut.Translator            // 翻译器
+	UserClient   proto.UserClient         // grpc客户端
+	FileConfig   = &config.FileConfig{}   // 文件配置
 )

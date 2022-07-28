@@ -21,6 +21,10 @@ var (
 	TokenInvalid     = errors.New("couldn't handle this token")
 )
 
+// JWTAuth
+// @Description: JWT认证
+// @return gin.HandlerFunc
+//
 func JWTAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		token := c.Request.Header.Get("x-token")
@@ -53,6 +57,10 @@ func JWTAuth() gin.HandlerFunc {
 	}
 }
 
+// NewJWT
+// @Description: 生成JWT配置对象
+// @return *JWT
+//
 func NewJWT() *JWT {
 	return &JWT{SigningKey: []byte(global.ServerConfig.JWTInfo.SigningKey)}
 }
