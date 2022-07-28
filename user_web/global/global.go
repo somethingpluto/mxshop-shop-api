@@ -10,4 +10,5 @@ var (
 	ServerConfig = &config.ServerConfig{}
 	Translator   ut.Translator
 	UserClient   proto.UserClient
+	FileConfig   = &config.FileConfig{}
 )

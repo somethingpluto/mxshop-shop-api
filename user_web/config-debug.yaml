@@ -2,6 +2,7 @@ name: 'user-web'
 user_service:
   host: '127.0.0.1'
   port: 8000
+  name: "user-service"
 
 user_server:
   port: 8081
@@ -18,3 +19,7 @@ alisms_config:
 redis_config:
   host: "120.25.255.207"
   port: 6379
+
+consul_config:
+  host: "127.0.0.1"
+  port: 8500

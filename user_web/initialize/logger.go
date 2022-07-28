@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"time"
+	"user_web/global"
 )
 
 // InitLogger
@@ -51,5 +52,5 @@ func getLogWriter() zapcore.WriteSyncer {
 
 func createLogFileName() string {
 	today := time.Now().Format("2006-01-02")
-	return fmt.Sprintf("./log/%s.log", today)
+	return fmt.Sprintf("%s/%s.log", global.FileConfig.LogFile, today)
 }

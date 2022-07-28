@@ -1,0 +1,18 @@
+2022-07-28T17:16:06.307+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-28T17:16:06.308+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-28T17:16:06.309+0800	INFO	initialize/rpc.go:25	RPC 服务连接成功
+2022-07-28T17:16:06.310+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-28T17:16:06.310+0800	WARN	user_web/main.go:25	--------------user-web服务开启gin listen port 8081
+2022-07-28T20:50:47.555+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-28T20:50:47.556+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-28T20:50:47.563+0800	INFO	initialize/rpc.go:38	查询到 user-service address:127.0.0.1:8000
+2022-07-28T20:50:47.564+0800	INFO	initialize/rpc.go:47	RPC 服务连接成功
+2022-07-28T20:50:47.565+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-28T20:50:47.565+0800	WARN	user_web/main.go:25	--------------user-web服务开启gin listen port 8081
+2022-07-28T20:52:57.227+0800	WARN	api/user.go:125	验证码发送/redis存储失败	{"用户手机号": "15171618799"}
+2022-07-28T20:57:51.080+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-28T20:57:51.080+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-28T20:57:51.083+0800	INFO	initialize/rpc.go:38	查询到 user-service address:127.0.0.1:8000
+2022-07-28T20:57:51.083+0800	INFO	initialize/rpc.go:47	RPC 服务连接成功
+2022-07-28T20:57:51.084+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-28T20:57:51.084+0800	WARN	user_web/main.go:25	--------------user-web服务开启gin listen port 8081

@@ -7,6 +7,7 @@ type ServerConfig struct {
 	JWTInfo     JwtConfig         `mapstructure:"jwt_config"`
 	AliSms      AliSmsConfig      `mapstructure:"alisms_config"`
 	Redis       RedisConfig       `mapstructure:"redis_config"`
+	ConsulInfo  ConsulConfig      `mapstructure:"consul_config"`
 }
 
 // UserServiceConfig
@@ -15,6 +16,7 @@ type ServerConfig struct {
 type UserServiceConfig struct {
 	Host string `mapstructure:"host"`
 	Port int    `mapstructure:"port"`
+	Name string `mapstructure:"name"`
 }
 
 // UserServerConfig
@@ -39,6 +41,16 @@ type AliSmsConfig struct {
 }
 
 type RedisConfig struct {
+	Host string `mapstructure:"host"`
+	Port int    `mapstructure:"port"`
+}
+
+type FileConfig struct {
+	ConfigFile string
+	LogFile    string
+}
+
+type ConsulConfig struct {
 	Host string `mapstructure:"host"`
 	Port int    `mapstructure:"port"`
 }

@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	//0.
+	initialize.InitFilePath()
 	// 1.初始化配置文件
 	initialize.InitConfig()
 	// 2.初始化日志器

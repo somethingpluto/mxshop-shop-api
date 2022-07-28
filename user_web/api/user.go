@@ -15,19 +15,6 @@ import (
 	"user_web/utils"
 )
 
-//var userClient proto.UserClient
-//
-//func init() {
-//	// 1.grpc Dial
-//	userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", "127.0.0.1", 8000), grpc.WithTransportCredentials(insecure.NewCredentials()))
-//	if err != nil {
-//		zap.S().Errorw("[GetUserList] 连接 【用户服务】失败", "msg", err.Error())
-//		return
-//	}
-//	// 2.实例化客户端
-//	userClient = proto.NewUserClient(userConn)
-//}
-
 // GetUserList
 // @Description: 获取用户列表
 // @param c

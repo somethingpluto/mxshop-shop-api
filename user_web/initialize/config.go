@@ -12,7 +12,7 @@ import (
 func InitConfig() {
 	v := viper.New()
 	// 文件路径设置
-	v.SetConfigFile("./config-debug.yaml")
+	v.SetConfigFile(global.FileConfig.ConfigFile)
 	err := v.ReadInConfig()
 	if err != nil {
 		zap.S().Errorw("读取config-debug.yaml配置文件失败")
