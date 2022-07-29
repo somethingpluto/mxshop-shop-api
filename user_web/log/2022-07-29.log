@@ -1,0 +1,29 @@
+2022-07-29T20:46:31.283+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-29T20:46:31.284+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-29T20:46:33.316+0800	ERROR	initialize/rpc.go:30	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22user-service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-07-29T20:46:33.318+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-29T20:46:33.318+0800	WARN	user_web/main.go:26	--------------user-web服务开启gin listen port 8081
+2022-07-29T20:47:03.487+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-29T20:47:03.488+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-29T20:47:05.514+0800	ERROR	initialize/rpc.go:30	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22user-service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-07-29T20:47:05.516+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-29T20:47:05.516+0800	WARN	user_web/main.go:26	--------------user-web服务开启gin listen port 8081
+2022-07-29T21:15:37.445+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-29T21:15:37.446+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-29T21:15:39.499+0800	ERROR	initialize/rpc.go:30	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22user-service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-07-29T21:15:39.501+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-29T21:15:39.501+0800	WARN	user_web/main.go:26	--------------user-web服务开启gin listen port 8081
+2022-07-29T21:16:03.106+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-29T21:16:03.107+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-29T21:16:05.128+0800	ERROR	initialize/rpc.go:30	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22user-service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-07-29T21:16:05.129+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-29T21:16:05.130+0800	WARN	user_web/main.go:26	--------------user-web服务开启gin listen port 8081
+2022-07-29T21:16:32.631+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-29T21:16:32.632+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-29T21:16:34.676+0800	ERROR	initialize/rpc.go:30	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22user-service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-07-29T21:16:34.678+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-29T21:17:00.144+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-07-29T21:17:00.145+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-07-29T21:17:02.201+0800	ERROR	initialize/rpc.go:30	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22user-service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-07-29T21:17:02.203+0800	INFO	initialize/router.go:18	路由启动成功
+2022-07-29T21:17:02.219+0800	WARN	user_web/main.go:36	--------------user-web服务开启gin listen port 63505

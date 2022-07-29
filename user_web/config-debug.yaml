@@ -7,6 +7,7 @@ user_service:
 # 对外暴露端口
 user_server:
   port: 8081
+  mode: "debug"
 
 # jwt 加密key
 jwt_config:
@@ -27,3 +28,6 @@ redis_config:
 consul_config:
   host: "127.0.0.1"
   port: 8500
+
+runtime_config:
+  mode: "debug"

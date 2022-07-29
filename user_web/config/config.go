@@ -11,6 +11,7 @@ type ServerConfig struct {
 	AliSms      AliSmsConfig      `mapstructure:"alisms_config"`
 	Redis       RedisConfig       `mapstructure:"redis_config"`
 	ConsulInfo  ConsulConfig      `mapstructure:"consul_config"`
+	RuntimeInfo RuntimeConfig     `mapstructure:"runtime_config"`
 }
 
 // UserServiceConfig
@@ -26,7 +27,8 @@ type UserServiceConfig struct {
 // @Description: gin监听端口
 //
 type UserServerConfig struct {
-	Port int `mapstructure:"port"`
+	Port int    `mapstructure:"port"`
+	Mode string `mapstructure:"mode"`
 }
 
 // JwtConfig
@@ -68,4 +70,8 @@ type FileConfig struct {
 type ConsulConfig struct {
 	Host string `mapstructure:"host"`
 	Port int    `mapstructure:"port"`
+}
+
+type RuntimeConfig struct {
+	Mode string `mapstructure:"mode"`
 }

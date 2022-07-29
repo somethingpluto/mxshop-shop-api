@@ -35,6 +35,9 @@ func InitRPC() {
 		userServicePort = value.Port
 		break
 	}
+	if userServiceHost == "" || userServicePort == 0 {
+		zap.S().Fatalf("InitRPC 失败")
+	}
 	zap.S().Infof("查询到 user-service address:%s:%d", userServiceHost, userServicePort)
 
 	target := fmt.Sprintf("%s:%d", userServiceHost, userServicePort)

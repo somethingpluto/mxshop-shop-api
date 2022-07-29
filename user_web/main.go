@@ -5,6 +5,7 @@ import (
 	"go.uber.org/zap"
 	"user_web/global"
 	"user_web/initialize"
+	"user_web/utils"
 )
 
 func main() {
@@ -22,8 +23,19 @@ func main() {
 	initialize.InitRPC()
 	// 5.初始化router
 	Router := initialize.InitRouters()
+
+	// 环境判断
+	if global.ServerConfig.RuntimeInfo.Mode != "debug" { // 如果不为debug环境
+		port, err := utils.GetFreePort()
+		if err != nil {
+			zap.S().Errorw("utils.GetFreePort 失败", "err", err.Error())
+			return
+		}
+		global.ServerConfig.UserServer.Port = port
+	}
 	zap.S().Warnf("--------------user-web服务开启gin listen port %d", global.ServerConfig.UserServer.Port)
 	err := Router.Run(fmt.Sprintf(":%d", global.ServerConfig.UserServer.Port))
+
 	if err != nil {
 		panic(err)
 	}
