@@ -1,0 +1,10 @@
+2022-08-22T13:54:26.216+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T13:54:26.217+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T13:56:50.818+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T13:56:50.819+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T13:56:50.821+0800	INFO	goods_api/main.go:14	goods_web服务开启 端口8081
+2022-08-22T13:57:29.824+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T13:57:29.825+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T13:57:29.832+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:58853
+2022-08-22T13:57:29.833+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-22T13:57:29.835+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
