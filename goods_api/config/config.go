@@ -20,11 +20,16 @@ type WebApiConfig struct {
 	Name       string       `json:"name"`
 	Mode       string       `json:"mode"`
 	ConsulInfo ConsulConfig `json:"consulConfig"`
+	JWTInfo    JWTConfig    `json:"jwtConfig"`
 }
 
 type ConsulConfig struct {
 	Host string `json:"host"`
 	Port int    `json:"port"`
+}
+
+type JWTConfig struct {
+	SigningKey string `mapstructure:"key" json:"key"`
 }
 
 type FilePathConfig struct {
