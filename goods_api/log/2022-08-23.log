@@ -16,3 +16,40 @@
 2022-08-23T14:48:57.271+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
 2022-08-23T14:49:44.088+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
 2022-08-23T14:50:03.602+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T15:48:31.466+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T15:48:31.467+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T15:48:31.469+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:61589
+2022-08-23T15:48:31.470+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T15:48:31.470+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T15:49:32.286+0800	INFO	goods/goods.go:20	goods List request:127.0.0.1:8022
+2022-08-23T16:05:53.437+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T16:05:53.438+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T16:05:53.440+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:61589
+2022-08-23T16:05:53.440+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T16:05:53.441+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T16:06:02.150+0800	ERROR	goods/goods.go:109	goods 创建商品表单校验失败	{"err": "json: Unmarshal(non-pointer forms.GoodsForm)"}
+2022-08-23T16:07:35.472+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T16:07:35.473+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T16:07:35.475+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:61589
+2022-08-23T16:07:35.476+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T16:07:35.476+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T16:20:04.690+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T16:20:04.691+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T16:20:04.694+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:61589
+2022-08-23T16:20:04.694+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T16:20:04.695+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T16:31:38.416+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T16:31:38.417+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T16:31:38.419+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:54972
+2022-08-23T16:31:38.419+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T16:31:38.421+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T16:33:40.819+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T16:33:40.820+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T16:33:40.821+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:55018
+2022-08-23T16:33:40.822+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T16:33:40.822+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T16:36:10.437+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T16:36:10.437+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T16:36:10.439+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:55122
+2022-08-23T16:36:10.440+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T16:36:10.441+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081

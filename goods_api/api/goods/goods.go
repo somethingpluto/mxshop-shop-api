@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
+	"goods_api/forms"
 	"goods_api/global"
 	"goods_api/proto"
 	"goods_api/utils"
@@ -95,4 +96,102 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = goodsList
 	ctx.JSON(http.StatusOK, responseMap)
+}
+
+// New
+// @Description: 创建商品
+// @param ctx
+//
+// TODO：创建商品失败
+func New(ctx *gin.Context) {
+	goodsForm := forms.GoodsForm{}
+	if err := ctx.ShouldBindJSON(&goodsForm); err != nil {
+		utils.HandleValidatorError(ctx, err)
+		return
+	}
+	goodsClient := global.GoodsClient
+	rsp, err := goodsClient.CreateGoods(context.Background(), &proto.CreateGoodsInfo{
+		Name:            goodsForm.Name,
+		GoodsSn:         goodsForm.GoodsSn,
+		Stocks:          goodsForm.Stocks,
+		MarketPrice:     goodsForm.MarketPrice,
+		ShopPrice:       goodsForm.ShopPrice,
+		GoodsBrief:      goodsForm.GoodsBrief,
+		ShipFree:        *goodsForm.ShipFree,
+		Images:          goodsForm.Images,
+		DescImages:      goodsForm.DescImages,
+		GoodsFrontImage: goodsForm.FrontImage,
+		CategoryId:      goodsForm.CategoryId,
+		BrandId:         goodsForm.Brand,
+	})
+	if err != nil {
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+
+	//如何设置库存
+	//TODO 商品的库存 - 分布式事务
+	ctx.JSON(http.StatusOK, rsp)
+}
+
+// Detail
+// @Description: 获取商品详情
+// @param ctx
+//
+func Detail(ctx *gin.Context) {
+	id := ctx.Param("id")
+	i, err := strconv.ParseInt(id, 10, 32)
+	if err != nil {
+		ctx.Status(http.StatusNotFound)
+		return
+	}
+	response, err := global.GoodsClient.GetGoodsDetail(context.WithValue(context.Background(), "ginContext", ctx), &proto.GoodsInfoRequest{Id: int32(i)})
+	if err != nil {
+		zap.S().Errorw("goods 获取商品详情失败", "err", err.Error())
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+	rep := map[string]interface{}{
+		"id":          response.Id,
+		"name":        response.Name,
+		"goods_brief": response.GoodsBrief,
+		"desc":        response.GoodsDesc,
+		"ship_free":   response.ShipFree,
+		"images":      response.Images,
+		"desc_images": response.DescImages,
+		"front_image": response.GoodsFrontImage,
+		"shop_price":  response.ShopPrice,
+		"category": map[string]interface{}{
+			"id":   response.Category.Id,
+			"name": response.Category.Name,
+		},
+		"brand": map[string]interface{}{
+			"id":   response.Brand.Id,
+			"name": response.Brand.Name,
+			"logo": response.Brand.Logo,
+		},
+		"is_hot":  response.IsHot,
+		"is_new":  response.IsNew,
+		"on_sale": response.OnSale,
+	}
+	ctx.JSON(http.StatusOK, rep)
+}
+
+func Delete(ctx *gin.Context) {
+	id := ctx.Param("id")
+	i, err := strconv.ParseInt(id, 10, 32)
+	if err != nil {
+		ctx.Status(http.StatusNotFound)
+		return
+	}
+	response, err := global.GoodsClient.DeleteGoods(context.Background(), &proto.DeleteGoodsInfo{Id: int32(i)})
+	if err != nil {
+		zap.S().Errorf("goods 删除商品 id:%v", i)
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"status": response.Success,
+	})
 }
