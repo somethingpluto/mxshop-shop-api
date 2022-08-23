@@ -4,5 +4,8 @@
     "consulConfig":{
         "host":"127.0.0.1",
         "port":8500
+    },
+    "jwtConfig":{
+        "key":"7G(yQ9F0tXHy#EHT0ZIR"
     }
 }

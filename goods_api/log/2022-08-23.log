@@ -1,0 +1,18 @@
+2022-08-23T14:45:09.511+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T14:45:09.512+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T14:45:09.520+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:61589
+2022-08-23T14:45:09.520+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T14:45:09.521+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T14:46:41.270+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-23T14:46:41.270+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-23T14:46:41.272+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:61589
+2022-08-23T14:46:41.273+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-23T14:46:41.276+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-23T14:46:50.476+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T14:47:07.998+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T14:47:22.972+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T14:47:30.616+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T14:48:44.154+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T14:48:57.271+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T14:49:44.088+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022
+2022-08-23T14:50:03.602+0800	INFO	goods/goods.go:15	goods List request:127.0.0.1:8022

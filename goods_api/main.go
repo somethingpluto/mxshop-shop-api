@@ -13,7 +13,7 @@ func main() {
 	initialize.InitRPC()
 	Router := initialize.InitRouter()
 	zap.S().Infof("goods_web服务开启 端口8081")
-	err := Router.Run(":8081")
+	err := Router.Run(":8022")
 	if err != nil {
 		panic(err)
 	}
