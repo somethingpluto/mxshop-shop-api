@@ -17,7 +17,7 @@ import (
 // @param ctx
 //
 func List(ctx *gin.Context) {
-	zap.S().Infof("goods List request:%v", ctx.Request.Host)
+	zap.S().Infof("goods 【List】获取商品列表 request:%v", ctx.Request.Host)
 	request := &proto.GoodsFilterRequest{}
 
 	priceMin := ctx.DefaultQuery("pmin", "0")
@@ -102,10 +102,11 @@ func List(ctx *gin.Context) {
 // @Description: 创建商品
 // @param ctx
 //
-// TODO：创建商品失败
 func New(ctx *gin.Context) {
+	zap.S().Infof("goods 【New】新建商品 request:%v", ctx.Request.Host)
 	goodsForm := forms.GoodsForm{}
 	if err := ctx.ShouldBindJSON(&goodsForm); err != nil {
+		zap.S().Errorw("goods 创建商品格式错误", "err", err.Error())
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -125,12 +126,11 @@ func New(ctx *gin.Context) {
 		BrandId:         goodsForm.Brand,
 	})
 	if err != nil {
+		zap.S().Errorw("goods 创建商品失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
 
-	//如何设置库存
-	//TODO 商品的库存 - 分布式事务
 	ctx.JSON(http.StatusOK, rsp)
 }
 
@@ -139,6 +139,7 @@ func New(ctx *gin.Context) {
 // @param ctx
 //
 func Detail(ctx *gin.Context) {
+	zap.S().Infof("goods 【Detail】获取商品详情 request:%v", ctx.Request.Host)
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -178,6 +179,7 @@ func Detail(ctx *gin.Context) {
 }
 
 func Delete(ctx *gin.Context) {
+	zap.S().Infof("goods 【Delelte】删除商品 request:%v", ctx.Request.Host)
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -193,5 +195,103 @@ func Delete(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": response.Success,
+	})
+}
+
+func UpdateStatus(ctx *gin.Context) {
+	zap.S().Infof("goods 【Update】更新商品信息 request:%v", ctx.Request.Host)
+	goodsStatusForm := forms.GoodsStatusForm{}
+	err := ctx.ShouldBind(&goodsStatusForm)
+	if err != nil {
+		utils.HandleValidatorError(ctx, err)
+		return
+	}
+	id := ctx.Param("id")
+	i, err := strconv.ParseInt(id, 10, 32)
+	response, err := global.GoodsClient.UpdateGoods(context.Background(), &proto.CreateGoodsInfo{
+		Id:     int32(i),
+		IsHot:  *goodsStatusForm.IsHot,
+		IsNew:  *goodsStatusForm.IsNew,
+		OnSale: *goodsStatusForm.OnSale,
+	})
+	if err != nil {
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"id":          response.Id,
+		"name":        response.Name,
+		"goods_brief": response.GoodsBrief,
+		"desc":        response.GoodsDesc,
+		"ship_free":   response.ShipFree,
+		"images":      response.Images,
+		"desc_images": response.DescImages,
+		"front_image": response.GoodsFrontImage,
+		"shop_price":  response.ShopPrice,
+		"category": map[string]interface{}{
+			"id":   response.Category.Id,
+			"name": response.Category.Name,
+		},
+		"brand": map[string]interface{}{
+			"id":   response.Brand.Id,
+			"name": response.Brand.Name,
+			"logo": response.Brand.Logo,
+		},
+		"is_hot":  response.IsHot,
+		"is_new":  response.IsNew,
+		"on_sale": response.OnSale,
+	})
+}
+
+func Update(ctx *gin.Context) {
+	goodsForm := forms.GoodsForm{}
+	err := ctx.ShouldBind(&goodsForm)
+	if err != nil {
+		utils.HandleValidatorError(ctx, err)
+		return
+	}
+	id := ctx.Param("id")
+	i, err := strconv.ParseInt(id, 10, 32)
+	response, err := global.GoodsClient.UpdateGoods(context.Background(), &proto.CreateGoodsInfo{
+		Id:              int32(i),
+		Name:            goodsForm.Name,
+		GoodsSn:         goodsForm.GoodsSn,
+		Stocks:          goodsForm.Stocks,
+		MarketPrice:     goodsForm.MarketPrice,
+		ShopPrice:       goodsForm.ShopPrice,
+		GoodsBrief:      goodsForm.GoodsBrief,
+		ShipFree:        *goodsForm.ShipFree,
+		Images:          goodsForm.Images,
+		DescImages:      goodsForm.DescImages,
+		GoodsFrontImage: goodsForm.FrontImage,
+		CategoryId:      goodsForm.CategoryId,
+		BrandId:         goodsForm.Brand,
+	})
+	if err != nil {
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"id":          response.Id,
+		"name":        response.Name,
+		"goods_brief": response.GoodsBrief,
+		"desc":        response.GoodsDesc,
+		"ship_free":   response.ShipFree,
+		"images":      response.Images,
+		"desc_images": response.DescImages,
+		"front_image": response.GoodsFrontImage,
+		"shop_price":  response.ShopPrice,
+		"category": map[string]interface{}{
+			"id":   response.Category.Id,
+			"name": response.Category.Name,
+		},
+		"brand": map[string]interface{}{
+			"id":   response.Brand.Id,
+			"name": response.Brand.Name,
+			"logo": response.Brand.Logo,
+		},
+		"is_hot":  response.IsHot,
+		"is_new":  response.IsNew,
+		"on_sale": response.OnSale,
 	})
 }
