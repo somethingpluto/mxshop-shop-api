@@ -24,8 +24,9 @@ type WebApiConfig struct {
 }
 
 type ConsulConfig struct {
-	Host string `json:"host"`
-	Port int    `json:"port"`
+	Host string   `json:"host"`
+	Port int      `json:"port"`
+	Tags []string `json:"tags"`
 }
 
 type JWTConfig struct {
