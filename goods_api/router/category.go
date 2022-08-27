@@ -17,6 +17,6 @@ func InitCategoryRouter(Router *gin.RouterGroup) {
 		//// 新建分类
 		CategoryRouter.POST("", category.New)
 		//// 修改分类信息
-		//CategoryRouter.PUT("/:id")
+		CategoryRouter.PUT("/:id", category.Update)
 	}
 }

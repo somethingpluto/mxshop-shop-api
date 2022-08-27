@@ -1,6 +1,6 @@
 {
     "name":"goods_web",
-    "mode":"release",
+    "mode":"debug",
     "consulConfig":{
         "host":"127.0.0.1",
         "port":8500,

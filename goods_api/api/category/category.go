@@ -107,3 +107,42 @@ func Delete(ctx *gin.Context) {
 		"status": response.Success,
 	})
 }
+
+// Update
+// @Description: 更新目录信息
+// @param ctx
+//
+// TODO:目录信息不更新
+func Update(ctx *gin.Context) {
+	categoryForm := forms.UpdateCategoryForm{}
+	err := ctx.ShouldBind(&categoryForm)
+	if err != nil {
+		utils.HandleValidatorError(ctx, err)
+		return
+	}
+	id := ctx.Param("id")
+	i, err := strconv.ParseInt(id, 10, 32)
+	if err != nil {
+		ctx.Status(http.StatusNotFound)
+		return
+	}
+	request := &proto.CategoryInfoRequest{
+		Id:   int32(i),
+		Name: categoryForm.Name,
+	}
+	if categoryForm.IsTab != nil {
+		request.Name = categoryForm.Name
+		request.IsTab = *categoryForm.IsTab
+	}
+	response, err := global.GoodsClient.UpdateCategory(context.Background(), request)
+	if err != nil {
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"id":     response.Id,
+		"name":   response.Name,
+		"is_tab": response.IsTab,
+		"level":  response.Level,
+	})
+}
