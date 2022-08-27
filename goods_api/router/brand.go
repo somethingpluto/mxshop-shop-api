@@ -23,11 +23,11 @@ func InitBrandRouter(Router *gin.RouterGroup) {
 		// 类别品牌页
 		CategoryBrandRouter.GET("", categoryBrand.List)
 		// 删除类别品牌
-		//CategoryBrandRouter.DELETE("/:id")
+		CategoryBrandRouter.DELETE("/:id", categoryBrand.Delete)
 		//// 新建类别品牌
 		CategoryBrandRouter.POST("", categoryBrand.New)
 		//// 修改类别品牌
-		//CategoryBrandRouter.PUT("/:id")
+		CategoryBrandRouter.PUT("/:id", categoryBrand.Update)
 		//// 获取分类的品牌
 		CategoryBrandRouter.GET("/:id", categoryBrand.Detail)
 	}

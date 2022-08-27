@@ -98,3 +98,58 @@ func New(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, responseMap)
 }
+
+// Update
+// @Description: 更新商品目录-品牌
+// @param ctx
+//
+func Update(ctx *gin.Context) {
+	categoryBrandForm := forms.CategoryBrandForm{}
+	err := ctx.ShouldBind(&categoryBrandForm)
+	if err != nil {
+		utils.HandleValidatorError(ctx, err)
+		return
+	}
+
+	id := ctx.Param("id")
+	idInt, err := strconv.ParseInt(id, 10, 32)
+	if err != nil {
+		ctx.Status(http.StatusNotFound)
+		return
+	}
+
+	response, err := global.GoodsClient.UpdateCategoryBrand(context.Background(), &proto.CategoryBrandRequest{
+		Id:         int32(idInt),
+		CategoryId: int32(categoryBrandForm.CategoryId),
+		BrandId:    int32(categoryBrandForm.BrandId),
+	})
+	if err != nil {
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"status": response.Success,
+	})
+}
+
+// Delete
+// @Description: 删除商品目录-品牌
+// @param ctx
+//
+func Delete(ctx *gin.Context) {
+	id := ctx.Param("id")
+	idInt, err := strconv.ParseInt(id, 10, 32)
+	if err != nil {
+		ctx.Status(http.StatusNotFound)
+		return
+	}
+
+	response, err := global.GoodsClient.DeleteCategoryBrand(context.Background(), &proto.CategoryBrandRequest{Id: int32(idInt)})
+	if err != nil {
+		utils.HandleGrpcErrorToHttpError(err, ctx)
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"status": response.Success,
+	})
+}
