@@ -55,3 +55,11 @@
 2022-08-27T14:27:49.929+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
 2022-08-27T14:28:43.993+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
 2022-08-27T14:30:22.894+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T14:35:36.276+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T15:02:56.847+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T15:03:20.529+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T15:04:13.995+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T15:10:35.965+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T15:10:39.985+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T15:12:42.851+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
+2022-08-27T15:22:06.915+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>

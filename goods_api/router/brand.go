@@ -3,6 +3,7 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"goods_api/api/brand"
+	"goods_api/api/categoryBrand"
 )
 
 func InitBrandRouter(Router *gin.RouterGroup) {
@@ -17,17 +18,17 @@ func InitBrandRouter(Router *gin.RouterGroup) {
 		//// 更新品牌
 		BrandRouter.PUT("/:id", brand.Update)
 	}
-	//CategoryBrandRouter := Router.Group("categorybrands")
-	//{
-	//	// 类别品牌页
-	//	CategoryBrandRouter.GET("")
-	//	// 删除类别品牌
-	//	CategoryBrandRouter.DELETE("/:id")
-	//	// 新建类别品牌
-	//	CategoryBrandRouter.POST("")
-	//	// 修改类别品牌
-	//	CategoryBrandRouter.PUT("/:id")
-	//	// 获取分类的品牌
-	//	CategoryBrandRouter.GET("/:id")
-	//}
+	CategoryBrandRouter := Router.Group("categorybrands")
+	{
+		// 类别品牌页
+		CategoryBrandRouter.GET("", categoryBrand.List)
+		// 删除类别品牌
+		//CategoryBrandRouter.DELETE("/:id")
+		//// 新建类别品牌
+		CategoryBrandRouter.POST("", categoryBrand.New)
+		//// 修改类别品牌
+		//CategoryBrandRouter.PUT("/:id")
+		//// 获取分类的品牌
+		CategoryBrandRouter.GET("/:id", categoryBrand.Detail)
+	}
 }

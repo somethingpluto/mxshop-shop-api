@@ -70,3 +70,48 @@
 2022-08-27T14:35:36.323+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
 2022-08-27T14:35:36.325+0800	WARN	goods_api/main.go:33	启动模式：debug
 2022-08-27T14:35:36.325+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-27T15:02:56.892+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:02:56.893+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:02:56.895+0800	FATAL	initialize/rpc.go:37	InitRPC失败
+2022-08-27T15:03:20.576+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:03:20.577+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:03:20.579+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62087
+2022-08-27T15:03:20.580+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-27T15:03:20.581+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-27T15:03:20.582+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-27T15:04:14.041+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:04:14.042+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:04:14.046+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62087
+2022-08-27T15:04:14.046+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-27T15:04:14.049+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-27T15:04:14.049+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-27T15:10:36.014+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:10:36.015+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:10:36.016+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62087
+2022-08-27T15:10:36.017+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-27T15:10:36.019+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-27T15:10:36.019+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-27T15:10:40.032+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:10:40.033+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:10:40.036+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62087
+2022-08-27T15:10:40.037+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-27T15:10:40.041+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-27T15:10:40.042+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-27T15:12:42.904+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:12:42.905+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:12:42.907+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62087
+2022-08-27T15:12:42.908+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-27T15:12:42.909+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-27T15:12:42.909+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-27T15:22:06.968+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:22:06.969+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:22:06.971+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62087
+2022-08-27T15:22:06.972+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-27T15:22:06.974+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-27T15:22:06.975+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-27T15:22:26.930+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-27T15:22:26.931+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-27T15:22:26.933+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62087
+2022-08-27T15:22:26.934+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-27T15:22:26.937+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-27T15:22:26.938+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
