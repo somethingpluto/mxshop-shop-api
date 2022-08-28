@@ -11,6 +11,10 @@ import (
 	"strconv"
 )
 
+// List
+// @Description: 获取品牌列表
+// @param ctx
+//
 func List(ctx *gin.Context) {
 	pn := ctx.DefaultQuery("pn", "0")
 	pnInt, _ := strconv.Atoi(pn)

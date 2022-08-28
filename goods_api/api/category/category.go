@@ -14,6 +14,10 @@ import (
 	"strconv"
 )
 
+// List
+// @Description: 获取商品目录列表
+// @param ctx
+//
 func List(ctx *gin.Context) {
 	response, err := global.GoodsClient.GetAllCategoriesList(context.Background(), &empty.Empty{})
 	if err != nil {
@@ -29,6 +33,10 @@ func List(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, data)
 }
 
+// Detail
+// @Description: 获取商品目录详情信息
+// @param ctx
+//
 func Detail(ctx *gin.Context) {
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
@@ -63,7 +71,11 @@ func Detail(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, responseMap)
 }
 
-// TODO:返回数据无效
+// New
+// @Description: 创建商品目录
+// @param ctx
+//
+// TODO: 创建商品的返回信息无效
 func New(ctx *gin.Context) {
 	categoryForm := forms.CategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)
@@ -112,7 +124,7 @@ func Delete(ctx *gin.Context) {
 // @Description: 更新目录信息
 // @param ctx
 //
-// TODO:目录信息不更新
+// TODO: 数据库中信息不更新
 func Update(ctx *gin.Context) {
 	categoryForm := forms.UpdateCategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)

@@ -1,0 +1,29 @@
+2022-08-28T14:38:08.788+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-28T14:38:08.789+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-28T14:38:08.795+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62098
+2022-08-28T14:38:08.795+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-28T14:38:08.799+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-28T14:38:08.799+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-28T14:38:12.106+0800	INFO	banner/banner.go:18	List 触发 request:127.0.0.1:8022
+2022-08-28T14:38:18.623+0800	INFO	banner/banner.go:18	List 触发 request:127.0.0.1:8022
+2022-08-28T14:40:38.279+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-28T14:40:38.281+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-28T14:40:38.283+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62098
+2022-08-28T14:40:38.283+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-28T14:40:38.286+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-28T14:40:38.287+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-28T14:42:07.142+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-28T14:42:07.143+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-28T14:42:07.145+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62098
+2022-08-28T14:42:07.146+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-28T14:42:07.149+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-28T14:42:07.150+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)
+2022-08-28T15:02:42.551+0800	INFO	goods/goods.go:20	goods 【List】获取商品列表 request:127.0.0.1:8022
+2022-08-28T15:03:42.284+0800	INFO	goods/goods.go:106	goods 【New】新建商品 request:127.0.0.1:8022
+2022-08-28T15:09:47.681+0800	INFO	goods/goods.go:182	goods 【Delelte】删除商品 request:127.0.0.1:8022
+2022-08-28T20:36:23.430+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-28T20:36:23.431+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-28T20:36:23.433+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:62098
+2022-08-28T20:36:23.434+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-28T20:36:23.437+0800	WARN	goods_api/main.go:33	启动模式：debug
+2022-08-28T20:36:23.437+0800	INFO	goods_api/main.go:39	goods_web服务开启 端口%!s(int=8022)

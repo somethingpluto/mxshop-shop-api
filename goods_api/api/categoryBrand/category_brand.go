@@ -11,6 +11,10 @@ import (
 	"strconv"
 )
 
+// List
+// @Description: 获取商品目录品牌列表
+// @param ctx
+//
 func List(ctx *gin.Context) {
 	response, err := global.GoodsClient.CategoryBrandList(context.Background(), &proto.CategoryBrandFilterRequest{})
 	if err != nil {

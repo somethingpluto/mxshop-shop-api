@@ -9,8 +9,8 @@ func InitBannerRouter(Router *gin.RouterGroup) {
 	BannerRouter := Router.Group("banners")
 	{
 		BannerRouter.GET("", banner.List)
-		BannerRouter.DELETE("/:id")
+		BannerRouter.DELETE("/:id", banner.Delete)
 		BannerRouter.POST("", banner.New)
-		BannerRouter.PUT("/:id")
+		BannerRouter.PUT("/:id", banner.Update)
 	}
 }
