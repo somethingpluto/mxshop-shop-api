@@ -75,7 +75,6 @@ func Detail(ctx *gin.Context) {
 // @Description: 创建商品目录
 // @param ctx
 //
-// TODO: 创建商品的返回信息无效
 func New(ctx *gin.Context) {
 	categoryForm := forms.CategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)
@@ -124,7 +123,6 @@ func Delete(ctx *gin.Context) {
 // @Description: 更新目录信息
 // @param ctx
 //
-// TODO: 数据库中信息不更新
 func Update(ctx *gin.Context) {
 	categoryForm := forms.UpdateCategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)

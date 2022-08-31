@@ -35,12 +35,11 @@ func List(ctx *gin.Context) {
 // @Description: 创建轮播图
 // @param ctx
 //
-// TODO:创建失败 数据库无数据添加 返回结构体为空
 func New(ctx *gin.Context) {
 	bannerForm := forms.BannerForm{}
-	err := ctx.ShouldBind(bannerForm)
+	err := ctx.ShouldBind(&bannerForm)
 	if err != nil {
-		utils.HandleGrpcErrorToHttpError(err, ctx)
+		utils.HandleValidatorError(ctx, err)
 		return
 	}
 	response, err := global.GoodsClient.CreateBanner(context.Background(), &proto.BannerRequest{
@@ -64,7 +63,6 @@ func New(ctx *gin.Context) {
 // @Description: 更新轮播图信息
 // @param ctx
 //
-// TODO:更新失败 数据库无法更改数据 报错
 func Update(ctx *gin.Context) {
 	bannerForm := forms.BannerForm{}
 	err := ctx.ShouldBind(&bannerForm)
@@ -83,6 +81,7 @@ func Update(ctx *gin.Context) {
 		Id:    int32(idInt),
 		Index: int32(bannerForm.Index),
 		Url:   bannerForm.Url,
+		Image: bannerForm.Image,
 	})
 	if err != nil {
 		utils.HandleGrpcErrorToHttpError(err, ctx)

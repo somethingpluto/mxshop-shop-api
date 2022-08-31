@@ -8,9 +8,9 @@ import (
 func InitRouter() *gin.Engine {
 	Router := gin.Default()
 	ApiGroup := Router.Group("/g/v1")
+	router.InitBannerRouter(ApiGroup)
 	router.InitGoodsRouter(ApiGroup)
 	router.InitCategoryRouter(ApiGroup)
 	router.InitBrandRouter(ApiGroup)
-	router.InitBannerRouter(ApiGroup)
 	return Router
 }

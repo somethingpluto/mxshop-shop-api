@@ -2,6 +2,7 @@ package goods
 
 import (
 	"context"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"goods_api/forms"
@@ -203,18 +204,20 @@ func UpdateStatus(ctx *gin.Context) {
 	goodsStatusForm := forms.GoodsStatusForm{}
 	err := ctx.ShouldBind(&goodsStatusForm)
 	if err != nil {
+		fmt.Println(err)
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
-	response, err := global.GoodsClient.UpdateGoods(context.Background(), &proto.CreateGoodsInfo{
+	response, err := global.GoodsClient.UpdateGoodsStatus(context.Background(), &proto.CreateGoodsInfo{
 		Id:     int32(i),
 		IsHot:  *goodsStatusForm.IsHot,
 		IsNew:  *goodsStatusForm.IsNew,
 		OnSale: *goodsStatusForm.OnSale,
 	})
 	if err != nil {
+		fmt.Println(err)
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
