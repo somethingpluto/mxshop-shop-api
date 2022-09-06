@@ -21,13 +21,12 @@ func main() {
 	initialize.InitLogger()
 	// 初始化翻译器
 	initialize.InitTranslator("zh")
-
-	Router := initialize.InitRouter()
 	if mode == "release" {
 		runMode.ReleaseMode()
 	} else if mode == "debug" {
 		runMode.DebugMode()
 	}
+	Router := initialize.InitRouter()
 	zap.S().Infof("goods_web服务开启 端口%s", port)
 	err := Router.Run(":8022")
 	if err != nil {

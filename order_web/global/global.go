@@ -11,5 +11,5 @@ var (
 	NacosConfig  *config.NacosConfig
 	WebApiConfig *config.WebApiConfig
 	Translator   ut.Translator
-	GoodsClient  proto.OrderClient
+	OrderClient  proto.OrderClient
 )
