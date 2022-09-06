@@ -1,0 +1,5 @@
+package runMode
+
+func DebugMode() {
+
+}
