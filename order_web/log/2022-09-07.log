@@ -1,0 +1,4 @@
+2022-09-07T17:51:27.643+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-07T17:51:27.644+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-07T17:51:27.645+0800	INFO	runMode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-07T17:51:27.646+0800	INFO	order_web/main.go:30	goods_web服务开启 端口%!s(int=8022)

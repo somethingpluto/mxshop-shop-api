@@ -22,10 +22,12 @@ type FilePathConfig struct {
 // @Description: nacos拉取的配置
 //
 type WebApiConfig struct {
-	Name       string       `json:"name"`
-	Mode       string       `json:"runMode"`
-	ConsulInfo ConsulConfig `json:"consulConfig"`
-	JWTInfo    JWTConfig    `json:"jwtConfig"`
+	Name             string                 `json:"name"`
+	Mode             string                 `json:"runMode"`
+	ConsulInfo       ConsulConfig           `json:"consulConfig"`
+	JWTInfo          JWTConfig              `json:"jwtConfig"`
+	GoodsService     GoodsServiceConfig     `json:"goods_service"`
+	InventoryService InventoryServiceConfig `json:"inventory_service"`
 }
 
 type ConsulConfig struct {
@@ -36,4 +38,12 @@ type ConsulConfig struct {
 
 type JWTConfig struct {
 	SigningKey string `mapstructure:"key" json:"key"`
+}
+
+type GoodsServiceConfig struct {
+	Name string `json:"name"`
+}
+
+type InventoryServiceConfig struct {
+	Name string `json:"name"`
 }
