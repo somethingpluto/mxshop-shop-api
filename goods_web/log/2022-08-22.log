@@ -1,0 +1,45 @@
+2022-08-22T13:54:26.216+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T13:54:26.217+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T13:56:50.818+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T13:56:50.819+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T13:56:50.821+0800	INFO	goods_api/main.go:14	goods_web服务开启 端口8081
+2022-08-22T13:57:29.824+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T13:57:29.825+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T13:57:29.832+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:58853
+2022-08-22T13:57:29.833+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-22T13:57:29.835+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-22T17:36:19.734+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T17:36:19.735+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T17:36:21.775+0800	ERROR	initialize/rpc.go:28	查询 goods-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22goods_service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-08-22T17:36:21.776+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-22T17:38:49.385+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T17:38:49.386+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T17:38:51.425+0800	ERROR	initialize/rpc.go:28	查询 goods-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22goods_service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-08-22T17:38:51.427+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-22T18:49:51.594+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T18:49:51.595+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T18:49:51.597+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:52047
+2022-08-22T18:49:51.597+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-22T18:49:51.599+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-22T18:52:55.954+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T18:52:55.955+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T18:52:55.958+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:52047
+2022-08-22T18:52:55.958+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-22T18:52:55.960+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-22T18:53:06.967+0800	INFO	banner/banner.go:16	List 触发 request:&{GET /g/v1/banners HTTP/1.1 1 1 map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Connection:[keep-alive] User-Agent:[apifox/1.0.0 (https://www.apifox.cn)]] {} <nil> 0 [] false 127.0.0.1:8081 map[] map[] <nil> map[] 127.0.0.1:52197 /g/v1/banners <nil> <nil> <nil> 0xc000510600}
+2022-08-22T18:53:30.788+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T18:53:30.789+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T18:53:30.792+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:52047
+2022-08-22T18:53:30.793+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-22T18:53:30.794+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-22T18:53:36.531+0800	INFO	banner/banner.go:16	List 触发 request:127.0.0.1:8081
+2022-08-22T18:56:37.161+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T18:56:37.162+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T18:56:37.163+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:52047
+2022-08-22T18:56:37.164+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-22T18:56:37.165+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
+2022-08-22T19:00:33.763+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-08-22T19:00:33.764+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-08-22T19:00:33.767+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:52047
+2022-08-22T19:00:33.768+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
+2022-08-22T19:00:33.769+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081

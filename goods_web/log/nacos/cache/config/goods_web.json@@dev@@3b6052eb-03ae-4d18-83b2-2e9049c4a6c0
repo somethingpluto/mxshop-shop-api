@@ -1,0 +1,12 @@
+{
+    "name":"goods_web",
+    "mode":"debug",
+    "consulConfig":{
+        "host":"127.0.0.1",
+        "port":8500,
+        "tags":["goods","api"]
+    },
+    "jwtConfig":{
+        "key":"7G(yQ9F0tXHy#EHT0ZIR"
+    }
+}

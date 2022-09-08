@@ -1,0 +1,5 @@
+package mode
+
+func DebugMode() {
+
+}
