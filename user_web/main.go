@@ -1,14 +1,17 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"go.uber.org/zap"
-	"user_web/global"
 	"user_web/initialize"
-	"user_web/utils"
+	"user_web/mode"
 )
 
 func main() {
+	Port := flag.Int("port", 8022, "port: 服务端口(release模式下随机获取)")
+	Mode := flag.String("mode", "release", "mode: 服务启动模式 debug 开发模式 / release 服务注册模式")
+	flag.Parse()
 	//0.初始化文件路径
 	initialize.InitFilePath()
 	// 1.初始化配置文件
@@ -19,23 +22,15 @@ func main() {
 	initialize.InitTranslator("zh")
 	// 4.初始化验证器
 	initialize.InitValidator()
-	// 初始化rpc
-	initialize.InitRPC()
+	if *Mode == "release" {
+		mode.ReleaseMode()
+	} else if *Mode == "debug" {
+		mode.DebugMode()
+	}
 	// 5.初始化router
 	Router := initialize.InitRouters()
-
-	// 环境判断
-	if global.ServerConfig.RuntimeInfo.Mode != "debug" { // 如果不为debug环境
-		port, err := utils.GetFreePort()
-		if err != nil {
-			zap.S().Errorw("utils.GetFreePort 失败", "err", err.Error())
-			return
-		}
-		global.ServerConfig.UserServer.Port = port
-	}
-	zap.S().Warnf("--------------user-web服务开启gin listen port %d", global.ServerConfig.UserServer.Port)
-	err := Router.Run(fmt.Sprintf(":%d", global.ServerConfig.UserServer.Port))
-
+	zap.S().Infof("user_web服务开启")
+	err := Router.Run(fmt.Sprintf(":%d", *Port))
 	if err != nil {
 		panic(err)
 	}

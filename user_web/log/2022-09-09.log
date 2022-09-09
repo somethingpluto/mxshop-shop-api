@@ -1,0 +1,42 @@
+2022-09-09T21:26:47.498+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-09T21:26:47.499+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-09T21:26:47.500+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-09T21:26:47.501+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-09T21:26:47.501+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-09-09T21:29:11.199+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-09T21:29:11.200+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-09T21:29:13.241+0800	ERROR	mode/release.go:28	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22user_service%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-09-09T21:29:13.243+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-09T21:29:13.243+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-09-09T21:34:54.117+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-09T21:34:54.118+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-09T21:34:54.127+0800	INFO	mode/release.go:40	查询到user-service 127.0.0.1:58300
+2022-09-09T21:34:54.128+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-09T21:34:54.130+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-09T21:34:54.131+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-09-09T21:52:22.683+0800	ERROR	validator/validators.go:18	手机号验证失败	{"手机号:": "1808208820"}
+2022-09-09T22:05:45.676+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-09T22:05:45.677+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-09T22:05:45.680+0800	INFO	mode/release.go:40	查询到user-service 127.0.0.1:58300
+2022-09-09T22:05:45.680+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-09T22:05:45.681+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-09T22:05:45.682+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-09-09T22:06:41.636+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-09T22:06:41.636+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-09T22:06:41.638+0800	INFO	mode/release.go:40	查询到user-service 127.0.0.1:58300
+2022-09-09T22:06:41.639+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-09T22:06:41.640+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-09T22:06:41.640+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-09-09T22:07:09.275+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-09T22:07:09.276+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-09T22:07:09.279+0800	INFO	mode/release.go:40	查询到user-service 127.0.0.1:58300
+2022-09-09T22:07:09.280+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-09T22:07:09.282+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-09T22:07:09.282+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-09-09T22:10:16.103+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-09T22:10:16.103+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-09T22:10:16.106+0800	INFO	mode/release.go:40	查询到user-service 127.0.0.1:58300
+2022-09-09T22:10:16.107+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-09T22:10:16.107+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-09T22:10:16.107+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-09-09T22:14:12.477+0800	ERROR	api/user.go:147	[CreateUser] 失败	{"err": "rpc error: code = Internal desc = Error 1062: Duplicate entry '15171618793' for key 'mobile'"}

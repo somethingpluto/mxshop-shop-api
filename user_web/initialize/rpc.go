@@ -15,8 +15,8 @@ import (
 // @Description: 初始化rpc
 //
 func InitRPC() {
-	consulInfo := global.ServerConfig.ConsulInfo
-	consulURL := fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulInfo.Host, consulInfo.Port, global.ServerConfig.UserService.Name)
+	consulInfo := global.WebServiceConfig.ConsulInfo
+	consulURL := fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulInfo.Host, consulInfo.Port, global.WebServiceConfig.Service.Name)
 	conn, err := grpc.Dial(consulURL, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`))
 	if err != nil {
 		zap.S().Fatalw("连接用户服务失败", "err", err.Error())
@@ -26,7 +26,7 @@ func InitRPC() {
 }
 func InitRPC2() {
 	cfg := api.DefaultConfig()
-	consulInfo := global.ServerConfig.ConsulInfo
+	consulInfo := global.WebServiceConfig.ConsulInfo
 	cfg.Address = fmt.Sprintf("%s:%d", consulInfo.Host, consulInfo.Port)
 
 	var userServiceHost string

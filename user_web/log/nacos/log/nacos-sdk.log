@@ -1,0 +1,7 @@
+2022-09-09T21:26:47.451+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/cache>
+2022-09-09T21:29:11.152+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/cache>
+2022-09-09T21:34:54.073+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/cache>
+2022-09-09T22:05:45.629+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/cache>
+2022-09-09T22:06:41.578+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/cache>
+2022-09-09T22:07:09.197+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/cache>
+2022-09-09T22:10:16.057+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/user_web/log/nacos/cache>

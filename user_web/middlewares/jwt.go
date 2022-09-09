@@ -62,7 +62,7 @@ func JWTAuth() gin.HandlerFunc {
 // @return *JWT
 //
 func NewJWT() *JWT {
-	return &JWT{SigningKey: []byte(global.ServerConfig.JWTInfo.SigningKey)}
+	return &JWT{SigningKey: []byte(global.WebServiceConfig.JWTInfo.SigningKey)}
 }
 
 // CreateToken

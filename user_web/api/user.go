@@ -2,6 +2,7 @@ package api
 
 import (
 	"context"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis/v9"
 	"go.uber.org/zap"
@@ -115,6 +116,8 @@ func Register(c *gin.Context) {
 	registerForm := forms.RegisterForm{}
 	err := c.ShouldBind(&registerForm)
 	if err != nil {
+
+		fmt.Println("c.ShouldBind error", err.Error())
 		utils.HandleValidatorError(c, err)
 		return
 	}

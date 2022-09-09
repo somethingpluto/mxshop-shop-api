@@ -1,8 +1,14 @@
 package initialize
 
 import (
+	"encoding/json"
+	"fmt"
+	"github.com/nacos-group/nacos-sdk-go/clients"
+	"github.com/nacos-group/nacos-sdk-go/common/constant"
+	"github.com/nacos-group/nacos-sdk-go/vo"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
+	"user_web/config"
 	"user_web/global"
 )
 
@@ -10,18 +16,60 @@ import (
 // @Description:  初始化配置
 //
 func InitConfig() {
+	configFileName := fmt.Sprintf("%s", global.FileConfig.ConfigFile)
+
 	v := viper.New()
-	// 文件路径设置
-	v.SetConfigFile(global.FileConfig.ConfigFile)
+	v.SetConfigFile(configFileName)
 	err := v.ReadInConfig()
 	if err != nil {
-		zap.S().Errorw("读取config-debug.yaml配置文件失败")
-		panic(err)
+		zap.S().Errorw("viper.ReadInConfig失败", "err", err.Error())
+		return
 	}
-	err = v.Unmarshal(global.ServerConfig)
+	global.NacosConfig = &config.NacosConfig{}
+	err = v.Unmarshal(global.NacosConfig)
 	if err != nil {
-		zap.S().Errorw("解析config-debug.yaml配置文件失败")
-		panic(err)
+		zap.S().Errorw("viper unmarshal失败", "err", err.Error())
+		return
 	}
-	zap.S().Infof("配置文件加载成功 config:%#v \n", global.ServerConfig)
+	zap.S().Infof("%#v", global.NacosConfig)
+
+	sConfig := []constant.ServerConfig{
+		{
+			IpAddr: global.NacosConfig.Host,
+			Port:   uint64(global.NacosConfig.Port),
+		},
+	}
+	nacosLogDir := fmt.Sprintf("%s/%s/%s", global.FileConfig.LogFile, "nacos", "log")
+	nacosCacheDir := fmt.Sprintf("%s/%s/%s", global.FileConfig.LogFile, "nacos", "cache")
+	cConfig := constant.ClientConfig{
+		NamespaceId:         global.NacosConfig.Namespace,
+		TimeoutMs:           5000,
+		NotLoadCacheAtStart: true,
+		LogDir:              nacosLogDir,
+		CacheDir:            nacosCacheDir,
+		LogLevel:            "debug",
+	}
+	client, err := clients.CreateConfigClient(map[string]interface{}{
+		"serverConfigs": sConfig,
+		"clientConfig":  cConfig,
+	})
+	if err != nil {
+		zap.S().Errorw("客户端连接失败", "err", err.Error())
+		return
+	}
+	content, err := client.GetConfig(vo.ConfigParam{
+		DataId: global.NacosConfig.Dataid,
+		Group:  global.NacosConfig.Group,
+	})
+	if err != nil {
+		zap.S().Errorw("client.GetConfig读取文件失败", "err", err.Error())
+		return
+	}
+	global.WebServiceConfig = &config.WebServiceConfig{}
+	err = json.Unmarshal([]byte(content), global.WebServiceConfig)
+	if err != nil {
+		zap.S().Errorw("读取的配置content解析到global.serviceConfig失败", "err", err.Error())
+		return
+	}
+	zap.S().Infof("nacos配置拉取成功 %#v", global.WebServiceConfig)
 }

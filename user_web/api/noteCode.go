@@ -34,7 +34,7 @@ func SendNoteCode(c *gin.Context) {
 	}
 
 	config := sdk.NewConfig()
-	credential := credentials.NewAccessKeyCredential(global.ServerConfig.AliSms.ApiKey, global.ServerConfig.AliSms.ApiSecret)
+	credential := credentials.NewAccessKeyCredential(global.WebServiceConfig.AliSms.ApiKey, global.WebServiceConfig.AliSms.ApiSecret)
 	/* use STS Token
 	credential := credentials.NewStsTokenCredential("<your-access-key-id>", "<your-access-key-secret>", "<your-sts-token>")
 	*/
@@ -46,8 +46,8 @@ func SendNoteCode(c *gin.Context) {
 
 	request := dysmsapi.CreateSendSmsRequest()
 	request.Scheme = "https"
-	request.SignName = global.ServerConfig.AliSms.SignName
-	request.TemplateCode = global.ServerConfig.AliSms.TemplateCode
+	request.SignName = global.WebServiceConfig.AliSms.SignName
+	request.TemplateCode = global.WebServiceConfig.AliSms.TemplateCode
 	request.PhoneNumbers = sendSmsForm.Mobile
 	request.TemplateParam = "{\"code\":\"" + smsCode + "\"}"
 
@@ -85,8 +85,7 @@ func generateNoteCode(width int) string {
 //
 func connectRedis() {
 	red = redis.NewClient(&redis.Options{
-		Addr:     fmt.Sprintf("%s:%d", global.ServerConfig.Redis.Host, global.ServerConfig.Redis.Port),
-		Password: "chx200205173214",
-		DB:       0,
+		Addr:     fmt.Sprintf("%s:%d", global.WebServiceConfig.Redis.Host, global.WebServiceConfig.Redis.Port),
+		Password: global.WebServiceConfig.Redis.Password,
 	})
 }

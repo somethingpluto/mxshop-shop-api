@@ -1,4 +1,4 @@
-package runMode
+package mode
 
 import (
 	"fmt"

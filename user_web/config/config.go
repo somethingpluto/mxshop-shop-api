@@ -1,67 +1,42 @@
 package config
 
-// ServerConfig
-// @Description: 服务配置总
-//
-type ServerConfig struct {
-	Name        string            `mapstructure:"name"`
-	UserService UserServiceConfig `mapstructure:"user_service"`
-	UserServer  UserServerConfig  `mapstructure:"user_server"`
-	JWTInfo     JwtConfig         `mapstructure:"jwt_config"`
-	AliSms      AliSmsConfig      `mapstructure:"alisms_config"`
-	Redis       RedisConfig       `mapstructure:"redis_config"`
-	ConsulInfo  ConsulConfig      `mapstructure:"consul_config"`
-	RuntimeInfo RuntimeConfig     `mapstructure:"runtime_config"`
+type NacosConfig struct {
+	Host      string `mapstructure:"host"`
+	Port      int    `mapstructure:"port"`
+	Namespace string `mapstructure:"namespace"`
+	User      string `mapstructure:"user"`
+	Password  string `mapstructure:"password"`
+	Dataid    string `mapstructure:"dataid"`
+	Group     string `mapstructure:"group"`
 }
 
-// UserServiceConfig
-// @Description: gRPC服务 主机 端口
+// WebServiceConfig
+// @Description:
 //
-type UserServiceConfig struct {
-	Host string `mapstructure:"host"`
-	Port int    `mapstructure:"port"`
-	Name string `mapstructure:"name"`
-}
-
-// UserServerConfig
-// @Description: gin监听端口
-//
-type UserServerConfig struct {
-	Port int    `mapstructure:"port"`
-	Mode string `mapstructure:"mode"`
+type WebServiceConfig struct {
+	Name       string        `json:"name"`
+	JWTInfo    JwtConfig     `json:"jwt"`
+	AliSms     AliSmsConfig  `json:"aliyun_message"`
+	Redis      RedisConfig   `json:"redis"`
+	ConsulInfo ConsulConfig  `json:"consul"`
+	Service    ServiceConfig `json:"service"`
 }
 
 // JwtConfig
 // @Description: JWT
 //
 type JwtConfig struct {
-	SigningKey string `mapstructure:"key"`
+	SigningKey string `json:"key"`
 }
 
 // AliSmsConfig
 // @Description: 阿里云短信服务配置
 //
 type AliSmsConfig struct {
-	ApiKey       string `mapstructure:"key"`
-	ApiSecret    string `mapstructure:"secret"`
-	SignName     string `mapstructure:"signName"`
-	TemplateCode string `mapstructure:"templateCode"`
-}
-
-// RedisConfig
-// @Description: Redis配置
-//
-type RedisConfig struct {
-	Host string `mapstructure:"host"`
-	Port int    `mapstructure:"port"`
-}
-
-// FileConfig
-// @Description: 文件路劲配置
-//
-type FileConfig struct {
-	ConfigFile string
-	LogFile    string
+	ApiKey       string `json:"key"`
+	ApiSecret    string `json:"secret"`
+	SignName     string `json:"signName"`
+	TemplateCode string `json:"template_code"`
 }
 
 // ConsulConfig
@@ -72,6 +47,22 @@ type ConsulConfig struct {
 	Port int    `mapstructure:"port"`
 }
 
-type RuntimeConfig struct {
-	Mode string `mapstructure:"mode"`
+// RedisConfig
+// @Description: Redis配置
+//
+type RedisConfig struct {
+	Host     string `json:"host"`
+	Port     int    `json:"port"`
+	Password string `json:"password"`
+}
+type ServiceConfig struct {
+	Name string `json:"string"`
+}
+
+// FileConfig
+// @Description: 文件路劲配置
+//
+type FileConfig struct {
+	ConfigFile string
+	LogFile    string
 }

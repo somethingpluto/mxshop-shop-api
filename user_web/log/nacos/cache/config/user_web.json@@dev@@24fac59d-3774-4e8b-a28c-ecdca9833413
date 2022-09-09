@@ -1,0 +1,25 @@
+{
+    "name":"user_web",
+    "jwt":{
+        "key":"7G(yQ9F0tXHy#EHT0ZIR"
+    },
+    "aliyun_message":{
+        "key":"LTAI5tADvWEsLktfz57iKBki",
+        "secret":"NKXZG8xfJHODbrTH4WWwGwz0Do7kze",
+        "signName":"阿里云短信测试",
+        "template_code":"SMS_154950909"
+    },
+    "redis":{
+        "host":"120.25.255.207",
+        "port":6380,
+        "password":"chx200205173214"
+    },
+    "consul":{
+        "host":"127.0.0.1",
+        "port":8500,
+        "password":"chx200205173214"
+    },
+    "service":{
+        "name":"user_service"
+    }
+}
