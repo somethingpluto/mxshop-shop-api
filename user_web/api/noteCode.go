@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis/v9"
+	"go.uber.org/zap"
 	"math/rand"
 	"net/http"
 	"strings"
@@ -29,6 +30,7 @@ func SendNoteCode(c *gin.Context) {
 	sendSmsForm := forms.SendSmsForm{}
 	err := c.ShouldBind(&sendSmsForm)
 	if err != nil {
+		zap.S().Errorw("Error", "method", "SendNoteCode", "err", err.Error())
 		utils.HandleValidatorError(c, err)
 		return
 	}

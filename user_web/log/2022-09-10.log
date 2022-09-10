@@ -1,0 +1,6 @@
+2022-09-10T16:53:25.169+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T16:53:25.170+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-10T16:53:25.173+0800	INFO	mode/release.go:40	查询到user-service 127.0.0.1:50604
+2022-09-10T16:53:25.174+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T16:53:25.175+0800	INFO	initialize/router.go:18	路由启动成功
+2022-09-10T16:53:25.176+0800	INFO	user_web/main.go:32	user_web服务开启
