@@ -21,12 +21,16 @@ import (
 func List(ctx *gin.Context) {
 	response, err := global.GoodsClient.GetAllCategoriesList(context.Background(), &empty.Empty{})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
 	data := make([]interface{}, 0)
 	err = json.Unmarshal([]byte(response.JsonData), &data)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		zap.S().Errorw("Category 【list】获取商品分类失败", "err", err.Error())
 		return
 	}
@@ -41,6 +45,8 @@ func Detail(ctx *gin.Context) {
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
@@ -50,6 +56,8 @@ func Detail(ctx *gin.Context) {
 		Id: int32(i),
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -79,6 +87,8 @@ func New(ctx *gin.Context) {
 	categoryForm := forms.CategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -89,6 +99,8 @@ func New(ctx *gin.Context) {
 		IsTab:          *categoryForm.IsTab,
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -106,11 +118,15 @@ func Delete(ctx *gin.Context) {
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
 	response, err := global.GoodsClient.DeleteCategory(context.Background(), &proto.DeleteCategoryRequest{Id: int32(i)})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -127,12 +143,16 @@ func Update(ctx *gin.Context) {
 	categoryForm := forms.UpdateCategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
@@ -146,6 +166,8 @@ func Update(ctx *gin.Context) {
 	}
 	response, err := global.GoodsClient.UpdateCategory(context.Background(), request)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}

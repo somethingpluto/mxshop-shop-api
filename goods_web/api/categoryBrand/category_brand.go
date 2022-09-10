@@ -3,6 +3,7 @@ package categoryBrand
 import (
 	"context"
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 	"goods_api/forms"
 	"goods_api/global"
 	"goods_api/proto"
@@ -18,6 +19,8 @@ import (
 func List(ctx *gin.Context) {
 	response, err := global.GoodsClient.CategoryBrandList(context.Background(), &proto.CategoryBrandFilterRequest{})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -52,6 +55,8 @@ func Detail(ctx *gin.Context) {
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
@@ -59,6 +64,8 @@ func Detail(ctx *gin.Context) {
 		Id: int32(idInt),
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -82,6 +89,8 @@ func New(ctx *gin.Context) {
 	categoryBrandForm := forms.CategoryBrandForm{}
 	err := ctx.ShouldBind(&categoryBrandForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -91,6 +100,8 @@ func New(ctx *gin.Context) {
 		BrandId:    int32(categoryBrandForm.BrandId),
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -110,6 +121,8 @@ func Update(ctx *gin.Context) {
 	categoryBrandForm := forms.CategoryBrandForm{}
 	err := ctx.ShouldBind(&categoryBrandForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -117,6 +130,8 @@ func Update(ctx *gin.Context) {
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
@@ -127,6 +142,8 @@ func Update(ctx *gin.Context) {
 		BrandId:    int32(categoryBrandForm.BrandId),
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -143,12 +160,16 @@ func Delete(ctx *gin.Context) {
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
 
 	response, err := global.GoodsClient.DeleteCategoryBrand(context.Background(), &proto.CategoryBrandRequest{Id: int32(idInt)})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}

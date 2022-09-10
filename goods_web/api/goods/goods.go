@@ -2,7 +2,6 @@ package goods
 
 import (
 	"context"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"goods_api/forms"
@@ -62,7 +61,7 @@ func List(ctx *gin.Context) {
 
 	response, err := global.GoodsClient.GoodsList(context.Background(), request)
 	if err != nil {
-		zap.S().Errorw("goods 查询商品列表失败", "err", err.Error())
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -107,7 +106,7 @@ func New(ctx *gin.Context) {
 	zap.S().Infof("goods 【New】新建商品 request:%v", ctx.Request.Host)
 	goodsForm := forms.GoodsForm{}
 	if err := ctx.ShouldBindJSON(&goodsForm); err != nil {
-		zap.S().Errorw("goods 创建商品格式错误", "err", err.Error())
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -127,7 +126,7 @@ func New(ctx *gin.Context) {
 		BrandId:         goodsForm.Brand,
 	})
 	if err != nil {
-		zap.S().Errorw("goods 创建商品失败", "err", err.Error())
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -149,7 +148,7 @@ func Detail(ctx *gin.Context) {
 	}
 	response, err := global.GoodsClient.GetGoodsDetail(context.WithValue(context.Background(), "ginContext", ctx), &proto.GoodsInfoRequest{Id: int32(i)})
 	if err != nil {
-		zap.S().Errorw("goods 获取商品详情失败", "err", err.Error())
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -184,12 +183,14 @@ func Delete(ctx *gin.Context) {
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
 	response, err := global.GoodsClient.DeleteGoods(context.Background(), &proto.DeleteGoodsInfo{Id: int32(i)})
 	if err != nil {
-		zap.S().Errorf("goods 删除商品 id:%v", i)
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -204,7 +205,7 @@ func UpdateStatus(ctx *gin.Context) {
 	goodsStatusForm := forms.GoodsStatusForm{}
 	err := ctx.ShouldBind(&goodsStatusForm)
 	if err != nil {
-		fmt.Println(err)
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -217,7 +218,7 @@ func UpdateStatus(ctx *gin.Context) {
 		OnSale: *goodsStatusForm.OnSale,
 	})
 	if err != nil {
-		fmt.Println(err)
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -250,6 +251,7 @@ func Update(ctx *gin.Context) {
 	goodsForm := forms.GoodsForm{}
 	err := ctx.ShouldBind(&goodsForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -271,6 +273,7 @@ func Update(ctx *gin.Context) {
 		BrandId:         goodsForm.Brand,
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}

@@ -17,6 +17,7 @@ func List(ctx *gin.Context) {
 	response, err := global.GoodsClient.BannerList(context.Background(), &empty.Empty{})
 	zap.S().Infof("List 触发 request:%v", ctx.Request.Host)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -39,6 +40,7 @@ func New(ctx *gin.Context) {
 	bannerForm := forms.BannerForm{}
 	err := ctx.ShouldBind(&bannerForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -48,6 +50,7 @@ func New(ctx *gin.Context) {
 		Url:   bannerForm.Url,
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -67,6 +70,7 @@ func Update(ctx *gin.Context) {
 	bannerForm := forms.BannerForm{}
 	err := ctx.ShouldBind(&bannerForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -74,6 +78,8 @@ func Update(ctx *gin.Context) {
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
@@ -84,6 +90,7 @@ func Update(ctx *gin.Context) {
 		Image: bannerForm.Image,
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -103,12 +110,15 @@ func Delete(ctx *gin.Context) {
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
 
 	response, err := global.GoodsClient.DeleteBanner(context.Background(), &proto.BannerRequest{Id: int32(idInt)})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}

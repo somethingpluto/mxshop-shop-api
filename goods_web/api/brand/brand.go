@@ -3,6 +3,7 @@ package brand
 import (
 	"context"
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 	"goods_api/forms"
 	"goods_api/global"
 	"goods_api/proto"
@@ -27,6 +28,7 @@ func List(ctx *gin.Context) {
 		PagePerNums: int32(pSizeInt),
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -48,6 +50,7 @@ func New(ctx *gin.Context) {
 	brandForm := forms.BrandForm{}
 	err := ctx.ShouldBind(&brandForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
@@ -56,6 +59,7 @@ func New(ctx *gin.Context) {
 		Logo: brandForm.Logo,
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -70,6 +74,7 @@ func Delete(ctx *gin.Context) {
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		ctx.Status(http.StatusNotFound)
 		return
 	}
@@ -77,6 +82,7 @@ func Delete(ctx *gin.Context) {
 		Id: int32(idInt),
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -89,12 +95,16 @@ func Update(ctx *gin.Context) {
 	brandForm := forms.BrandForm{}
 	err := ctx.ShouldBind(&brandForm)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		ctx.Status(http.StatusNotFound)
 		return
 	}
@@ -104,6 +114,8 @@ func Update(ctx *gin.Context) {
 		Logo: brandForm.Logo,
 	})
 	if err != nil {
+		zap.S().Errorw("Error", "err", err.Error())
+
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
