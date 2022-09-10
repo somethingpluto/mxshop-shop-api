@@ -1,0 +1,145 @@
+2022-09-10T17:00:08.369+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:00:08.371+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:00:37.318+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:00:37.319+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:01:51.898+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:01:51.899+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:01:51.899+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:01:51.901+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:03:23.405+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:03:23.406+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:03:23.407+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:03:23.409+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:04:35.403+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:04:35.404+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:04:35.404+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:04:35.405+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:08:50.711+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:08:50.712+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:08:50.714+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:08:50.716+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:10:13.775+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:10:13.775+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:10:13.776+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:10:13.777+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:10:21.889+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:10:21.890+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:10:21.891+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:10:21.893+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:12:37.639+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:12:37.640+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:12:37.641+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:12:37.643+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:12:52.472+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:12:52.474+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:12:52.475+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:12:52.477+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:13:32.915+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:13:32.916+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:13:32.917+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:13:32.918+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:13:54.853+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:13:54.854+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:13:54.856+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:13:54.859+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:41:24.033+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:41:24.034+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:41:24.034+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:41:24.036+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:42:24.126+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:42:24.127+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:42:24.128+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:42:24.129+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:42:25.877+0800	ERROR	shop_cart/shop_cart.go:18	[CartItemList] 查询失败
+2022-09-10T17:43:07.367+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:43:07.367+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:43:07.368+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:43:07.369+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:43:11.503+0800	ERROR	shop_cart/shop_cart.go:18	[CartItemList] 查询失败
+2022-09-10T17:43:24.151+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:43:24.152+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:43:24.152+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:43:24.155+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:43:27.005+0800	ERROR	shop_cart/shop_cart.go:18	[CartItemList] 查询失败
+2022-09-10T17:43:35.990+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:43:35.991+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:43:35.992+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:43:35.994+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:43:38.397+0800	ERROR	shop_cart/shop_cart.go:18	[CartItemList] 查询失败
+2022-09-10T17:44:08.836+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:44:08.837+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:44:08.838+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:44:08.841+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:45:18.807+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:45:18.808+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:45:18.809+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-10T17:45:18.810+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:45:21.334+0800	ERROR	shop_cart/shop_cart.go:18	Error	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: address http://127.0.0.1:8000: too many colons in address\""}
+2022-09-10T17:45:37.055+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:45:37.055+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:45:37.057+0800	ERROR	mode/release.go:28	查询 order-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22order_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-09-10T17:45:37.059+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:46:56.677+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:46:56.678+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:46:56.680+0800	ERROR	mode/release.go:28	查询 order-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22order_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-09-10T17:46:56.681+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:47:16.085+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:47:16.086+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:47:16.087+0800	ERROR	mode/release.go:28	查询 order-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22order_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-09-10T17:47:16.090+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:47:32.501+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:47:32.502+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:47:32.504+0800	ERROR	mode/release.go:28	查询 order-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22order_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-09-10T17:47:32.506+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:48:57.325+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:48:57.326+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:48:57.328+0800	ERROR	mode/release.go:28	查询 order-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22order_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-09-10T17:48:57.329+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:49:05.252+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:49:05.253+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:49:05.255+0800	ERROR	mode/release.go:28	查询 order-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22order_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-09-10T17:49:05.257+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:50:57.712+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:50:57.713+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:50:57.715+0800	ERROR	mode/release.go:28	查询 order-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22order_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-09-10T17:50:57.716+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:55:18.456+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:55:18.457+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:56:36.586+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:56:36.587+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:56:36.591+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:51057
+2022-09-10T17:56:36.591+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T17:56:36.592+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:58:15.756+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:58:15.757+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:59:52.622+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:59:52.622+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:59:52.627+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:51057
+2022-09-10T17:59:52.627+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T17:59:52.629+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T17:59:57.613+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T17:59:57.613+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T17:59:57.616+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:51057
+2022-09-10T17:59:57.617+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T17:59:57.619+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T18:00:47.007+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T18:00:47.008+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T18:00:47.011+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:51057
+2022-09-10T18:00:47.011+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T18:00:47.013+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T18:02:11.896+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T18:02:11.896+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T18:02:11.899+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:53206
+2022-09-10T18:02:11.899+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T18:02:11.901+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T18:03:28.255+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T18:03:28.256+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T18:03:28.258+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:53263
+2022-09-10T18:03:28.259+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T18:03:28.260+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T18:05:20.939+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-10T18:05:20.940+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-10T18:05:20.942+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:53338
+2022-09-10T18:05:20.943+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-10T18:05:20.944+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-10T18:05:44.181+0800	ERROR	shop_cart/shop_cart.go:18	Error	{"err": "rpc error: code = Unavailable desc = error reading from server: read tcp 127.0.0.1:53347->127.0.0.1:53338: wsarecv: An existing connection was forcibly closed by the remote host."}

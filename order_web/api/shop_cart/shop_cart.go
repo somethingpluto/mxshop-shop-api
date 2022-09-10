@@ -15,7 +15,7 @@ func List(ctx *gin.Context) {
 	userId, _ := ctx.Get("userId")
 	response, err := global.OrderClient.CartItemList(context.Background(), &proto.UserInfo{Id: int32(userId.(uint))})
 	if err != nil {
-		zap.S().Errorf("[CartItemList] 查询失败")
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -32,7 +32,7 @@ func List(ctx *gin.Context) {
 	// 请求商品服务商品信息
 	goodsListResponse, err := global.GoodsClient.BatchGetGoods(context.Background(), &proto.BatchGoodsIdInfo{Id: ids})
 	if err != nil {
-		zap.S().Errorf("[CartItemList] 商品列表查询失败")
+		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
@@ -40,8 +40,8 @@ func List(ctx *gin.Context) {
 		"total": response.Total,
 	}
 	goodsList := make([]interface{}, 0)
-	for _, item := range response.Data {
-		for _, good := range goodsListResponse.Data {
+	for _, item := range response.Data { // 遍历购物车 获取商品ID
+		for _, good := range goodsListResponse.Data { // 遍历商品 获得商品的详细信息 将两者进行组装
 			if good.Id == item.GoodsId {
 				tmpMap := map[string]interface{}{}
 				tmpMap["id"] = item.Id
@@ -61,7 +61,7 @@ func List(ctx *gin.Context) {
 }
 
 func New(ctx *gin.Context) {
-
+	// 创建购物车表单
 }
 
 func Update(ctx *gin.Context) {

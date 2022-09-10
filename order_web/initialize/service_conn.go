@@ -2,7 +2,6 @@ package initialize
 
 import (
 	"fmt"
-	_ "github.com/mbobakov/grpc-consul-resolver"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
@@ -17,7 +16,6 @@ func InitService() {
 
 func initGoodsService() {
 	consulConfig := global.WebApiConfig.ConsulInfo
-
 	goodsConn, err := grpc.Dial(
 		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebApiConfig.GoodsService.Name),
 		grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),

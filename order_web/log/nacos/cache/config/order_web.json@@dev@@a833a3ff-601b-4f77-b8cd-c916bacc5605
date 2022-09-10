@@ -1,0 +1,14 @@
+{
+    "name":"order_web",
+    "goods_service":{"name":"goods_service"},
+    "inventory_service":{
+        "name":"inventory_service"
+    },
+    "jwtConfig":{
+        "key":"7G(yQ9F0tXHy#EHT0ZIR"
+    },
+    "consul":{
+        "host":"127.0.0.1",
+        "port":8500
+    }
+}

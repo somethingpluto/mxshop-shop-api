@@ -1,5 +1,0 @@
-package mode
-
-func DebugMode() {
-
-}

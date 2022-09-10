@@ -1,6 +1,0 @@
-2022-08-24T09:43:23.823+0800	INFO	initialize/logger.go:26	日志初始化成功
-2022-08-24T09:43:23.825+0800	INFO	initialize/translator.go:24	翻译器加载成功
-2022-08-24T09:43:23.828+0800	INFO	initialize/rpc.go:40	查询到goods-service 127.0.0.1:51418
-2022-08-24T09:43:23.829+0800	INFO	initialize/rpc.go:48	RPC 服务连接成功
-2022-08-24T09:43:23.830+0800	INFO	goods_api/main.go:15	goods_web服务开启 端口8081
-2022-08-24T09:43:29.295+0800	INFO	goods/goods.go:182	goods 【Delelte】删除商品 request:127.0.0.1:8022

@@ -23,8 +23,8 @@ type FilePathConfig struct {
 //
 type WebApiConfig struct {
 	Name             string                 `json:"name"`
-	Mode             string                 `json:"runMode"`
-	ConsulInfo       ConsulConfig           `json:"consulConfig"`
+	Mode             string                 `json:"mode"`
+	ConsulInfo       ConsulConfig           `json:"consul"`
 	JWTInfo          JWTConfig              `json:"jwtConfig"`
 	GoodsService     GoodsServiceConfig     `json:"goods_service"`
 	InventoryService InventoryServiceConfig `json:"inventory_service"`

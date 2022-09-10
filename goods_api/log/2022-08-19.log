@@ -1,3 +1,0 @@
-2022-08-19T17:15:55.521+0800	INFO	initialize/logger.go:26	日志初始化成功
-2022-08-19T17:15:55.522+0800	INFO	initialize/config.go:31	&config.NacosConfig{Host:"192.168.137.128", Port:8848, Namespace:"253e4ac2-ce73-47e2-9c2f-abfa80611169", User:"nacos", Password:"chx200205173214", Dataid:"goods_web.json", Group:"dev"}
-2022-08-19T17:15:55.543+0800	INFO	initialize/config.go:71	nacos配置拉取成功 &config.WebApiConfig{Name:"goods_web"}
