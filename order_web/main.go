@@ -22,6 +22,7 @@ func main() {
 	initialize.InitLogger()
 	// 初始化翻译器
 	initialize.InitTranslator("zh")
+	initialize.InitValidator()
 	initialize.InitService()
 	if *Mode == "release" {
 		mode.ReleaseMode()

@@ -56,3 +56,48 @@
 2022-09-11T18:36:50.318+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
 2022-09-11T18:36:50.318+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
 2022-09-11T18:36:50.320+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T20:24:25.774+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T20:24:25.775+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T20:24:25.777+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T20:24:25.778+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T20:24:25.782+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T20:45:10.119+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T20:45:10.119+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T20:45:10.122+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T20:45:10.122+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T20:45:10.125+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T20:45:30.996+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T20:45:30.997+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T20:45:31.000+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T20:45:31.001+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T20:45:31.003+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T20:57:05.377+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T20:57:05.377+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T20:57:05.380+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T20:57:05.381+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T20:57:05.383+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T20:57:07.917+0800	ERROR	order/order.go:73	Error	{"message": "创建订单验证失败", "err": "json: cannot unmarshal number into Go struct field CreateOrderForm.mobile of type string"}
+2022-09-11T20:57:40.470+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T20:57:40.470+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T20:57:40.474+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T20:57:40.474+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T20:57:40.478+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T21:01:56.257+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T21:01:56.257+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T21:01:56.259+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T21:01:56.260+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T21:01:56.263+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T21:02:01.345+0800	ERROR	order/order.go:86	Error	{"message": "创建订单服务失败", "err": "rpc error: code = ResourceExhausted desc = 库存服务扣减失败"}
+2022-09-11T21:06:05.808+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T21:06:05.808+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T21:06:05.808+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-11T21:06:05.811+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T21:06:05.812+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T21:06:05.814+0800	INFO	order_web/main.go:33	goods_web服务开启
+2022-09-11T21:06:22.268+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T21:06:22.269+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T21:06:22.270+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-11T21:06:22.272+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T21:06:22.273+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T21:06:22.275+0800	INFO	order_web/main.go:33	goods_web服务开启
+2022-09-11T21:06:30.173+0800	ERROR	order/order.go:86	Error	{"message": "创建订单服务失败", "err": "rpc error: code = InvalidArgument desc = 没有选中的结算商品"}

@@ -60,3 +60,11 @@
 2022-09-11T17:59:42.275+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
 2022-09-11T18:06:04.990+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
 2022-09-11T18:36:50.266+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T20:24:25.730+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T20:45:10.076+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T20:45:30.943+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T20:57:05.330+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T20:57:40.422+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T21:01:56.213+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T21:06:05.763+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
+2022-09-11T21:06:22.221+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/order_web/log/nacos/cache>
