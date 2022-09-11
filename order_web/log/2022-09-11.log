@@ -101,3 +101,9 @@
 2022-09-11T21:06:22.273+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
 2022-09-11T21:06:22.275+0800	INFO	order_web/main.go:33	goods_web服务开启
 2022-09-11T21:06:30.173+0800	ERROR	order/order.go:86	Error	{"message": "创建订单服务失败", "err": "rpc error: code = InvalidArgument desc = 没有选中的结算商品"}
+2022-09-11T21:38:56.081+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T21:38:56.082+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T21:38:56.082+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-11T21:38:56.086+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T21:38:56.087+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T21:38:56.089+0800	INFO	order_web/main.go:33	goods_web服务开启
