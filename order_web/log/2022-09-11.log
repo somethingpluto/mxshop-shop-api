@@ -1,0 +1,58 @@
+2022-09-11T17:33:50.371+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:33:50.373+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:33:50.377+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54032
+2022-09-11T17:33:50.378+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T17:33:50.379+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-11T17:34:09.133+0800	ERROR	shop_cart/shop_cart.go:35	Error	{"err": "rpc error: code = Unavailable desc = last connection error: connection error: desc = \"transport: Error while dialing dial tcp: address consul://127.0.0.1:8500/goods_service: too many colons in address\""}
+2022-09-11T17:34:33.415+0800	ERROR	shop_cart/shop_cart.go:35	Error	{"err": "rpc error: code = Unavailable desc = last connection error: connection error: desc = \"transport: Error while dialing dial tcp: address consul://127.0.0.1:8500/goods_service: too many colons in address\""}
+2022-09-11T17:34:37.442+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:34:37.443+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:34:37.445+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54032
+2022-09-11T17:34:37.446+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T17:34:37.448+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-11T17:34:39.178+0800	ERROR	shop_cart/shop_cart.go:35	Error	{"err": "rpc error: code = Unavailable desc = last connection error: connection error: desc = \"transport: Error while dialing dial tcp: address consul://127.0.0.1:8500/goods_service: too many colons in address\""}
+2022-09-11T17:34:48.104+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:34:48.105+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:34:48.106+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-11T17:34:48.107+0800	INFO	order_web/main.go:31	goods_web服务开启
+2022-09-11T17:34:50.727+0800	ERROR	shop_cart/shop_cart.go:18	Error	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: address http://127.0.0.1:8000: too many colons in address\""}
+2022-09-11T17:35:41.147+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:35:41.147+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:35:41.150+0800	FATAL	mode/release.go:37	InitRPC失败
+2022-09-11T17:36:14.620+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:36:14.620+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:36:14.624+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T17:36:14.624+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T17:36:14.625+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T17:36:21.914+0800	ERROR	shop_cart/shop_cart.go:35	Error	{"err": "rpc error: code = Unavailable desc = last connection error: connection error: desc = \"transport: Error while dialing dial tcp: address consul://127.0.0.1:8500/goods_service: too many colons in address\""}
+2022-09-11T17:37:24.076+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:37:24.076+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:37:24.079+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T17:37:24.079+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T17:37:24.081+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T17:57:22.575+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:57:22.576+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:57:22.579+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T17:57:22.580+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T17:57:22.582+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T17:59:12.472+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:59:12.473+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:59:12.476+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T17:59:12.477+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T17:59:12.479+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T17:59:42.323+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T17:59:42.325+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T17:59:42.326+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T17:59:42.327+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T17:59:42.330+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T18:06:05.036+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T18:06:05.036+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T18:06:05.038+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T18:06:05.039+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T18:06:05.042+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-11T18:13:11.666+0800	ERROR	shop_cart/shop_cart.go:142	Error	{"message": "删除购物车记录失败", "err": "rpc error: code = NotFound desc = 购物车记录不存在"}
+2022-09-11T18:36:50.314+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-11T18:36:50.314+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-11T18:36:50.318+0800	INFO	mode/release.go:40	查询到order-service 127.0.0.1:54156
+2022-09-11T18:36:50.318+0800	INFO	mode/release.go:48	RPC release模式 服务连接成功
+2022-09-11T18:36:50.320+0800	INFO	order_web/main.go:32	goods_web服务开启
