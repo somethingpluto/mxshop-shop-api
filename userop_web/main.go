@@ -22,14 +22,13 @@ func main() {
 	// 初始化翻译器
 	initialize.InitTranslator("zh")
 	initialize.InitValidator()
-	initialize.InitService()
 	if *Mode == "release" {
 		mode.ReleaseMode()
 	} else if *Mode == "debug" {
 		mode.DebugMode()
 	}
 	Router := initialize.InitRouter()
-	zap.S().Infof("goods_web服务开启")
+	zap.S().Infof("userop_web服务开启")
 	err := Router.Run(fmt.Sprintf(":%d", port))
 	if err != nil {
 		panic(err)

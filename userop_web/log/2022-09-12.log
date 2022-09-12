@@ -1,0 +1,42 @@
+2022-09-12T19:47:21.962+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T19:47:21.964+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T19:47:21.964+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T19:47:21.965+0800	FATAL	initialize/service_conn.go:20	连接 【goods_service】商品服务失败	{"err": "failed to build resolver: Wrong consul URL: Malformed URL('consul://127.0.0.1:8500/'). Must be in the next format: 'consul://[user:passwd]@host/service?param=value'"}
+2022-09-12T19:48:06.937+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T19:48:06.938+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T19:48:06.938+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T19:48:06.939+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-12T19:48:06.941+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-12T19:48:24.796+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T19:48:24.796+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T19:48:24.797+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T19:48:24.797+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-12T19:48:24.799+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-12T20:17:02.799+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T20:17:02.799+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T20:17:02.799+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T20:17:02.800+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-12T20:17:02.802+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-12T20:17:17.260+0800	ERROR	address/addresss.go:22	Error	{"message": "添加地址表单验证失败"}
+2022-09-12T20:19:09.366+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T20:19:09.368+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T20:19:09.368+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T20:19:09.370+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-12T20:19:09.372+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-12T20:19:12.362+0800	ERROR	address/addresss.go:22	Error	{"message": "添加地址表单验证失败"}
+2022-09-12T20:19:20.826+0800	ERROR	address/addresss.go:22	Error	{"message": "添加地址表单验证失败"}
+2022-09-12T20:21:59.578+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T20:21:59.579+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T20:21:59.579+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T20:21:59.580+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-12T20:21:59.581+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-12T20:22:52.701+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T20:22:52.702+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T20:22:52.702+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T20:22:52.702+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-12T20:22:52.704+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-12T20:23:16.369+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T20:23:16.370+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T20:23:16.370+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T20:23:16.371+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-12T20:23:16.373+0800	INFO	userop_web/main.go:31	userop_web服务开启

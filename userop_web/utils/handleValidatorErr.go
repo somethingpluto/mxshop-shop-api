@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"net/http"
-	"order_web/global"
+	"userop_web/global"
 )
 
 func HandleValidatorError(c *gin.Context, err error) {
