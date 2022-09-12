@@ -18,7 +18,7 @@ func main() {
 		panic(err)
 	}
 	p := alipay.TradePagePay{}
-	p.NotifyURL = "http://o567795d58.goho.co:13580/o/v1/pay/alipay/notify"
+	p.NotifyURL = "http://120.25.255.207:33389/"
 	p.ReturnURL = "http://127.0.0.1:8089/"
 	p.Subject = "生鲜-订单支付"
 	p.OutTradeNo = "pluto"

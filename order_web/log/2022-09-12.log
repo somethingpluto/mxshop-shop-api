@@ -1,0 +1,56 @@
+2022-09-12T13:42:30.195+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:42:30.197+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:42:30.197+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:42:30.201+0800	FATAL	mode/release.go:37	InitRPC失败
+2022-09-12T13:42:39.364+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:42:39.365+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:42:39.365+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:42:39.367+0800	FATAL	mode/release.go:37	InitRPC失败
+2022-09-12T13:44:21.808+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:44:21.809+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:44:21.809+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:44:21.810+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T13:44:21.812+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T13:44:34.280+0800	ERROR	shop_cart/shop_cart.go:24	Error	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: address http://127.0.0.1:8000: too many colons in address\""}
+2022-09-12T13:45:24.068+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:45:24.069+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:45:24.069+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:45:24.069+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T13:45:24.071+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T13:45:28.869+0800	ERROR	shop_cart/shop_cart.go:24	Error	{"err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: address http://127.0.0.1:8000: too many colons in address\""}
+2022-09-12T13:45:43.823+0800	ERROR	order/order.go:38	Error	{"message": "获取订单列表失败", "err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: address http://127.0.0.1:8000: too many colons in address\""}
+2022-09-12T13:46:58.488+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:46:58.489+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:46:58.489+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:46:58.490+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T13:46:58.492+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T13:47:05.382+0800	ERROR	order/order.go:38	Error	{"message": "获取订单列表失败", "err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp: address http://127.0.0.1:8000: too many colons in address\""}
+2022-09-12T13:47:44.694+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:47:44.695+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:47:44.695+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:47:44.696+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T13:47:44.697+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T13:49:22.046+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:49:22.047+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:49:22.047+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:49:22.048+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T13:49:22.050+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T13:50:39.709+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T13:50:39.709+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T13:50:39.710+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T13:50:39.710+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T13:50:39.712+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T14:10:30.118+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T14:10:30.119+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T14:10:30.119+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T14:10:30.120+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T14:10:30.122+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T14:11:40.299+0800	ERROR	order/order.go:87	Error	{"message": "创建订单服务失败", "err": "rpc error: code = InvalidArgument desc = 没有选中的结算商品"}
+2022-09-12T14:12:27.308+0800	ERROR	order/order.go:87	Error	{"message": "创建订单服务失败", "err": "rpc error: code = InvalidArgument desc = 没有选中的结算商品"}
+2022-09-12T14:15:25.432+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-12T14:15:25.432+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-12T14:15:25.433+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-12T14:15:25.433+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-09-12T14:15:25.435+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-09-12T14:15:46.214+0800	ERROR	order/order.go:87	Error	{"message": "创建订单服务失败", "err": "rpc error: code = InvalidArgument desc = 没有选中的结算商品"}
+2022-09-12T14:17:34.905+0800	ERROR	order/order.go:87	Error	{"message": "创建订单服务失败", "err": "rpc error: code = InvalidArgument desc = 没有选中的结算商品"}

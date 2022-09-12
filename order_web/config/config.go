@@ -28,6 +28,7 @@ type WebApiConfig struct {
 	JWTInfo          JWTConfig              `json:"jwtConfig"`
 	GoodsService     GoodsServiceConfig     `json:"goods_service"`
 	InventoryService InventoryServiceConfig `json:"inventory_service"`
+	AlipayInfo       AlipayInfoConfig       `json:"alipay_info"`
 }
 
 type ConsulConfig struct {
@@ -46,4 +47,12 @@ type GoodsServiceConfig struct {
 
 type InventoryServiceConfig struct {
 	Name string `json:"name"`
+}
+
+type AlipayInfoConfig struct {
+	AppID        string `mapstructure:"app_id" json:"app_id"`
+	PrivateKey   string `mapstructure:"private_key" json:"private_key"`
+	AliPublicKey string `mapstructure:"ali_public_key" json:"ali_public_key"`
+	NotifyURL    string `mapstructure:"notify_url" json:"notify_url"`
+	ReturnURL    string `mapstructure:"return_url" json:"return_url"`
 }

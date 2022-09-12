@@ -3,6 +3,7 @@ package order
 import (
 	"context"
 	"github.com/gin-gonic/gin"
+	"github.com/smartwalle/alipay/v3"
 	"go.uber.org/zap"
 	"net/http"
 	"order_web/forms"
@@ -87,8 +88,44 @@ func New(ctx *gin.Context) {
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
+	// 生成支付宝支付URL
+	client, err := alipay.New(global.WebApiConfig.AlipayInfo.AppID, global.WebApiConfig.AlipayInfo.PrivateKey, false)
+	if err != nil {
+		zap.S().Errorw("Error", "message", "实例化支付宝失败", "err", err.Error())
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"message": err.Error(),
+		})
+		return
+	}
+	err = client.LoadAliPayPublicKey(global.WebApiConfig.AlipayInfo.AliPublicKey)
+	if err != nil {
+		zap.S().Errorw("Error", "message", "加载支付宝公钥失败", "err", err.Error())
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"message": err.Error(),
+		})
+		return
+	}
+
+	var p = alipay.TradePagePay{}
+	p.NotifyURL = global.WebApiConfig.AlipayInfo.NotifyURL
+	p.ReturnURL = global.WebApiConfig.AlipayInfo.ReturnURL
+	p.Subject = "慕学生鲜订单-" + response.OrderSn
+	p.OutTradeNo = response.OrderSn
+	p.TotalAmount = strconv.FormatFloat(float64(response.Total), 'f', 2, 64)
+	p.ProductCode = "FAST_INSTANT_TRADE_PAY"
+
+	url, err := client.TradePagePay(p)
+	if err != nil {
+		zap.S().Errorw("生成支付url失败")
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"msg": err.Error(),
+		})
+		return
+	}
+
 	ctx.JSON(http.StatusOK, gin.H{
-		"id": response.Id,
+		"id":         response.Id,
+		"alipay_url": url.String(),
 	})
 }
 

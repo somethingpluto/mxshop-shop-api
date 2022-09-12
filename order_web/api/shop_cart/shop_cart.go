@@ -104,12 +104,14 @@ func New(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{
 			"nums": "商品库存不足",
 		})
+		return
 	}
 
 	userId, _ := ctx.Get("userId")
 	orderResp, err := global.OrderClient.CreateCartItem(context.Background(), &proto.CartItemRequest{
 		GoodsId: itemForm.GoodsId,
 		UserId:  int32(userId.(uint)),
+		Nums:    itemForm.Nums,
 	})
 	if err != nil {
 		zap.S().Errorw("Error", "message", "添加到购物车失败", "err", err.Error())
