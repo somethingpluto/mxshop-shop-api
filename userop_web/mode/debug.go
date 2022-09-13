@@ -9,6 +9,7 @@ import (
 )
 
 func DebugMode() {
+	zap.S().Warnf("<<<<<debug模式仅启动Userop服务 关联服务未启动>>>>>")
 	target := "127.0.0.1:8000"
 	useropConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {

@@ -2,6 +2,7 @@ package initialize
 
 import (
 	"fmt"
+	"github.com/hashicorp/consul/api"
 	_ "github.com/mbobakov/grpc-consul-resolver"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
@@ -10,33 +11,80 @@ import (
 	"userop_web/proto"
 )
 
-func InitService() {
-	InitUseropService()
-	InitGoodsService()
-}
-
 func InitUseropService() {
+	cfg := api.DefaultConfig()
+	fmt.Println(cfg)
 	consulConfig := global.WebApiConfig.ConsulInfo
-	useropConn, err := grpc.Dial(
-		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebApiConfig.UseropService.Name),
-		grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
-	)
+	cfg.Address = fmt.Sprintf("%s:%d", consulConfig.Host, consulConfig.Port)
+
+	var useropServiceHost string
+	var useropServicePort int
+	client, err := api.NewClient(cfg)
 	if err != nil {
-		zap.S().Fatalw("连接 【order_service】商品服务失败", "err", err)
+		zap.S().Errorw("Error", "message", "注册中心连接失败", "err", err.Error())
+		return
+	}
+	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \" %s\"", global.WebApiConfig.UseropService.Name))
+	if err != nil {
+		zap.S().Errorw("Error", "message", "查找服务失败", "err", err.Error())
+		return
+	}
+	for _, value := range data {
+		useropServiceHost = value.Address
+		useropServicePort = value.Port
+		break
+	}
+	if useropServiceHost == "" || useropServicePort == 0 {
+		zap.S().Errorw("Error", "message", "获取服务IP/Port失败")
+		return
+	}
+	zap.S().Infof("获得【%s】服务 %s:%d", global.WebApiConfig.UseropService.Name, useropServiceHost, useropServicePort)
+	target := fmt.Sprintf("%s:%d", useropServiceHost, useropServicePort)
+	useropConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`))
+	if err != nil {
+		zap.S().Errorw("grpc Dial错误", "err", err.Error())
+		return
 	}
 	global.UserFavoriteClient = proto.NewUserFavoriteClient(useropConn)
 	global.AddressClient = proto.NewAddressClient(useropConn)
 	global.MessageClient = proto.NewMessageClient(useropConn)
+	zap.S().Infof("RPC release模式 服务连接成功")
 }
 
 func InitGoodsService() {
+	cfg := api.DefaultConfig()
+	fmt.Println(cfg)
 	consulConfig := global.WebApiConfig.ConsulInfo
-	goodsConn, err := grpc.Dial(
-		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebApiConfig.GoodsService.Name),
-		grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
-	)
+	cfg.Address = fmt.Sprintf("%s:%d", consulConfig.Host, consulConfig.Port)
+
+	var goodsServiceHost string
+	var goodsServicePort int
+	client, err := api.NewClient(cfg)
 	if err != nil {
-		zap.S().Fatalw("连接 【goods_service】商品服务失败", "err", err)
+		zap.S().Errorw("Error", "message", "注册中心连接失败", "err", err.Error())
+		return
+	}
+	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \" %s\"", global.WebApiConfig.GoodsService.Name))
+	if err != nil {
+		zap.S().Errorw("Error", "message", "查找服务失败", "err", err.Error())
+		return
+	}
+	for _, value := range data {
+		goodsServiceHost = value.Address
+		goodsServicePort = value.Port
+		break
+	}
+	if goodsServiceHost == "" || goodsServicePort == 0 {
+		zap.S().Errorw("Error", "message", "获取服务IP/Port失败")
+		return
+	}
+	zap.S().Infof("获得【%s】服务 %s:%d", global.WebApiConfig.UseropService.Name, goodsServiceHost, goodsServicePort)
+	target := fmt.Sprintf("%s:%d", goodsServiceHost, goodsServicePort)
+	goodsConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`))
+	if err != nil {
+		zap.S().Errorw("grpc Dial错误", "err", err.Error())
+		return
 	}
 	global.GoodsClient = proto.NewGoodsClient(goodsConn)
+	zap.S().Infof("RPC release模式 服务连接成功")
 }
