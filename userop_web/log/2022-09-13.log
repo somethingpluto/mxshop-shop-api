@@ -1,0 +1,63 @@
+2022-09-13T12:38:25.076+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T12:38:25.077+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T12:38:25.077+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T12:38:25.078+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T12:38:25.080+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T12:40:07.790+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T12:40:07.791+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T12:40:07.791+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T12:40:07.791+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T12:40:07.795+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T12:42:14.218+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T12:42:14.219+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T12:42:14.219+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T12:42:14.220+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T12:42:14.222+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T12:45:18.274+0800	ERROR	address/addresss.go:101	Error	{"message": "删除地址服务失败", "err": "rpc error: code = NotFound desc = 收货地址不存在"}
+2022-09-13T12:45:31.826+0800	ERROR	address/addresss.go:101	Error	{"message": "删除地址服务失败", "err": "rpc error: code = NotFound desc = 收货地址不存在"}
+2022-09-13T12:48:07.048+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T12:48:07.049+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T12:48:07.049+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T12:48:07.050+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T12:48:07.052+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T12:49:43.193+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T12:49:43.194+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T12:49:43.194+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T12:49:43.194+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T12:49:43.196+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T12:52:19.783+0800	ERROR	address/addresss.go:117	Error	{"message": "地址表单验证失败", "err": "Key: 'AddressForm.signer_name' Error:Field validation for 'signer_name' failed on the 'required' tag\nKey: 'AddressForm.signer_mobile' Error:Field validation for 'signer_mobile' failed on the 'required' tag"}
+2022-09-13T13:14:13.267+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T13:14:13.268+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T13:14:13.268+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T13:14:13.269+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T13:14:13.270+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T13:23:35.630+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T13:23:35.631+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T13:23:35.631+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T13:23:35.632+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T13:23:35.635+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T13:26:49.811+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T13:26:49.811+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T13:26:49.811+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T13:26:49.812+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T13:26:49.814+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T13:29:57.003+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T13:29:57.004+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T13:29:57.004+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T13:29:57.005+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T13:29:57.008+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T13:31:17.083+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T13:31:17.083+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T13:31:17.084+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T13:31:17.084+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T13:31:17.085+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T13:32:01.768+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T13:32:01.769+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T13:32:01.770+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T13:32:01.770+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T13:32:01.771+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-09-13T13:39:10.068+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-09-13T13:39:10.069+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-09-13T13:39:10.070+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-09-13T13:39:10.070+0800	INFO	mode/debug.go:20	RPC debugg模式 服务连接成功
+2022-09-13T13:39:10.072+0800	INFO	userop_web/main.go:31	userop_web服务开启
