@@ -22,6 +22,7 @@ type WebApiConfig struct {
 	ConsulInfo    ConsulConfig        `json:"consul"`
 	JWTInfo       JWTConfig           `json:"jwtConfig"`
 	UseropService UserOPServiceConfig `json:"userop_service"`
+	GoodsService  GoodsServiceConfig  `json:"goods_service"`
 }
 
 type ConsulConfig struct {
@@ -35,6 +36,10 @@ type JWTConfig struct {
 }
 
 type UserOPServiceConfig struct {
+	Name string `json:"name"`
+}
+
+type GoodsServiceConfig struct {
 	Name string `json:"name"`
 }
 

@@ -14,4 +14,5 @@ var (
 	UserFavoriteClient proto.UserFavoriteClient
 	MessageClient      proto.MessageClient
 	AddressClient      proto.AddressClient
+	GoodsClient        proto.GoodsClient
 )

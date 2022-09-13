@@ -11,15 +11,32 @@ import (
 )
 
 func InitService() {
+	InitUseropService()
+	InitGoodsService()
+}
+
+func InitUseropService() {
 	consulConfig := global.WebApiConfig.ConsulInfo
 	useropConn, err := grpc.Dial(
 		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebApiConfig.UseropService.Name),
 		grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
 	)
 	if err != nil {
-		zap.S().Fatalw("连接 【goods_service】商品服务失败", "err", err)
+		zap.S().Fatalw("连接 【order_service】商品服务失败", "err", err)
 	}
 	global.UserFavoriteClient = proto.NewUserFavoriteClient(useropConn)
 	global.AddressClient = proto.NewAddressClient(useropConn)
 	global.MessageClient = proto.NewMessageClient(useropConn)
+}
+
+func InitGoodsService() {
+	consulConfig := global.WebApiConfig.ConsulInfo
+	goodsConn, err := grpc.Dial(
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebApiConfig.GoodsService.Name),
+		grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
+	)
+	if err != nil {
+		zap.S().Fatalw("连接 【goods_service】商品服务失败", "err", err)
+	}
+	global.GoodsClient = proto.NewGoodsClient(goodsConn)
 }
