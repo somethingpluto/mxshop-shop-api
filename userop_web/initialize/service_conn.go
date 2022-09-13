@@ -64,7 +64,7 @@ func InitGoodsService() {
 		zap.S().Errorw("Error", "message", "注册中心连接失败", "err", err.Error())
 		return
 	}
-	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \" %s\"", global.WebApiConfig.GoodsService.Name))
+	data, err := client.Agent().ServicesWithFilter(`Service == goods_service`)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "查找服务失败", "err", err.Error())
 		return

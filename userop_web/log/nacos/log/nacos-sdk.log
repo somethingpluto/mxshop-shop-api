@@ -18,3 +18,14 @@
 2022-09-13T13:31:16.994+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
 2022-09-13T13:32:01.669+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
 2022-09-13T13:39:09.979+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T21:52:20.983+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T21:55:12.678+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T21:55:45.780+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T21:56:12.609+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T21:58:16.876+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T22:09:43.067+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T22:09:58.626+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T22:11:06.700+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T22:11:43.980+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T22:16:09.055+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
+2022-09-13T22:17:23.132+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/userop_web/log/nacos/cache>
