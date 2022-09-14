@@ -9,7 +9,7 @@ import (
 )
 
 func DebugMode() {
-	target := "http://127.0.0.1:8000"
+	target := "127.0.0.1:8000"
 	userConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		panic(err)

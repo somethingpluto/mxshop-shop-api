@@ -11,6 +11,13 @@ import (
 )
 
 func ReleaseMode() {
+	getUserService()
+}
+
+// getUserService
+// @Description: 连接user_service
+//
+func getUserService() {
 	cfg := api.DefaultConfig()
 	fmt.Println(cfg)
 	consulConfig := global.WebServiceConfig.ConsulInfo
@@ -23,7 +30,7 @@ func ReleaseMode() {
 		zap.S().Errorw("连接注册中心失败", "err", err.Error())
 		return
 	}
-	data, err := client.Agent().ServicesWithFilter(`Service == "user_service"`)
+	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \"%s\"", global.WebServiceConfig.ServiceInfo.Name))
 	if err != nil {
 		zap.S().Errorw("查询 user-service失败", "err", err.Error())
 		return
