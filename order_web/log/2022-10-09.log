@@ -1,0 +1,32 @@
+2022-10-09T22:27:40.094+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-09T22:27:40.095+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-09T22:27:40.095+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-09T22:27:40.096+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-10-09T22:27:40.099+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-10-09T22:28:07.567+0800	ERROR	order/order.go:38	Error	{"message": "获取订单列表失败", "err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-10-09T22:28:37.521+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-09T22:28:37.523+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-09T22:28:37.523+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-09T22:28:37.526+0800	FATAL	mode/release.go:37	InitRPC失败
+2022-10-09T22:28:46.724+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-09T22:28:46.725+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-09T22:28:46.725+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-09T22:28:46.728+0800	FATAL	mode/release.go:37	InitRPC失败
+2022-10-09T22:29:20.431+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-09T22:29:20.432+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-09T22:29:20.432+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-09T22:29:20.434+0800	FATAL	mode/release.go:37	InitRPC失败
+2022-10-09T22:29:46.119+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-09T22:29:46.120+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-09T22:29:46.121+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-09T22:29:46.124+0800	FATAL	mode/release.go:37	InitRPC失败
+2022-10-09T22:29:53.666+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-09T22:29:53.667+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-09T22:29:53.667+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-09T22:29:53.668+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-10-09T22:29:53.669+0800	INFO	order_web/main.go:32	goods_web服务开启
+2022-10-09T22:30:42.334+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-09T22:30:42.335+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-09T22:30:42.335+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-09T22:30:42.336+0800	INFO	mode/debug.go:18	RPC debugg模式 服务连接成功
+2022-10-09T22:30:42.337+0800	INFO	order_web/main.go:32	goods_web服务开启

@@ -17,5 +17,9 @@
         "ali_public_key":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsJaQ3NjNAgpVMmUozGiwpb7/q9QjYl033mIHh7nqxuxHFHAQ+nTx7nz7k0vlTPuARmcTog3bZtivXJEEC8SOE46ejjnNiFBD1sCYFRe1LPuGb3RtPggkaPAJoIQQdREUZIdV/8//P/RIWoJjQTj7JIMlSv8UNQTLZtiEC1HQASTMM9w+6LUduTbd+AkpWubmXqj6JuoK6aiDSyl+OP9405MC9YMSeSCUbLv2fWes6vob+00492j9UthAP4/Mx0yUaaRS+pSV5tastfQTVrlqSKCnwxHcavJ6/7kfw1usYyGpO1l6u8EoqbcuEUII+BCPk2iOdkrMqQtI+OgcLmxIIwIDAQAB",
         "notify_url":"http://120.25.255.207:33389/",
         "return_url":"127.0.0.1:8089"
+    },
+    "jaeger_info":{
+        "host":"120.25.255.207",
+        "port":14268
     }
 }

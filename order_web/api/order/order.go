@@ -76,7 +76,7 @@ func New(ctx *gin.Context) {
 		return
 	}
 	userId, _ := ctx.Get("userId")
-	response, err := global.OrderClient.CreateOrder(context.Background(), &proto.OrderRequest{
+	response, err := global.OrderClient.CreateOrder(context.WithValue(context.Background(), "ginContext", ctx), &proto.OrderRequest{
 		UserId:  int32(userId.(uint)),
 		Address: orderForm.Address,
 		Name:    orderForm.Name,

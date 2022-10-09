@@ -29,6 +29,7 @@ type WebApiConfig struct {
 	GoodsService     GoodsServiceConfig     `json:"goods_service"`
 	InventoryService InventoryServiceConfig `json:"inventory_service"`
 	AlipayInfo       AlipayInfoConfig       `json:"alipay_info"`
+	JaegerInfo       JaegerConfig           `json:"jaeger_info"`
 }
 
 type ConsulConfig struct {
@@ -39,6 +40,11 @@ type ConsulConfig struct {
 
 type JWTConfig struct {
 	SigningKey string `mapstructure:"key" json:"key"`
+}
+
+type JaegerConfig struct {
+	Host string `json:"host"`
+	Port int    `json:"port"`
 }
 
 type GoodsServiceConfig struct {

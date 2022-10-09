@@ -58,8 +58,8 @@ func List(ctx *gin.Context) {
 	brandId := ctx.DefaultQuery("b", "0")
 	brandIdInt, _ := strconv.Atoi(brandId)
 	request.Brand = int32(brandIdInt)
-
-	response, err := global.GoodsClient.GoodsList(context.Background(), request)
+	ginContext := context.WithValue(context.Background(), "ginContext", ctx)
+	response, err := global.GoodsClient.GoodsList(ginContext, request)
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)

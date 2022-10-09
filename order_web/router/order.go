@@ -8,7 +8,7 @@ import (
 )
 
 func InitOrderRouter(Router *gin.RouterGroup) {
-	OrderRouter := Router.Group("orders")
+	OrderRouter := Router.Group("orders", middlewares.Trace())
 	{
 		OrderRouter.GET("", middlewares.JWTAuth(), order.List)
 		OrderRouter.POST("", middlewares.JWTAuth(), order.New)

@@ -8,5 +8,9 @@
     },
     "jwtConfig":{
         "key":"7G(yQ9F0tXHy#EHT0ZIR"
+    },
+    "jaeger_info":{
+        "host":"120.25.255.207",
+        "port":14268
     }
 }

@@ -3,9 +3,11 @@ package initialize
 import (
 	"fmt"
 	"github.com/hashicorp/consul/api"
+	"github.com/opentracing/opentracing-go"
 	"go.uber.org/zap"
 	"goods_api/global"
 	"goods_api/proto"
+	otgrpc "goods_api/utils/otgrpc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
@@ -39,7 +41,10 @@ func InitRPC() {
 	}
 	zap.S().Infof("查询到goods-service %s:%d", goodsServiceHost, goodsServicePort)
 	target := fmt.Sprintf("%s:%d", goodsServiceHost, goodsServicePort)
-	goodsConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	goodsConn, err := grpc.Dial(target,
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
+		grpc.WithUnaryInterceptor(otgrpc.OpenTracingClientInterceptor(opentracing.GlobalTracer())))
 	if err != nil {
 		zap.S().Errorw("grpc Dial错误", "err", err.Error())
 		return
