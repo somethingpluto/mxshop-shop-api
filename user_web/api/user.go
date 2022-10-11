@@ -27,7 +27,7 @@ func GetUserList(c *gin.Context) {
 	pageSize := c.DefaultQuery("size", "10")
 	pageSizeInt, _ := strconv.Atoi(pageSize)
 	// 1.调用rpc服务
-	resp, err := global.UserClient.GetUserList(context.Background(), &proto.PageInfoRequest{
+	resp, err := global.UserClient.GetUserList(context.WithValue(context.Background(), "ginContext", c), &proto.PageInfoRequest{
 		PageNum:  uint32(pageNumInt),
 		PageSize: uint32(pageSizeInt),
 	})
@@ -74,19 +74,19 @@ func PasswordLogin(c *gin.Context) {
 
 	// 3.登录
 	// 3.1获取用户加密后的密码
-	userInfoResponse, err := global.UserClient.GetUserByMobile(context.Background(), &proto.MobileRequest{Mobile: passwordLoginForm.Mobile})
+	userInfoResponse, err := global.UserClient.GetUserByMobile(context.WithValue(context.Background(), "ginContext", c), &proto.MobileRequest{Mobile: passwordLoginForm.Mobile})
 	if err != nil {
 		zap.S().Errorw("[GetUserByMobiles] 查询失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, c)
 	}
 	// 4.密码进行验证比对
-	checkPasswordResponse, err := global.UserClient.CheckPassword(context.Background(), &proto.CheckPasswordRequest{
+	checkPasswordResponse, err := global.UserClient.CheckPassword(context.WithValue(context.Background(), "ginContext", c), &proto.CheckPasswordRequest{
 		Password:          passwordLoginForm.Password,
 		EncryptedPassword: userInfoResponse.Password,
 	})
 	if err != nil {
 		zap.S().Errorw("[CheckPassword] 密码验证失败")
-		//utils.HandleGrpcErrorToHttpError(err, c)
+		utils.HandleGrpcErrorToHttpError(err, c)
 	}
 	// 5.根据获取的结果返回
 	if checkPasswordResponse.Success {

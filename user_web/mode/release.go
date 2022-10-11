@@ -1,13 +1,14 @@
 package mode
 
 import (
-	"fmt"
-	"github.com/hashicorp/consul/api"
+	"github.com/opentracing/opentracing-go"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"user_web/global"
+	"user_web/initialize"
 	"user_web/proto"
+	"user_web/utils/otgrpc"
 )
 
 func ReleaseMode() {
@@ -18,35 +19,11 @@ func ReleaseMode() {
 // @Description: 连接user_service
 //
 func getUserService() {
-	cfg := api.DefaultConfig()
-	fmt.Println(cfg)
-	consulConfig := global.WebServiceConfig.ConsulInfo
-	cfg.Address = fmt.Sprintf("%s:%d", consulConfig.Host, consulConfig.Port)
-
-	var userServiceHost string
-	var userServicePort int
-	client, err := api.NewClient(cfg)
-	if err != nil {
-		zap.S().Errorw("连接注册中心失败", "err", err.Error())
-		return
+	target := initialize.InitUserService()
+	if target == "" {
+		panic("初始化用户服务失败")
 	}
-	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \"%s\"", global.WebServiceConfig.ServiceInfo.Name))
-	if err != nil {
-		zap.S().Errorw("查询 user-service失败", "err", err.Error())
-		return
-	}
-	for _, value := range data {
-		userServiceHost = value.Address
-		userServicePort = value.Port
-		break
-	}
-	if userServiceHost == "" || userServicePort == 0 {
-		zap.S().Fatal("InitRPC失败")
-		return
-	}
-	zap.S().Infof("查询到user-service %s:%d", userServiceHost, userServicePort)
-	target := fmt.Sprintf("%s:%d", userServiceHost, userServicePort)
-	userConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()))
+	userConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithUnaryInterceptor(otgrpc.OpenTracingClientInterceptor(opentracing.GlobalTracer())))
 	if err != nil {
 		zap.S().Errorw("grpc Dial错误", "err", err.Error())
 		return

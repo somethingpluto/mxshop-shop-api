@@ -59,7 +59,7 @@ func SendNoteCode(c *gin.Context) {
 	}
 	fmt.Printf("response is %#v\n", response)
 	connectRedis()
-	red.Set(context.Background(), sendSmsForm.Mobile, smsCode, 300*time.Second)
+	red.Set(context.WithValue(context.Background(), "ginContext", c), sendSmsForm.Mobile, smsCode, 300*time.Second)
 	c.JSON(http.StatusOK, gin.H{
 		"msg": "发送成功",
 	})

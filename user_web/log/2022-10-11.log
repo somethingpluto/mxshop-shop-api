@@ -1,0 +1,51 @@
+2022-10-11T19:45:56.047+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T19:45:56.049+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T19:45:58.063+0800	ERROR	mode/release.go:37	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-10-11T19:45:58.066+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T19:45:58.066+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-10-11T19:47:45.175+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T19:47:45.175+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T19:47:47.187+0800	ERROR	mode/release.go:37	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-10-11T19:47:47.189+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T19:47:47.189+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-10-11T19:48:53.169+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T19:48:53.170+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T19:48:55.177+0800	ERROR	mode/release.go:37	查询 user-service失败	{"err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+%22%22\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-10-11T19:48:55.179+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T19:48:55.180+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-10-11T19:50:10.210+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T19:50:10.211+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T19:50:10.216+0800	INFO	mode/release.go:49	查询到user-service 192.168.8.1:55770
+2022-10-11T19:50:10.216+0800	INFO	mode/release.go:57	RPC release模式 服务连接成功
+2022-10-11T19:50:10.217+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T19:50:10.217+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-10-11T19:59:17.000+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T19:59:17.001+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T19:59:17.005+0800	INFO	mode/release.go:49	查询到user-service 192.168.8.1:55770
+2022-10-11T19:59:17.006+0800	INFO	mode/release.go:57	RPC release模式 服务连接成功
+2022-10-11T19:59:17.007+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T19:59:17.008+0800	INFO	user_web/main.go:32	user_web服务开启
+2022-10-11T20:05:34.377+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T20:05:34.379+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T20:05:34.627+0800	INFO	mode/release.go:49	查询到user-service 192.168.8.1:55770
+2022-10-11T20:05:34.627+0800	INFO	mode/release.go:57	RPC release模式 服务连接成功
+2022-10-11T20:05:34.628+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T20:05:34.628+0800	INFO	user_web/main.go:35	user_web服务开启
+2022-10-11T20:07:35.265+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T20:07:35.265+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T20:07:35.509+0800	INFO	mode/release.go:49	查询到user-service 192.168.8.1:55770
+2022-10-11T20:07:35.510+0800	INFO	mode/release.go:57	RPC release模式 服务连接成功
+2022-10-11T20:07:35.511+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T20:07:35.511+0800	INFO	user_web/main.go:35	user_web服务开启
+2022-10-11T20:08:31.676+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T20:08:31.678+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T20:08:31.681+0800	INFO	mode/release.go:49	查询到user-service 192.168.8.1:55770
+2022-10-11T20:08:31.681+0800	INFO	mode/release.go:57	RPC release模式 服务连接成功
+2022-10-11T20:08:31.682+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T20:08:31.682+0800	INFO	user_web/main.go:33	user_web服务开启
+2022-10-11T20:14:42.588+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-11T20:14:42.589+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-11T20:14:42.592+0800	INFO	initialize/find_service.go:37	查询到user-service 192.168.8.1:55770
+2022-10-11T20:14:42.592+0800	INFO	mode/release.go:32	RPC release模式 服务连接成功
+2022-10-11T20:14:42.593+0800	INFO	initialize/router.go:18	路由启动成功
+2022-10-11T20:14:42.593+0800	INFO	user_web/main.go:32	user_web服务开启

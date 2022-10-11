@@ -7,7 +7,7 @@ import (
 )
 
 func InitUserRouter(Router *gin.RouterGroup) {
-	userRouter := Router.Group("user")
+	userRouter := Router.Group("user", middlewares.Trace())
 	{
 		userRouter.GET("list", middlewares.JWTAuth(), middlewares.AdminAuth(), api.GetUserList)
 		userRouter.POST("pwd_login", api.PasswordLogin)

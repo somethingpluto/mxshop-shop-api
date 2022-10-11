@@ -14,12 +14,13 @@ type NacosConfig struct {
 // @Description:
 //
 type WebServiceConfig struct {
-	WebInfo     WebConfig     `json:"web"`
-	JWTInfo     JwtConfig     `json:"jwt"`
-	AliSmsInfo  AliSmsConfig  `json:"aliyun_message"`
-	RedisInfo   RedisConfig   `json:"redis"`
-	ConsulInfo  ConsulConfig  `json:"consul"`
-	ServiceInfo ServiceConfig `json:"service"`
+	Name            string            `json:"name"`
+	JWTInfo         JwtConfig         `json:"jwt"`
+	AliSmsInfo      AliSmsConfig      `json:"aliyun_message"`
+	RedisInfo       RedisConfig       `json:"redis"`
+	ConsulInfo      ConsulConfig      `json:"consul"`
+	JaegerInfo      JaegerConfig      `json:"jaeger_info"`
+	UserServiceInfo UserServiceConfig `json:"user_service_info"`
 }
 
 // JwtConfig
@@ -55,13 +56,18 @@ type RedisConfig struct {
 	Port     int    `json:"port"`
 	Password string `json:"password"`
 }
-type ServiceConfig struct {
-	Name string `json:"name"`
-}
-
 type WebConfig struct {
 	Name string   `json:"name"`
 	Tags []string `json:"tags"`
+}
+
+type JaegerConfig struct {
+	Host string `json:"host"`
+	Port int    `json:"port"`
+}
+
+type UserServiceConfig struct {
+	Name string `json:"name"`
 }
 
 // FileConfig
