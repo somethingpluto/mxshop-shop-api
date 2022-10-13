@@ -7,9 +7,9 @@ import (
 )
 
 var (
-	FilePath     *config.FilePathConfig
-	NacosConfig  *config.NacosConfig
-	WebApiConfig *config.WebApiConfig
-	Translator   ut.Translator
-	GoodsClient  proto.GoodsClient
+	FilePath         *config.FilePathConfig
+	NacosConfig      *config.NacosConfig
+	WebServiceConfig *config.WebServiceConfig
+	Translator       ut.Translator
+	GoodsClient      proto.GoodsClient
 )

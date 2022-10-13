@@ -3,10 +3,11 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"goods_api/api/category"
+	"goods_api/middlewares"
 )
 
 func InitCategoryRouter(Router *gin.RouterGroup) {
-	CategoryRouter := Router.Group("categorys")
+	CategoryRouter := Router.Group("categorys", middlewares.Trace())
 	{
 		// 商品类别  列表
 		CategoryRouter.GET("", category.List)

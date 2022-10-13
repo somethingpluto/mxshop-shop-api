@@ -9,7 +9,7 @@ import (
 
 func main() {
 	Port := flag.Int("port", 8022, "服务启动端口")
-	Mode := flag.String("mode", "debug", "开发模式debug / 服务注册release")
+	Mode := flag.String("mode", "release", "开发模式debug / 服务注册release")
 	flag.Parse()
 	// 初始化文件路径
 	initialize.InitFileAbsPath()
@@ -20,8 +20,7 @@ func main() {
 	// 初始化翻译器
 	initialize.InitTranslator("zh")
 	// 初始化RPC连接
-	initialize.InitRPC()
-	initialize.InitSentinel()
+
 	// 初始化路由
 	Router := initialize.InitRouter()
 	// 判断启动模式

@@ -43,7 +43,7 @@ func NewRegistry(host string, port int) RegistryClient {
 //
 func (r *Registry) Register(config *RegistryConfig) error {
 	cfg := api.DefaultConfig()
-	cfg.Address = fmt.Sprintf("%s:%d", global.WebApiConfig.ConsulInfo.Host, global.WebApiConfig.ConsulInfo.Port)
+	cfg.Address = fmt.Sprintf("%s:%d", global.WebServiceConfig.ConsulInfo.Host, global.WebServiceConfig.ConsulInfo.Port)
 	client, err := api.NewClient(cfg)
 	if err != nil {
 		panic(err)

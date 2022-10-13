@@ -106,3 +106,45 @@
 2022-09-01T15:16:07.239+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_api/log/nacos/cache>
 2022-10-09T21:48:19.031+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>
 2022-10-09T22:14:30.534+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>
+2022-10-13T14:11:20.937+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>
+2022-10-13T14:11:20.950+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:11:20.955+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:11:20.959+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:11:20.959+0800	[31mERROR[0m	config_client/config_client.go:202	get config from server error:[404] config data not exist
+ 
+2022-10-13T14:11:20.959+0800	[33mWARN[0m	config_client/config_client.go:207	[client.GetConfig] config not found, dataId: goods_web.json, group: dev, namespaceId: e37065d2-6989-45a7-829a-48ecb9060f21.
+2022-10-13T14:11:36.745+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>
+2022-10-13T14:11:36.754+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:11:36.759+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:11:36.764+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:11:36.764+0800	[31mERROR[0m	config_client/config_client.go:202	get config from server error:[404] config data not exist
+ 
+2022-10-13T14:11:36.765+0800	[33mWARN[0m	config_client/config_client.go:207	[client.GetConfig] config not found, dataId: goods_web.json, group: dev, namespaceId: e37065d2-6989-45a7-829a-48ecb9060f21.
+2022-10-13T14:15:36.680+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>
+2022-10-13T14:15:36.686+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:15:36.691+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:15:36.695+0800	[31mERROR[0m	nacos_server/nacos_server.go:194	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"goods_web.json","group":"dev","tenant":"e37065d2-6989-45a7-829a-48ecb9060f21"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-10-13T14:15:36.695+0800	[31mERROR[0m	config_client/config_client.go:202	get config from server error:[404] config data not exist
+ 
+2022-10-13T14:15:36.696+0800	[33mWARN[0m	config_client/config_client.go:207	[client.GetConfig] config not found, dataId: goods_web.json, group: dev, namespaceId: e37065d2-6989-45a7-829a-48ecb9060f21.
+2022-10-13T14:16:48.098+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>
+2022-10-13T14:19:13.581+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>
+2022-10-13T14:20:02.663+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/log>   cacheDir:<D:/C_Back/Go/Shop_api/goods_web/log/nacos/cache>

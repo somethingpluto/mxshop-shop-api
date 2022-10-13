@@ -1,0 +1,45 @@
+2022-10-13T14:11:20.959+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-13T14:11:20.961+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-10-13T14:11:20.964+0800	WARN	goods_web/main.go:28	debug本地调试模式 
+
+2022-10-13T14:11:20.965+0800	INFO	goods_web/main.go:34	goods_web服务开启 端口%!s(int=8022)
+2022-10-13T14:11:36.765+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-13T14:11:36.766+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-10-13T14:11:36.769+0800	WARN	goods_web/main.go:31	release服务注册模式 
+
+2022-10-13T14:11:36.771+0800	ERROR	initialize/src_conn.go:30	查询 goods-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22goods_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-10-13T14:11:36.772+0800	INFO	goods_web/main.go:34	goods_web服务开启 端口%!s(int=8022)
+2022-10-13T14:15:36.696+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-13T14:15:36.697+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-10-13T14:15:36.700+0800	WARN	goods_web/main.go:31	release服务注册模式 
+
+2022-10-13T14:15:36.701+0800	ERROR	initialize/src_conn.go:30	查询 goods-service失败	{"err": "Get \"http://:0/v1/agent/services?filter=Service+%3D%3D+%22goods_service%22\": dial tcp :0: connectex: The requested address is not valid in its context."}
+2022-10-13T14:15:36.702+0800	INFO	goods_web/main.go:34	goods_web服务开启 端口%!s(int=8022)
+2022-10-13T14:16:48.111+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-13T14:16:48.112+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-10-13T14:16:48.115+0800	WARN	goods_web/main.go:31	release服务注册模式 
+
+2022-10-13T14:16:48.120+0800	INFO	initialize/src_conn.go:42	查询到goods-service 192.168.8.1:52799
+2022-10-13T14:16:48.121+0800	INFO	initialize/src_conn.go:53	RPC 服务连接成功
+2022-10-13T14:16:48.121+0800	INFO	goods_web/main.go:34	goods_web服务开启 端口%!s(int=8022)
+2022-10-13T14:17:12.517+0800	INFO	banner/banner.go:22	List 触发 request:127.0.0.1:8022
+2022-10-13T14:18:09.428+0800	INFO	banner/banner.go:22	List 触发 request:127.0.0.1:8022
+2022-10-13T14:19:13.591+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-13T14:19:13.592+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-10-13T14:19:13.595+0800	WARN	goods_web/main.go:31	release服务注册模式 
+
+2022-10-13T14:19:13.599+0800	INFO	initialize/src_conn.go:42	查询到goods-service 192.168.8.1:52799
+2022-10-13T14:19:13.600+0800	INFO	initialize/src_conn.go:53	RPC 服务连接成功
+2022-10-13T14:19:13.600+0800	INFO	goods_web/main.go:34	goods_web服务开启 端口%!s(int=8022)
+2022-10-13T14:19:20.623+0800	INFO	banner/banner.go:22	List 触发 request:127.0.0.1:8022
+2022-10-13T14:20:02.672+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-13T14:20:02.673+0800	INFO	initialize/translator.go:24	翻译器加载成功
+2022-10-13T14:20:02.676+0800	WARN	goods_web/main.go:31	release服务注册模式 
+
+2022-10-13T14:20:02.680+0800	INFO	initialize/src_conn.go:42	查询到goods-service 192.168.8.1:52799
+2022-10-13T14:20:02.680+0800	INFO	initialize/src_conn.go:53	RPC 服务连接成功
+2022-10-13T14:20:02.681+0800	INFO	goods_web/main.go:34	goods_web服务开启 端口%!s(int=8022)
+2022-10-13T14:20:08.065+0800	INFO	banner/banner.go:22	List 触发 request:127.0.0.1:8022
+2022-10-13T14:22:11.976+0800	INFO	goods/goods.go:24	goods 【List】获取商品列表 request:127.0.0.1:8022
+2022-10-13T14:22:25.952+0800	INFO	goods/goods.go:24	goods 【List】获取商品列表 request:127.0.0.1:8022
+2022-10-13T14:22:29.813+0800	INFO	goods/goods.go:156	goods 【Detail】获取商品详情 request:127.0.0.1:8022

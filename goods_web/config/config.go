@@ -16,7 +16,7 @@ type NacosConfig struct {
 // WebApiConfig
 // @Description: nacos拉取的配置
 //
-type WebApiConfig struct {
+type WebServiceConfig struct {
 	Name       string       `json:"name"`
 	Host       string       `json:"host"`
 	ConsulInfo ConsulConfig `json:"consul"`

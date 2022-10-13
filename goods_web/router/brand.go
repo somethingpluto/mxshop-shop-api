@@ -4,10 +4,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"goods_api/api/brand"
 	"goods_api/api/categoryBrand"
+	"goods_api/middlewares"
 )
 
 func InitBrandRouter(Router *gin.RouterGroup) {
-	BrandRouter := Router.Group("brands")
+	BrandRouter := Router.Group("brands", middlewares.Trace())
 	{
 		// 获取品牌列表页
 		BrandRouter.GET("", brand.List)

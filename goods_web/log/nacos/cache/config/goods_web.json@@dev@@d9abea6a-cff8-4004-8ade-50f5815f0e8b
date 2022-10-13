@@ -1,0 +1,14 @@
+{
+    "name":"goods_web",
+    "consul":{
+        "host":"192.168.8.133",
+        "port":8500
+    },
+    "jwt":{
+        "key":"7G(yQ9F0tXHy#EHT0ZIR"
+    },
+    "jaeger":{
+        "host":"192.168.8.133",
+        "port":14268
+    }
+}
