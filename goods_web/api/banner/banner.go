@@ -14,13 +14,18 @@ import (
 )
 
 func List(ctx *gin.Context) {
-	response, err := global.GoodsClient.BannerList(context.Background(), &empty.Empty{})
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+	response, err := global.GoodsClient.BannerList(context.WithValue(context.Background(), "ginContext", ctx), &empty.Empty{})
 	zap.S().Infof("List 触发 request:%v", ctx.Request.Host)
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
+
 	result := make([]interface{}, 0)
 	for _, value := range response.Data {
 		reMap := make(map[string]interface{})
@@ -30,6 +35,7 @@ func List(ctx *gin.Context) {
 		result = append(result, reMap)
 	}
 	ctx.JSON(http.StatusOK, result)
+	entry.Exit()
 }
 
 // New
@@ -37,6 +43,10 @@ func List(ctx *gin.Context) {
 // @param ctx
 //
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	bannerForm := forms.BannerForm{}
 	err := ctx.ShouldBind(&bannerForm)
 	if err != nil {
@@ -44,7 +54,8 @@ func New(ctx *gin.Context) {
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
-	response, err := global.GoodsClient.CreateBanner(context.Background(), &proto.BannerRequest{
+
+	response, err := global.GoodsClient.CreateBanner(context.WithValue(context.Background(), "ginContext", ctx), &proto.BannerRequest{
 		Index: int32(bannerForm.Index),
 		Image: bannerForm.Image,
 		Url:   bannerForm.Url,
@@ -54,12 +65,14 @@ func New(ctx *gin.Context) {
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
+
 	ctx.JSON(http.StatusOK, gin.H{
 		"id":    response.Id,
 		"index": response.Index,
 		"image": response.Image,
 		"url":   response.Url,
 	})
+	entry.Exit()
 }
 
 // Update
@@ -67,6 +80,10 @@ func New(ctx *gin.Context) {
 // @param ctx
 //
 func Update(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	bannerForm := forms.BannerForm{}
 	err := ctx.ShouldBind(&bannerForm)
 	if err != nil {
@@ -83,7 +100,8 @@ func Update(ctx *gin.Context) {
 		ctx.Status(http.StatusNotFound)
 		return
 	}
-	response, err := global.GoodsClient.UpdateBanner(context.Background(), &proto.BannerRequest{
+
+	response, err := global.GoodsClient.UpdateBanner(context.WithValue(context.Background(), "ginContext", ctx), &proto.BannerRequest{
 		Id:    int32(idInt),
 		Index: int32(bannerForm.Index),
 		Url:   bannerForm.Url,
@@ -94,12 +112,14 @@ func Update(ctx *gin.Context) {
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
+	entry.Exit()
 	ctx.JSON(http.StatusOK, gin.H{
 		"id":    response.Id,
 		"index": response.Index,
 		"url":   response.Url,
 		"image": response.Image,
 	})
+	entry.Exit()
 }
 
 // Delete
@@ -107,6 +127,10 @@ func Update(ctx *gin.Context) {
 // @param ctx
 //
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -116,7 +140,7 @@ func Delete(ctx *gin.Context) {
 		return
 	}
 
-	response, err := global.GoodsClient.DeleteBanner(context.Background(), &proto.BannerRequest{Id: int32(idInt)})
+	response, err := global.GoodsClient.DeleteBanner(context.WithValue(context.Background(), "ginContext", ctx), &proto.BannerRequest{Id: int32(idInt)})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -126,4 +150,5 @@ func Delete(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": response.Success,
 	})
+	entry.Exit()
 }

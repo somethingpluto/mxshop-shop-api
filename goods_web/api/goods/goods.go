@@ -17,6 +17,10 @@ import (
 // @param ctx
 //
 func List(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	zap.S().Infof("goods 【List】获取商品列表 request:%v", ctx.Request.Host)
 	request := &proto.GoodsFilterRequest{}
 
@@ -96,6 +100,7 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = goodsList
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 // New
@@ -103,6 +108,10 @@ func List(ctx *gin.Context) {
 // @param ctx
 //
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	zap.S().Infof("goods 【New】新建商品 request:%v", ctx.Request.Host)
 	goodsForm := forms.GoodsForm{}
 	if err := ctx.ShouldBindJSON(&goodsForm); err != nil {
@@ -111,7 +120,7 @@ func New(ctx *gin.Context) {
 		return
 	}
 	goodsClient := global.GoodsClient
-	rsp, err := goodsClient.CreateGoods(context.Background(), &proto.CreateGoodsInfo{
+	rsp, err := goodsClient.CreateGoods(context.WithValue(context.Background(), "ginContext", ctx), &proto.CreateGoodsInfo{
 		Name:            goodsForm.Name,
 		GoodsSn:         goodsForm.GoodsSn,
 		Stocks:          goodsForm.Stocks,
@@ -132,6 +141,7 @@ func New(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, rsp)
+	entry.Exit()
 }
 
 // Detail
@@ -139,6 +149,10 @@ func New(ctx *gin.Context) {
 // @param ctx
 //
 func Detail(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	zap.S().Infof("goods 【Detail】获取商品详情 request:%v", ctx.Request.Host)
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
@@ -176,9 +190,14 @@ func Detail(ctx *gin.Context) {
 		"on_sale": response.OnSale,
 	}
 	ctx.JSON(http.StatusOK, rep)
+	entry.Exit()
 }
 
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	zap.S().Infof("goods 【Delelte】删除商品 request:%v", ctx.Request.Host)
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
@@ -188,7 +207,7 @@ func Delete(ctx *gin.Context) {
 		ctx.Status(http.StatusNotFound)
 		return
 	}
-	response, err := global.GoodsClient.DeleteGoods(context.Background(), &proto.DeleteGoodsInfo{Id: int32(i)})
+	response, err := global.GoodsClient.DeleteGoods(context.WithValue(context.Background(), "ginContext", ctx), &proto.DeleteGoodsInfo{Id: int32(i)})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -198,9 +217,15 @@ func Delete(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": response.Success,
 	})
+
+	entry.Exit()
 }
 
 func UpdateStatus(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	zap.S().Infof("goods 【Update】更新商品信息 request:%v", ctx.Request.Host)
 	goodsStatusForm := forms.GoodsStatusForm{}
 	err := ctx.ShouldBind(&goodsStatusForm)
@@ -211,7 +236,7 @@ func UpdateStatus(ctx *gin.Context) {
 	}
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
-	response, err := global.GoodsClient.UpdateGoodsStatus(context.Background(), &proto.CreateGoodsInfo{
+	response, err := global.GoodsClient.UpdateGoodsStatus(context.WithValue(context.Background(), "ginContext", ctx), &proto.CreateGoodsInfo{
 		Id:     int32(i),
 		IsHot:  *goodsStatusForm.IsHot,
 		IsNew:  *goodsStatusForm.IsNew,
@@ -245,9 +270,14 @@ func UpdateStatus(ctx *gin.Context) {
 		"is_new":  response.IsNew,
 		"on_sale": response.OnSale,
 	})
+	entry.Exit()
 }
 
 func Update(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	goodsForm := forms.GoodsForm{}
 	err := ctx.ShouldBind(&goodsForm)
 	if err != nil {
@@ -257,7 +287,7 @@ func Update(ctx *gin.Context) {
 	}
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
-	response, err := global.GoodsClient.UpdateGoods(context.Background(), &proto.CreateGoodsInfo{
+	response, err := global.GoodsClient.UpdateGoods(context.WithValue(context.Background(), "ginContext", ctx), &proto.CreateGoodsInfo{
 		Id:              int32(i),
 		Name:            goodsForm.Name,
 		GoodsSn:         goodsForm.GoodsSn,
@@ -300,4 +330,5 @@ func Update(ctx *gin.Context) {
 		"is_new":  response.IsNew,
 		"on_sale": response.OnSale,
 	})
+	entry.Exit()
 }

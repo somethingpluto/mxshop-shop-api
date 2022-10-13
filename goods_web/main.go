@@ -21,6 +21,7 @@ func main() {
 	initialize.InitTranslator("zh")
 	// 初始化RPC连接
 	initialize.InitRPC()
+	initialize.InitSentinel()
 	// 初始化路由
 	Router := initialize.InitRouter()
 	// 判断启动模式

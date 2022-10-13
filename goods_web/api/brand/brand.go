@@ -17,13 +17,18 @@ import (
 // @param ctx
 //
 func List(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	pn := ctx.DefaultQuery("pn", "0")
 	pnInt, _ := strconv.Atoi(pn)
 
 	pSize := ctx.DefaultQuery("psize", "10")
 	pSizeInt, _ := strconv.Atoi(pSize)
 
-	response, err := global.GoodsClient.BrandList(context.Background(), &proto.BrandFilterRequest{
+	response, err := global.GoodsClient.BrandList(context.WithValue(context.Background(), "ginContext", ctx), &proto.BrandFilterRequest{
 		Pages:       int32(pnInt),
 		PagePerNums: int32(pSizeInt),
 	})
@@ -44,9 +49,15 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = brandList
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	brandForm := forms.BrandForm{}
 	err := ctx.ShouldBind(&brandForm)
 	if err != nil {
@@ -54,7 +65,7 @@ func New(ctx *gin.Context) {
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
-	response, err := global.GoodsClient.CreateBrand(context.Background(), &proto.BrandRequest{
+	response, err := global.GoodsClient.CreateBrand(context.WithValue(context.Background(), "ginContext", ctx), &proto.BrandRequest{
 		Name: brandForm.Name,
 		Logo: brandForm.Logo,
 	})
@@ -68,9 +79,15 @@ func New(ctx *gin.Context) {
 	responseMap["name"] = response.Name
 	responseMap["logo"] = response.Logo
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -78,7 +95,7 @@ func Delete(ctx *gin.Context) {
 		ctx.Status(http.StatusNotFound)
 		return
 	}
-	response, err := global.GoodsClient.DeleteBrand(context.Background(), &proto.BrandRequest{
+	response, err := global.GoodsClient.DeleteBrand(context.WithValue(context.Background(), "ginContext", ctx), &proto.BrandRequest{
 		Id: int32(idInt),
 	})
 	if err != nil {
@@ -89,9 +106,14 @@ func Delete(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": response.Success,
 	})
+	entry.Exit()
 }
 
 func Update(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	brandForm := forms.BrandForm{}
 	err := ctx.ShouldBind(&brandForm)
 	if err != nil {
@@ -108,7 +130,7 @@ func Update(ctx *gin.Context) {
 		ctx.Status(http.StatusNotFound)
 		return
 	}
-	response, err := global.GoodsClient.UpdateBrand(context.Background(), &proto.BrandRequest{
+	response, err := global.GoodsClient.UpdateBrand(context.WithValue(context.Background(), "ginContext", ctx), &proto.BrandRequest{
 		Id:   int32(idInt),
 		Name: brandForm.Name,
 		Logo: brandForm.Logo,
@@ -124,4 +146,5 @@ func Update(ctx *gin.Context) {
 		"name": response.Name,
 		"logo": response.Logo,
 	})
+	entry.Exit()
 }

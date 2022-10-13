@@ -18,16 +18,15 @@ type NacosConfig struct {
 //
 type WebApiConfig struct {
 	Name       string       `json:"name"`
-	Mode       string       `json:"mode"`
-	ConsulInfo ConsulConfig `json:"consulConfig"`
-	JWTInfo    JWTConfig    `json:"jwtConfig"`
-	JaegerInfo JaegerConfig `json:"jaeger_info"`
+	Host       string       `json:"host"`
+	ConsulInfo ConsulConfig `json:"consul"`
+	JWTInfo    JWTConfig    `json:"jwt"`
+	JaegerInfo JaegerConfig `json:"jaeger"`
 }
 
 type ConsulConfig struct {
-	Host string   `json:"host"`
-	Port int      `json:"port"`
-	Tags []string `json:"tags"`
+	Host string `json:"host"`
+	Port int    `json:"port"`
 }
 
 type JWTConfig struct {

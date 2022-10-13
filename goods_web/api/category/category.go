@@ -19,7 +19,11 @@ import (
 // @param ctx
 //
 func List(ctx *gin.Context) {
-	response, err := global.GoodsClient.GetAllCategoriesList(context.Background(), &empty.Empty{})
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+	response, err := global.GoodsClient.GetAllCategoriesList(context.WithValue(context.Background(), "ginContext", ctx), &empty.Empty{})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 
@@ -35,6 +39,7 @@ func List(ctx *gin.Context) {
 		return
 	}
 	ctx.JSON(http.StatusOK, data)
+	entry.Exit()
 }
 
 // Detail
@@ -42,6 +47,11 @@ func List(ctx *gin.Context) {
 // @param ctx
 //
 func Detail(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -52,7 +62,7 @@ func Detail(ctx *gin.Context) {
 	}
 	responseMap := make(map[string]interface{})
 	subCategorys := make([]interface{}, 0)
-	response, err := global.GoodsClient.GetSubCategory(context.Background(), &proto.CategoryListRequest{
+	response, err := global.GoodsClient.GetSubCategory(context.WithValue(context.Background(), "ginContext", ctx), &proto.CategoryListRequest{
 		Id: int32(i),
 	})
 	if err != nil {
@@ -77,6 +87,7 @@ func Detail(ctx *gin.Context) {
 	responseMap["is_tab"] = response.Info.IsTab
 	responseMap["sub_categorys"] = subCategorys
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 // New
@@ -84,6 +95,11 @@ func Detail(ctx *gin.Context) {
 // @param ctx
 //
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	categoryForm := forms.CategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)
 	if err != nil {
@@ -92,7 +108,7 @@ func New(ctx *gin.Context) {
 		utils.HandleValidatorError(ctx, err)
 		return
 	}
-	response, err := global.GoodsClient.CreateCategory(context.Background(), &proto.CategoryInfoRequest{
+	response, err := global.GoodsClient.CreateCategory(context.WithValue(context.Background(), "ginContext", ctx), &proto.CategoryInfoRequest{
 		Name:           categoryForm.Name,
 		ParentCategory: categoryForm.ParentCategory,
 		Level:          categoryForm.Level,
@@ -112,9 +128,15 @@ func New(ctx *gin.Context) {
 		"is_tab": response.IsTab,
 	}
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	id := ctx.Param("id")
 	i, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -123,7 +145,7 @@ func Delete(ctx *gin.Context) {
 		ctx.Status(http.StatusNotFound)
 		return
 	}
-	response, err := global.GoodsClient.DeleteCategory(context.Background(), &proto.DeleteCategoryRequest{Id: int32(i)})
+	response, err := global.GoodsClient.DeleteCategory(context.WithValue(context.Background(), "ginContext", ctx), &proto.DeleteCategoryRequest{Id: int32(i)})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 
@@ -133,6 +155,7 @@ func Delete(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": response.Success,
 	})
+	entry.Exit()
 }
 
 // Update
@@ -140,6 +163,11 @@ func Delete(ctx *gin.Context) {
 // @param ctx
 //
 func Update(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	categoryForm := forms.UpdateCategoryForm{}
 	err := ctx.ShouldBind(&categoryForm)
 	if err != nil {
@@ -164,7 +192,7 @@ func Update(ctx *gin.Context) {
 		request.Name = categoryForm.Name
 		request.IsTab = *categoryForm.IsTab
 	}
-	response, err := global.GoodsClient.UpdateCategory(context.Background(), request)
+	response, err := global.GoodsClient.UpdateCategory(context.WithValue(context.Background(), "ginContext", ctx), request)
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 
@@ -177,4 +205,5 @@ func Update(ctx *gin.Context) {
 		"is_tab": response.IsTab,
 		"level":  response.Level,
 	})
+	entry.Exit()
 }

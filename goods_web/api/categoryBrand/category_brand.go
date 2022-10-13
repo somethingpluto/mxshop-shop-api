@@ -17,7 +17,12 @@ import (
 // @param ctx
 //
 func List(ctx *gin.Context) {
-	response, err := global.GoodsClient.CategoryBrandList(context.Background(), &proto.CategoryBrandFilterRequest{})
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
+	response, err := global.GoodsClient.CategoryBrandList(context.WithValue(context.Background(), "ginContext", ctx), &proto.CategoryBrandFilterRequest{})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 
@@ -45,6 +50,7 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = list
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 // Detail
@@ -52,6 +58,10 @@ func List(ctx *gin.Context) {
 // @param ctx
 //
 func Detail(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -60,7 +70,7 @@ func Detail(ctx *gin.Context) {
 		ctx.Status(http.StatusNotFound)
 		return
 	}
-	response, err := global.GoodsClient.GetCategoryBrandList(context.Background(), &proto.CategoryInfoRequest{
+	response, err := global.GoodsClient.GetCategoryBrandList(context.WithValue(context.Background(), "ginContext", ctx), &proto.CategoryInfoRequest{
 		Id: int32(idInt),
 	})
 	if err != nil {
@@ -79,6 +89,7 @@ func Detail(ctx *gin.Context) {
 		result = append(result, responseMap)
 	}
 	ctx.JSON(http.StatusOK, result)
+	entry.Exit()
 }
 
 // New
@@ -86,6 +97,10 @@ func Detail(ctx *gin.Context) {
 // @param ctx
 //
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	categoryBrandForm := forms.CategoryBrandForm{}
 	err := ctx.ShouldBind(&categoryBrandForm)
 	if err != nil {
@@ -95,7 +110,7 @@ func New(ctx *gin.Context) {
 		return
 	}
 
-	response, err := global.GoodsClient.CreateCategoryBrand(context.Background(), &proto.CategoryBrandRequest{
+	response, err := global.GoodsClient.CreateCategoryBrand(context.WithValue(context.Background(), "ginContext", ctx), &proto.CategoryBrandRequest{
 		CategoryId: int32(categoryBrandForm.CategoryId),
 		BrandId:    int32(categoryBrandForm.BrandId),
 	})
@@ -111,6 +126,7 @@ func New(ctx *gin.Context) {
 	responseMap["brand"] = response.Brand
 
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 // Update
@@ -118,6 +134,10 @@ func New(ctx *gin.Context) {
 // @param ctx
 //
 func Update(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	categoryBrandForm := forms.CategoryBrandForm{}
 	err := ctx.ShouldBind(&categoryBrandForm)
 	if err != nil {
@@ -136,7 +156,7 @@ func Update(ctx *gin.Context) {
 		return
 	}
 
-	response, err := global.GoodsClient.UpdateCategoryBrand(context.Background(), &proto.CategoryBrandRequest{
+	response, err := global.GoodsClient.UpdateCategoryBrand(context.WithValue(context.Background(), "ginContext", ctx), &proto.CategoryBrandRequest{
 		Id:         int32(idInt),
 		CategoryId: int32(categoryBrandForm.CategoryId),
 		BrandId:    int32(categoryBrandForm.BrandId),
@@ -150,6 +170,7 @@ func Update(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": response.Success,
 	})
+	entry.Exit()
 }
 
 // Delete
@@ -157,6 +178,10 @@ func Update(ctx *gin.Context) {
 // @param ctx
 //
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -166,7 +191,7 @@ func Delete(ctx *gin.Context) {
 		return
 	}
 
-	response, err := global.GoodsClient.DeleteCategoryBrand(context.Background(), &proto.CategoryBrandRequest{Id: int32(idInt)})
+	response, err := global.GoodsClient.DeleteCategoryBrand(context.WithValue(context.Background(), "ginContext", ctx), &proto.CategoryBrandRequest{Id: int32(idInt)})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 
@@ -176,4 +201,5 @@ func Delete(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"status": response.Success,
 	})
+	entry.Exit()
 }
