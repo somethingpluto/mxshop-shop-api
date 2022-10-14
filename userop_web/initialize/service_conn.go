@@ -14,7 +14,7 @@ import (
 func InitUseropService() {
 	cfg := api.DefaultConfig()
 	fmt.Println(cfg)
-	consulConfig := global.WebApiConfig.ConsulInfo
+	consulConfig := global.WebServiceConfig.ConsulInfo
 	cfg.Address = fmt.Sprintf("%s:%d", consulConfig.Host, consulConfig.Port)
 
 	var useropServiceHost string
@@ -24,7 +24,7 @@ func InitUseropService() {
 		zap.S().Errorw("Error", "message", "注册中心连接失败", "err", err.Error())
 		return
 	}
-	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \" %s\"", global.WebApiConfig.UseropService.Name))
+	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \" %s\"", global.WebServiceConfig.UseropService.Name))
 	if err != nil {
 		zap.S().Errorw("Error", "message", "查找服务失败", "err", err.Error())
 		return
@@ -38,7 +38,7 @@ func InitUseropService() {
 		zap.S().Errorw("Error", "message", "获取服务IP/Port失败")
 		return
 	}
-	zap.S().Infof("获得【%s】服务 %s:%d", global.WebApiConfig.UseropService.Name, useropServiceHost, useropServicePort)
+	zap.S().Infof("获得【%s】服务 %s:%d", global.WebServiceConfig.UseropService.Name, useropServiceHost, useropServicePort)
 	target := fmt.Sprintf("%s:%d", useropServiceHost, useropServicePort)
 	useropConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`))
 	if err != nil {
@@ -54,7 +54,7 @@ func InitUseropService() {
 func InitGoodsService() {
 	cfg := api.DefaultConfig()
 	fmt.Println(cfg)
-	consulConfig := global.WebApiConfig.ConsulInfo
+	consulConfig := global.WebServiceConfig.ConsulInfo
 	cfg.Address = fmt.Sprintf("%s:%d", consulConfig.Host, consulConfig.Port)
 
 	var goodsServiceHost string
@@ -78,7 +78,7 @@ func InitGoodsService() {
 		zap.S().Errorw("Error", "message", "获取服务IP/Port失败")
 		return
 	}
-	zap.S().Infof("获得【%s】服务 %s:%d", global.WebApiConfig.UseropService.Name, goodsServiceHost, goodsServicePort)
+	zap.S().Infof("获得【%s】服务 %s:%d", global.WebServiceConfig.UseropService.Name, goodsServiceHost, goodsServicePort)
 	target := fmt.Sprintf("%s:%d", goodsServiceHost, goodsServicePort)
 	goodsConn, err := grpc.Dial(target, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`))
 	if err != nil {

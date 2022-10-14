@@ -14,7 +14,10 @@ import (
 )
 
 func List(ctx *gin.Context) {
-
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	request := &proto.AddressRequest{}
 
 	claims, _ := ctx.Get("claims")
@@ -25,7 +28,7 @@ func List(ctx *gin.Context) {
 		request.UserId = int32(userId.(uint))
 	}
 
-	response, err := global.AddressClient.GetAddressList(context.Background(), request)
+	response, err := global.AddressClient.GetAddressList(context.WithValue(context.Background(), "ginContext", ctx), request)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "获取地址列表失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -51,9 +54,14 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = result
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	addressForm := forms.AddressForm{}
 	err := ctx.ShouldBind(&addressForm)
 	if err != nil {
@@ -64,7 +72,7 @@ func New(ctx *gin.Context) {
 
 	userId, _ := ctx.Get("userId")
 
-	response, err := global.AddressClient.CreateAddress(context.Background(), &proto.AddressRequest{
+	response, err := global.AddressClient.CreateAddress(context.WithValue(context.Background(), "ginContext", ctx), &proto.AddressRequest{
 		UserId:       int32(userId.(uint)),
 		Province:     addressForm.Province,
 		City:         addressForm.City,
@@ -87,9 +95,14 @@ func New(ctx *gin.Context) {
 		"singerName":   response.SignerName,
 		"singerMobile": response.SignerMobile,
 	})
+	entry.Exit()
 }
 
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -99,7 +112,7 @@ func Delete(ctx *gin.Context) {
 
 	userId, _ := ctx.Get("userId")
 
-	_, err = global.AddressClient.DeleteAddress(context.Background(), &proto.AddressRequest{Id: int32(idInt), UserId: int32(userId.(uint))})
+	_, err = global.AddressClient.DeleteAddress(context.WithValue(context.Background(), "ginContext", ctx), &proto.AddressRequest{Id: int32(idInt), UserId: int32(userId.(uint))})
 	if err != nil {
 		zap.S().Errorw("Error", "message", "删除地址服务失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -108,9 +121,14 @@ func Delete(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"message": "删除成功",
 	})
+	entry.Exit()
 }
 
 func Update(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	addressForm := forms.AddressForm{}
 	err := ctx.ShouldBind(&addressForm)
 	if err != nil {
@@ -126,7 +144,7 @@ func Update(ctx *gin.Context) {
 		return
 	}
 	userId, _ := ctx.Get("userId")
-	_, err = global.AddressClient.UpdateAddress(context.Background(), &proto.AddressRequest{
+	_, err = global.AddressClient.UpdateAddress(context.WithValue(context.Background(), "ginContext", ctx), &proto.AddressRequest{
 		Id:           int32(idInt),
 		UserId:       int32(userId.(uint)),
 		Province:     addressForm.Province,
@@ -144,4 +162,5 @@ func Update(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"message": "更新成功",
 	})
+	entry.Exit()
 }

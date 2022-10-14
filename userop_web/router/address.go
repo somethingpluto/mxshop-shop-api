@@ -7,7 +7,7 @@ import (
 )
 
 func InitAddressRouter(Router *gin.RouterGroup) {
-	AddressRouter := Router.Group("address")
+	AddressRouter := Router.Group("address", middlewares.Trace())
 	{
 		AddressRouter.GET("", middlewares.JWTAuth(), address.List)
 		AddressRouter.DELETE("/:id", middlewares.JWTAuth(), address.Delete)

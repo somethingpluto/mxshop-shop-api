@@ -9,7 +9,7 @@ import (
 var (
 	FilePath           *config.FilePathConfig
 	NacosConfig        *config.NacosConfig
-	WebApiConfig       *config.WebApiConfig
+	WebServiceConfig   *config.WebServiceConfig
 	Translator         ut.Translator
 	UserFavoriteClient proto.UserFavoriteClient
 	MessageClient      proto.MessageClient

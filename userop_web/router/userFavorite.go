@@ -7,7 +7,7 @@ import (
 )
 
 func InitUserFavoriteRouter(Router *gin.RouterGroup) {
-	userFavoriteRouter := Router.Group("userfavs")
+	userFavoriteRouter := Router.Group("userfavs", middlewares.Trace())
 	{
 		userFavoriteRouter.GET("", middlewares.JWTAuth(), userFavorite.List)
 		userFavoriteRouter.POST("", middlewares.JWTAuth(), userFavorite.New)

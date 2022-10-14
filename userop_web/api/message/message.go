@@ -13,6 +13,10 @@ import (
 )
 
 func List(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	request := &proto.MessageRequest{}
 	userId, _ := ctx.Get("userId")
 	claims, _ := ctx.Get("claims")
@@ -21,7 +25,7 @@ func List(ctx *gin.Context) {
 		request.UserId = int32(userId.(uint))
 	}
 
-	response, err := global.MessageClient.MessageList(context.Background(), request)
+	response, err := global.MessageClient.MessageList(context.WithValue(context.Background(), "ginContext", ctx), request)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "查询message列表失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -44,9 +48,15 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = result
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+
 	userId, _ := ctx.Get("userId")
 
 	messageForm := forms.MessageForm{}
@@ -57,7 +67,7 @@ func New(ctx *gin.Context) {
 		return
 	}
 
-	response, err := global.MessageClient.CreateMessage(context.Background(), &proto.MessageRequest{
+	response, err := global.MessageClient.CreateMessage(context.WithValue(context.Background(), "ginContext", ctx), &proto.MessageRequest{
 		UserId:      int32(userId.(uint)),
 		MessageType: messageForm.MessageType,
 		Subject:     messageForm.Subject,
@@ -72,4 +82,5 @@ func New(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"Id": response.Id,
 	})
+	entry.Exit()
 }

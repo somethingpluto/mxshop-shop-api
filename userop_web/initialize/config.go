@@ -62,11 +62,12 @@ func InitConfig() {
 		zap.S().Errorw("client.GetConfig读取文件失败", "err", err.Error())
 		return
 	}
-	global.WebApiConfig = &config.WebApiConfig{}
-	err = json.Unmarshal([]byte(content), global.WebApiConfig)
+	global.WebServiceConfig = &config.WebServiceConfig{}
+	err = json.Unmarshal([]byte(content), global.WebServiceConfig)
 	if err != nil {
 		zap.S().Errorw("读取的配置content解析到global.serviceConfig失败", "err", err.Error())
 		return
 	}
-	zap.S().Infof("nacos配置拉取成功 %#v", global.WebApiConfig)
+	zap.S().Infof("nacos配置拉取成功 %#v", global.WebServiceConfig)
+	global.WebServiceConfig.Host = "192.168.8.1"
 }

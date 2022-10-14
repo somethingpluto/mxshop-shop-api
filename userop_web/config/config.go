@@ -16,13 +16,14 @@ type NacosConfig struct {
 // WebApiConfig
 // @Description: nacos拉取的配置
 //
-type WebApiConfig struct {
-	Name          string              `json:"name"`
-	Mode          string              `json:"mode"`
+type WebServiceConfig struct {
+	Name          string `json:"name"`
+	Host          string
 	ConsulInfo    ConsulConfig        `json:"consul"`
 	JWTInfo       JWTConfig           `json:"jwtConfig"`
 	UseropService UserOPServiceConfig `json:"userop_service"`
 	GoodsService  GoodsServiceConfig  `json:"goods_service"`
+	JaegerInfo    JaegerConfig        `json:"jaeger"`
 }
 
 type ConsulConfig struct {
@@ -33,6 +34,11 @@ type ConsulConfig struct {
 
 type JWTConfig struct {
 	SigningKey string `mapstructure:"key" json:"key"`
+}
+
+type JaegerConfig struct {
+	Host string `json:"host"`
+	Port int    `json:"port"`
 }
 
 type UserOPServiceConfig struct {

@@ -13,8 +13,12 @@ import (
 )
 
 func List(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	userId, _ := ctx.Get("userId")
-	response, err := global.UserFavoriteClient.GetFavoriteList(context.Background(), &proto.UserFavoriteRequest{
+	response, err := global.UserFavoriteClient.GetFavoriteList(context.WithValue(context.Background(), "ginContext", ctx), &proto.UserFavoriteRequest{
 		UserId: int32(userId.(uint)),
 	})
 	if err != nil {
@@ -33,7 +37,7 @@ func List(ctx *gin.Context) {
 		return
 	}
 
-	goodsResponse, err := global.GoodsClient.BatchGetGoods(context.Background(), &proto.BatchGoodsIdInfo{Id: ids})
+	goodsResponse, err := global.GoodsClient.BatchGetGoods(context.WithValue(context.Background(), "ginContext", ctx), &proto.BatchGoodsIdInfo{Id: ids})
 	if err != nil {
 		zap.S().Errorw("Error", "message", "商品服务批量获取商品失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -59,9 +63,14 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = goodsList
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	userFavFrom := forms.UserFavForm{}
 	err := ctx.ShouldBind(&userFavFrom)
 	if err != nil {
@@ -71,7 +80,7 @@ func New(ctx *gin.Context) {
 	}
 
 	userId, _ := ctx.Get("userId")
-	_, err = global.UserFavoriteClient.AddUserFavorite(context.Background(), &proto.UserFavoriteRequest{
+	_, err = global.UserFavoriteClient.AddUserFavorite(context.WithValue(context.Background(), "ginContext", ctx), &proto.UserFavoriteRequest{
 		UserId:  int32(userId.(uint)),
 		GoodsId: userFavFrom.GoodsId,
 	})
@@ -83,9 +92,14 @@ func New(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"message": "收藏成功",
 	})
+	entry.Exit()
 }
 
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.ParseInt(id, 10, 32)
 	if err != nil {
@@ -93,7 +107,7 @@ func Delete(ctx *gin.Context) {
 		return
 	}
 	userId, _ := ctx.Get("userId")
-	_, err = global.UserFavoriteClient.DeleteUserFavorite(context.Background(), &proto.UserFavoriteRequest{
+	_, err = global.UserFavoriteClient.DeleteUserFavorite(context.WithValue(context.Background(), "ginContext", ctx), &proto.UserFavoriteRequest{
 		UserId:  int32(userId.(uint)),
 		GoodsId: int32(idInt),
 	})
@@ -105,9 +119,14 @@ func Delete(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"message": "删除收藏成功",
 	})
+	entry.Exit()
 }
 
 func Detail(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	goodsId := ctx.Param("id")
 	goodsIdInt, err := strconv.ParseInt(goodsId, 10, 32)
 	if err != nil {
@@ -115,7 +134,7 @@ func Detail(ctx *gin.Context) {
 		return
 	}
 	userId, _ := ctx.Get("userId")
-	_, err = global.UserFavoriteClient.GetUserFavoriteDetail(context.Background(), &proto.UserFavoriteRequest{
+	_, err = global.UserFavoriteClient.GetUserFavoriteDetail(context.WithValue(context.Background(), "ginContext", ctx), &proto.UserFavoriteRequest{
 		UserId:  int32(userId.(uint)),
 		GoodsId: int32(goodsIdInt),
 	})
@@ -125,4 +144,5 @@ func Detail(ctx *gin.Context) {
 		return
 	}
 	ctx.Status(http.StatusOK)
+	entry.Exit()
 }
