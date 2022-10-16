@@ -24,7 +24,7 @@ func InitUseropService() {
 		zap.S().Errorw("Error", "message", "注册中心连接失败", "err", err.Error())
 		return
 	}
-	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \" %s\"", global.WebServiceConfig.UseropService.Name))
+	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service == \"%s\"", global.WebServiceConfig.UseropService.Name))
 	if err != nil {
 		zap.S().Errorw("Error", "message", "查找服务失败", "err", err.Error())
 		return
@@ -86,5 +86,5 @@ func InitGoodsService() {
 		return
 	}
 	global.GoodsClient = proto.NewGoodsClient(goodsConn)
-	zap.S().Infof("RPC release模式 服务连接成功")
+	zap.S().Infof("Goods微服务连接成功")
 }

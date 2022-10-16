@@ -1,0 +1,20 @@
+{
+	"name": "userop_web",
+    "jwtConfig": {
+		"key": "7G(yQ9F0tXHy#EHT0ZIR"
+	},
+	"consul": {
+		"host": "192.168.8.133",
+		"port": 8500
+	},
+    "jaeger":{
+        "host":"192.168.8.133",
+        "port":14268
+    },
+	"userop_service": {
+		"name": "userop_service"
+	},
+	"goods_service": {
+		"name": "goods_service"
+	}
+}

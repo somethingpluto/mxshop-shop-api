@@ -1,0 +1,96 @@
+2022-10-16T19:57:46.061+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T19:57:46.062+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T19:57:46.063+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T19:57:46.063+0800	WARN	mode/debug.go:12	<<<<<debug模式仅启动Userop服务 关联服务未启动>>>>>
+2022-10-16T19:57:46.063+0800	INFO	mode/debug.go:21	RPC debugg模式 服务连接成功
+2022-10-16T19:57:48.074+0800	ERROR	initialize/service_conn.go:69	Error	{"message": "查找服务失败", "err": "Get \"http://127.0.0.1:8500/v1/agent/services?filter=Service+%3D%3D+goods_service\": dial tcp 127.0.0.1:8500: connectex: No connection could be made because the target machine actively refused it."}
+2022-10-16T19:57:48.078+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T19:59:18.990+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T19:59:18.991+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T19:59:18.992+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T19:59:18.992+0800	WARN	mode/debug.go:12	<<<<<debug模式仅启动Userop服务 关联服务未启动>>>>>
+2022-10-16T19:59:18.992+0800	INFO	mode/debug.go:21	RPC debugg模式 服务连接成功
+2022-10-16T19:59:18.996+0800	ERROR	initialize/service_conn.go:78	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T19:59:18.998+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T19:59:52.471+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T19:59:52.472+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T19:59:52.472+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T19:59:52.472+0800	WARN	mode/debug.go:12	<<<<<debug模式仅启动Userop服务 关联服务未启动>>>>>
+2022-10-16T19:59:52.473+0800	INFO	mode/debug.go:21	RPC debugg模式 服务连接成功
+2022-10-16T19:59:52.475+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T19:59:52.475+0800	INFO	initialize/service_conn.go:89	RPC release模式 服务连接成功
+2022-10-16T19:59:52.477+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:02:03.801+0800	ERROR	address/addresss.go:33	Error	{"message": "获取地址列表失败", "err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-10-16T20:02:11.769+0800	ERROR	address/addresss.go:33	Error	{"message": "获取地址列表失败", "err": "rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:8000: connectex: No connection could be made because the target machine actively refused it.\""}
+2022-10-16T20:03:02.513+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:03:02.513+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:03:02.514+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:03:02.519+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:03:02.522+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:03:02.522+0800	INFO	initialize/service_conn.go:89	RPC release模式 服务连接成功
+2022-10-16T20:03:02.525+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:04:19.725+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:04:19.726+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:04:19.727+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:04:19.728+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:04:19.732+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:04:19.732+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:04:19.734+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:05:12.880+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:05:12.882+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:05:12.882+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:05:12.884+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:05:12.887+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:05:12.888+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:05:12.890+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:06:35.762+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:06:35.763+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:06:35.763+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:06:35.765+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:06:35.768+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:06:35.769+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:06:35.772+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:07:17.733+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:07:17.735+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:07:17.735+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:07:17.738+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:07:17.741+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:07:17.742+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:07:17.744+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:08:30.059+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:08:30.059+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:08:30.060+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:08:30.063+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:08:30.065+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:08:30.067+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:08:30.069+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:09:15.827+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:09:15.829+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:09:15.829+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:09:15.831+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:09:15.835+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:09:15.836+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:09:15.839+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:10:22.714+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:10:22.715+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:10:22.715+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:10:22.721+0800	ERROR	initialize/service_conn.go:38	Error	{"message": "获取服务IP/Port失败"}
+2022-10-16T20:10:22.724+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:10:22.725+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:10:22.727+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:11:44.885+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:11:44.886+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:11:44.886+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:11:44.891+0800	INFO	initialize/service_conn.go:41	获得【userop_service】服务 192.168.8.1:51389
+2022-10-16T20:11:44.892+0800	INFO	initialize/service_conn.go:51	RPC release模式 服务连接成功
+2022-10-16T20:11:44.897+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:11:44.898+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:11:44.902+0800	INFO	userop_web/main.go:31	userop_web服务开启
+2022-10-16T20:19:06.298+0800	INFO	initialize/logger.go:26	日志初始化成功
+2022-10-16T20:19:06.299+0800	INFO	initialize/translator.go:25	翻译器加载成功
+2022-10-16T20:19:06.299+0800	INFO	initialize/validator.go:40	mobile 验证器加载成功
+2022-10-16T20:19:06.302+0800	INFO	initialize/service_conn.go:41	获得【userop_service】服务 192.168.8.1:52189
+2022-10-16T20:19:06.304+0800	INFO	initialize/service_conn.go:51	RPC release模式 服务连接成功
+2022-10-16T20:19:06.309+0800	INFO	initialize/service_conn.go:81	获得【userop_service】服务 192.168.8.1:51542
+2022-10-16T20:19:06.309+0800	INFO	initialize/service_conn.go:89	Goods微服务连接成功
+2022-10-16T20:19:06.312+0800	INFO	userop_web/main.go:31	userop_web服务开启

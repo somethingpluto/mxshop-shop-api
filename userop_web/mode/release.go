@@ -3,6 +3,7 @@ package mode
 import "userop_web/initialize"
 
 func ReleaseMode() {
-	DebugMode()
+	//initialize.InitUseropService()
+	initialize.InitUseropService()
 	initialize.InitGoodsService()
 }
