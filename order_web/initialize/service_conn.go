@@ -18,28 +18,30 @@ func InitService() {
 }
 
 func initGoodsService() {
-	consulConfig := global.WebApiConfig.ConsulInfo
+	consulConfig := global.WebServiceConfig.ConsulInfo
 	goodsConn, err := grpc.Dial(
-		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebApiConfig.GoodsService.Name),
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebServiceConfig.GoodsService.Name),
 		grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
 		grpc.WithUnaryInterceptor(otgrpc.OpenTracingClientInterceptor(opentracing.GlobalTracer())),
 	)
 	if err != nil {
 		zap.S().Fatalw("连接 【goods_service】商品服务失败", "err", err)
 	}
+	zap.S().Infof("goods_service 连接成功")
 	global.GoodsClient = proto.NewGoodsClient(goodsConn)
 }
 
 func initInventoryService() {
-	consulConfig := global.WebApiConfig.ConsulInfo
+	consulConfig := global.WebServiceConfig.ConsulInfo
 
 	inventoryConn, err := grpc.Dial(
-		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebApiConfig.InventoryService.Name),
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulConfig.Host, consulConfig.Port, global.WebServiceConfig.InventoryService.Name),
 		grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
 		grpc.WithUnaryInterceptor(otgrpc.OpenTracingClientInterceptor(opentracing.GlobalTracer())),
 	)
 	if err != nil {
 		zap.S().Fatalw("连接 【inventory_service】商品服务失败", "err", err)
 	}
+	zap.S().Infof("inventory_service 连接成功")
 	global.InventoryClient = proto.NewInventoryClient(inventoryConn)
 }

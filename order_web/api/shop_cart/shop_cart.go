@@ -17,9 +17,13 @@ import (
 // @param ctx
 //
 func List(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	// 获取购物车商品
 	userId, _ := ctx.Get("userId")
-	response, err := global.OrderClient.CartItemList(context.Background(), &proto.UserInfo{Id: int32(userId.(uint))})
+	response, err := global.OrderClient.CartItemList(context.WithValue(context.Background(), "ginContext", ctx), &proto.UserInfo{Id: int32(userId.(uint))})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -36,7 +40,7 @@ func List(ctx *gin.Context) {
 		return
 	}
 	// 请求商品服务商品信息
-	goodsListResponse, err := global.GoodsClient.BatchGetGoods(context.Background(), &proto.BatchGoodsIdInfo{Id: ids})
+	goodsListResponse, err := global.GoodsClient.BatchGetGoods(context.WithValue(context.Background(), "ginContext", ctx), &proto.BatchGoodsIdInfo{Id: ids})
 	if err != nil {
 		zap.S().Errorw("Error", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -64,6 +68,7 @@ func List(ctx *gin.Context) {
 	}
 	reMap["data"] = goodsList
 	ctx.JSON(http.StatusOK, reMap)
+	entry.Exit()
 }
 
 // New
@@ -71,6 +76,10 @@ func List(ctx *gin.Context) {
 // @param ctx
 //
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	// 创建购物车表单
 	itemForm := forms.ShopCartItemForm{}
 	err := ctx.ShouldBind(&itemForm)
@@ -81,7 +90,7 @@ func New(ctx *gin.Context) {
 	}
 
 	// 添加之前检查商品是否存在
-	_, err = global.GoodsClient.GetGoodsDetail(context.Background(), &proto.GoodsInfoRequest{
+	_, err = global.GoodsClient.GetGoodsDetail(context.WithValue(context.Background(), "ginContext", ctx), &proto.GoodsInfoRequest{
 		Id: itemForm.GoodsId,
 	})
 	if err != nil {
@@ -91,7 +100,7 @@ func New(ctx *gin.Context) {
 	}
 
 	// 如果添加到购物车数量和商品库存不一致
-	inventoryResp, err := global.InventoryClient.InvDetail(context.Background(), &proto.GoodsInvInfo{
+	inventoryResp, err := global.InventoryClient.InvDetail(context.WithValue(context.Background(), "ginContext", ctx), &proto.GoodsInvInfo{
 		GoodsId: itemForm.GoodsId,
 	})
 	if err != nil {
@@ -108,7 +117,7 @@ func New(ctx *gin.Context) {
 	}
 
 	userId, _ := ctx.Get("userId")
-	orderResp, err := global.OrderClient.CreateCartItem(context.Background(), &proto.CartItemRequest{
+	orderResp, err := global.OrderClient.CreateCartItem(context.WithValue(context.Background(), "ginContext", ctx), &proto.CartItemRequest{
 		GoodsId: itemForm.GoodsId,
 		UserId:  int32(userId.(uint)),
 		Nums:    itemForm.Nums,
@@ -122,6 +131,7 @@ func New(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"id": orderResp.Id,
 	})
+	entry.Exit()
 }
 
 // Update
@@ -129,6 +139,10 @@ func New(ctx *gin.Context) {
 // @param ctx
 //
 func Update(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.Atoi(id)
 	if err != nil {
@@ -148,7 +162,7 @@ func Update(ctx *gin.Context) {
 	}
 
 	userId, _ := ctx.Get("userId")
-	_, err = global.OrderClient.UpdateCartItem(context.Background(), &proto.CartItemRequest{
+	_, err = global.OrderClient.UpdateCartItem(context.WithValue(context.Background(), "ginContext", ctx), &proto.CartItemRequest{
 
 		UserId:  int32(userId.(uint)),
 		GoodsId: int32(idInt),
@@ -160,6 +174,7 @@ func Update(ctx *gin.Context) {
 		utils.HandleGrpcErrorToHttpError(err, ctx)
 		return
 	}
+	entry.Exit()
 }
 
 // Delete
@@ -167,6 +182,10 @@ func Update(ctx *gin.Context) {
 // @param ctx
 //
 func Delete(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.Atoi(id)
 	if err != nil {
@@ -178,7 +197,7 @@ func Delete(ctx *gin.Context) {
 	}
 
 	userId, _ := ctx.Get("userId")
-	_, err = global.OrderClient.DeleteCartItem(context.Background(), &proto.CartItemRequest{
+	_, err = global.OrderClient.DeleteCartItem(context.WithValue(context.Background(), "ginContext", ctx), &proto.CartItemRequest{
 		UserId:  int32(userId.(uint)),
 		GoodsId: int32(idInt),
 	})
@@ -188,4 +207,5 @@ func Delete(ctx *gin.Context) {
 		return
 	}
 	ctx.Status(http.StatusOK)
+	entry.Exit()
 }

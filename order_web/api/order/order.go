@@ -15,6 +15,10 @@ import (
 )
 
 func List(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	userId, _ := ctx.Get("userId")
 	claims, _ := ctx.Get("claims")
 
@@ -33,7 +37,7 @@ func List(ctx *gin.Context) {
 	perNumsInt, _ := strconv.Atoi(perNums)
 	request.PagePerNums = int32(perNumsInt)
 
-	response, err := global.OrderClient.OrderList(context.Background(), &request)
+	response, err := global.OrderClient.OrderList(context.WithValue(context.Background(), "ginContext", ctx), &request)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "获取订单列表失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -65,9 +69,14 @@ func List(ctx *gin.Context) {
 	}
 	responseMap["data"] = orderList
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }
 
 func New(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	orderForm := forms.CreateOrderForm{}
 	err := ctx.ShouldBind(&orderForm)
 	if err != nil {
@@ -89,7 +98,7 @@ func New(ctx *gin.Context) {
 		return
 	}
 	// 生成支付宝支付URL
-	client, err := alipay.New(global.WebApiConfig.AlipayInfo.AppID, global.WebApiConfig.AlipayInfo.PrivateKey, false)
+	client, err := alipay.New(global.WebServiceConfig.AlipayInfo.AppID, global.WebServiceConfig.AlipayInfo.PrivateKey, false)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "实例化支付宝失败", "err", err.Error())
 		ctx.JSON(http.StatusInternalServerError, gin.H{
@@ -97,7 +106,7 @@ func New(ctx *gin.Context) {
 		})
 		return
 	}
-	err = client.LoadAliPayPublicKey(global.WebApiConfig.AlipayInfo.AliPublicKey)
+	err = client.LoadAliPayPublicKey(global.WebServiceConfig.AlipayInfo.AliPublicKey)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "加载支付宝公钥失败", "err", err.Error())
 		ctx.JSON(http.StatusInternalServerError, gin.H{
@@ -107,8 +116,8 @@ func New(ctx *gin.Context) {
 	}
 
 	var p = alipay.TradePagePay{}
-	p.NotifyURL = global.WebApiConfig.AlipayInfo.NotifyURL
-	p.ReturnURL = global.WebApiConfig.AlipayInfo.ReturnURL
+	p.NotifyURL = global.WebServiceConfig.AlipayInfo.NotifyURL
+	p.ReturnURL = global.WebServiceConfig.AlipayInfo.ReturnURL
 	p.Subject = "慕学生鲜订单-" + response.OrderSn
 	p.OutTradeNo = response.OrderSn
 	p.TotalAmount = strconv.FormatFloat(float64(response.Total), 'f', 2, 64)
@@ -127,9 +136,14 @@ func New(ctx *gin.Context) {
 		"id":         response.Id,
 		"alipay_url": url.String(),
 	})
+	entry.Exit()
 }
 
 func Detail(ctx *gin.Context) {
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
 	id := ctx.Param("id")
 	idInt, err := strconv.Atoi(id)
 	if err != nil {
@@ -149,7 +163,7 @@ func Detail(ctx *gin.Context) {
 	if model.AuthorityId == 1 {
 		request.UserId = int32(userId.(uint))
 	}
-	response, err := global.OrderClient.OrderDetail(context.Background(), &request)
+	response, err := global.OrderClient.OrderDetail(context.WithValue(context.Background(), "ginContext", ctx), &request)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "获取用户详情失败", "err", err.Error())
 		utils.HandleGrpcErrorToHttpError(err, ctx)
@@ -181,4 +195,5 @@ func Detail(ctx *gin.Context) {
 	}
 	responseMap["goods"] = goodsList
 	ctx.JSON(http.StatusOK, responseMap)
+	entry.Exit()
 }

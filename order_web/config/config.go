@@ -21,15 +21,15 @@ type FilePathConfig struct {
 // WebApiConfig
 // @Description: nacos拉取的配置
 //
-type WebApiConfig struct {
-	Name             string                 `json:"name"`
-	Mode             string                 `json:"mode"`
+type WebServiceConfig struct {
+	Name             string `json:"name"`
+	Host             string
 	ConsulInfo       ConsulConfig           `json:"consul"`
 	JWTInfo          JWTConfig              `json:"jwtConfig"`
 	GoodsService     GoodsServiceConfig     `json:"goods_service"`
 	InventoryService InventoryServiceConfig `json:"inventory_service"`
 	AlipayInfo       AlipayInfoConfig       `json:"alipay_info"`
-	JaegerInfo       JaegerConfig           `json:"jaeger_info"`
+	JaegerInfo       JaegerConfig           `json:"jaeger"`
 }
 
 type ConsulConfig struct {

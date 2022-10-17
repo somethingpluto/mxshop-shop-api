@@ -13,7 +13,7 @@ import (
 func ReleaseMode() {
 	cfg := api.DefaultConfig()
 	fmt.Println(cfg)
-	consulConfig := global.WebApiConfig.ConsulInfo
+	consulConfig := global.WebServiceConfig.ConsulInfo
 	cfg.Address = fmt.Sprintf("%s:%d", consulConfig.Host, consulConfig.Port)
 
 	var goodsServiceHost string

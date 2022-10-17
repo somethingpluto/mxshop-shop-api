@@ -9,10 +9,15 @@ import (
 	"net/http"
 	"order_web/global"
 	"order_web/proto"
+	"order_web/utils"
 )
 
 func Notify(ctx *gin.Context) {
-	aliPayInfo := global.WebApiConfig.AlipayInfo
+	entry, blockError := utils.SentinelEntry(ctx)
+	if blockError != nil {
+		return
+	}
+	aliPayInfo := global.WebServiceConfig.AlipayInfo
 	client, err := alipay.New(aliPayInfo.AppID, aliPayInfo.PrivateKey, false)
 	if err != nil {
 		zap.S().Errorw("Error", "message", "支付宝支付实例化初始化失败", "err", err.Error())
@@ -40,7 +45,7 @@ func Notify(ctx *gin.Context) {
 		return
 	}
 	fmt.Println(notification)
-	_, err = global.OrderClient.UpdateOrderStatus(context.Background(), &proto.OrderStatus{
+	_, err = global.OrderClient.UpdateOrderStatus(context.WithValue(context.Background(), "ginContext", ctx), &proto.OrderStatus{
 		OrderSn: notification.OutTradeNo,
 		Status:  string(notification.TradeStatus),
 	})
@@ -52,4 +57,5 @@ func Notify(ctx *gin.Context) {
 		return
 	}
 	ctx.String(http.StatusOK, "success")
+	entry.Exit()
 }
